@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Our Services",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "AL-LINK Expert",
+    "subtitle": "We Provide You with the Best Services and Solutions",
+    "description": "We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
+    "cta": "Contact Us Now"
+  },
+  "about": {
+    "title": "Who Are We?",
+    "description": "We are specialists in managing and operating parking systems and linking them with their services, including car parking, car washing, parking equipment, and maintenance and operation of parking areas in a scientific and practical advanced manner using artificial intelligence and advanced cloud systems. We only accept new and advanced technologies, and we dream of being the leaders in this field in the Middle East region and the Kingdom of Saudi Arabia."
+  },
+  "offerings": {
+    "title": "What Do We Offer Our Clients?",
+    "saveTime": {
+      "title": "Save Time",
+      "description": "We provide the best solutions and services to save your time"
+    },
+    "saveMoney": {
+      "title": "Save Money", 
+      "description": "We provide the best solutions and services to save your money"
+    },
+    "saveEffort": {
+      "title": "Save Effort",
+      "description": "We provide the best solutions and services to save your effort"
+    },
+    "increaseRevenue": {
+      "title": "Increase Project Revenue",
+      "description": "We provide the best solutions to increase your project revenue"
+    },
+    "bestResults": {
+      "title": "Best Project Results",
+      "description": "We work on your project to achieve the best results"
+    }
+  },
+  "goal": {
+    "title": "Our Goal",
+    "description": "Building long-term relationships with our clients and providing the best solutions for their needs"
+  },
+  "services": {
+    "title": "Our Services",
+    "parkingManagement": "Parking Management & Establishment",
+    "vehicleFleet": "Vehicle Fleet Services",
+    "crowdControl": "Crowd Control & Management at Parking",
+    "membershipManagement": "Membership Management",
+    "busGolfCar": "Bus and Golf Car",
+    "energyCharging": "Energy and Electric Charging",
+    "maintenance": "Parking Maintenance and Cleaning"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We will contact you as soon as possible",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "info": {
+      "email": "info@parking-culture.com",
+      "phone": "+966538872510",
+      "address": "Kingdom of Saudi Arabia - Al Malqa District KSA"
+    }
+  },
+  "footer": {
+    "description": "AL-LINK Expert provides you with the best services and solutions. We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
+    "links": "Important Links",
+    "contactInfo": "Contact Information",
+    "rights": "© 2024 AL-LINK Expert. All rights reserved."
+  }
+}
