@@ -88,43 +88,50 @@ const Index = () => {
       icon: Building,
       title: t('services.parkingManagement'),
       description: "Complete parking facility management and establishment solutions",
-      features: ["Parking System Design", "Smart Parking Technology", "Access Control", "Payment Solutions"]
+      features: ["Parking System Design", "Smart Parking Technology", "Access Control", "Payment Solutions"],
+      iconImage: "https://link-expert.sa/images/L6_1.webp"
     },
     {
       icon: Car,
       title: t('services.vehicleFleet'),
       description: "Professional vehicle fleet management and maintenance",
-      features: ["Car Washing Services", "Fleet Maintenance", "Vehicle Registration", "Service Management"]
+      features: ["Car Washing Services", "Fleet Maintenance", "Vehicle Registration", "Service Management"],
+      iconImage: "https://link-expert.sa/images/L7_1.webp"
     },
     {
       icon: Users,
       title: t('services.crowdControl'),
       description: "Advanced crowd control and parking area management solutions",
-      features: ["Traffic Management", "Crowd Flow Control", "Security Systems", "Monitoring Solutions"]
+      features: ["Traffic Management", "Crowd Flow Control", "Security Systems", "Monitoring Solutions"],
+      iconImage: "https://link-expert.sa/images/L8_1.webp"
     },
     {
       icon: Settings,
       title: t('services.membershipManagement'),
       description: "Professional membership management solutions",
-      features: ["Member Registration", "Access Management", "Billing Systems", "Customer Support"]
+      features: ["Member Registration", "Access Management", "Billing Systems", "Customer Support"],
+      iconImage: "https://link-expert.sa/images/L9_1.webp"
     },
     {
       icon: Server,
       title: t('services.busGolfCar'),
       description: "Bus and golf car transportation services",
-      features: ["Transportation Solutions", "Vehicle Maintenance", "Route Planning", "Safety Management"]
+      features: ["Transportation Solutions", "Vehicle Maintenance", "Route Planning", "Safety Management"],
+      iconImage: "https://link-expert.sa/images/L10_1.webp"
     },
     {
       icon: Battery,
       title: t('services.energyCharging'),
       description: "Energy and electric charging solutions",
-      features: ["Charging Stations", "Energy Management", "Electric Vehicle Support", "Sustainable Solutions"]
+      features: ["Charging Stations", "Energy Management", "Electric Vehicle Support", "Sustainable Solutions"],
+      iconImage: "https://link-expert.sa/images/L10_1.webp"
     },
     {
       icon: Wrench,
       title: t('services.maintenance'),
       description: "Comprehensive parking maintenance and cleaning services",
-      features: ["Regular Maintenance", "Cleaning Services", "Equipment Repair", "Facility Management"]
+      features: ["Regular Maintenance", "Cleaning Services", "Equipment Repair", "Facility Management"],
+      iconImage: "https://link-expert.sa/images/L10_1.webp"
     }
   ];
 
@@ -140,31 +147,36 @@ const Index = () => {
       icon: Clock,
       title: t('offerings.saveTime.title'),
       description: t('offerings.saveTime.description'),
-      color: "bg-blue-500"
+      color: "bg-blue-500",
+      iconImage: "https://oudreserve.sa/images/Artboard-15.webp"
     },
     {
       icon: DollarSign,
       title: t('offerings.saveMoney.title'),
       description: t('offerings.saveMoney.description'),
-      color: "bg-green-500"
+      color: "bg-green-500",
+      iconImage: "https://oudreserve.sa/images/Artboard-14.webp"
     },
     {
       icon: Briefcase,
       title: t('offerings.saveEffort.title'),
       description: t('offerings.saveEffort.description'),
-      color: "bg-purple-500"
+      color: "bg-purple-500",
+      iconImage: "https://oudreserve.sa/images/Artboard-13.webp"
     },
     {
       icon: TrendingUp,
       title: t('offerings.increaseRevenue.title'),
       description: t('offerings.increaseRevenue.description'),
-      color: "bg-orange-500"
+      color: "bg-orange-500",
+      iconImage: "https://oudreserve.sa/images/Artboard-16.webp"
     },
     {
       icon: Target,
       title: t('offerings.bestResults.title'),
       description: t('offerings.bestResults.description'),
-      color: "bg-red-500"
+      color: "bg-red-500",
+      iconImage: "https://oudreserve.sa/images/Artboard-17.webp"
     }
   ];
 
@@ -175,7 +187,11 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-2 animate-slide-in-left">
-              <Network className="h-8 w-8 text-white" />
+              <img 
+                src="http://link-expert.sa/images/brand-logo.png" 
+                alt="AL-LINK Expert Logo"
+                className="h-8 w-8"
+              />
               <span className="text-2xl font-bold text-white gradient-text">
                 {t('hero.title')}
               </span>
@@ -272,8 +288,14 @@ const Index = () => {
       {/* Hero Section */}
       <section 
         id="home" 
-        className="min-h-screen section-overlay bg-hero-pattern flex items-center relative"
-        style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        className="min-h-screen bg-hero-pattern flex items-center relative"
+        style={{ 
+          transform: `translateY(${scrollY * 0.5}px)`,
+          backgroundImage: "url('https://oudreserve.sa/images/OudImage_1.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
       >
         <div className="container mx-auto px-6 text-center text-white">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -304,21 +326,31 @@ const Index = () => {
       </section>
 
       {/* About Section with Image */}
-      <section id="about" className="py-24 section-overlay reveal" style={{backgroundImage: "url('/api/placeholder/1920/800')"}}>
+      <section id="about" className="py-24 reveal bg-white">
         <div className="container mx-auto px-6">
+          {/* Section Image */}
+          <div className="mb-16">
+            <img 
+              src="https://oudreserve.sa/images/imageV2_1.webp" 
+              alt="About section background" 
+              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-2xl"
+            />
+          </div>
+          
+          {/* Section Content */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="glass-effect rounded-xl p-8 hover-lift">
+            <div className="bg-gray-100 rounded-xl p-8 hover-lift shadow-lg">
               <img 
-                src="/api/placeholder/600/400" 
+                src="https://al-link.com/wp-content/uploads/2024/06/amer-center-meeting-1024x944.jpeg" 
                 alt="AL-LINK parking management solutions" 
-                className="w-full h-80 object-cover rounded-lg shadow-2xl"
+                className="w-full h-80 object-cover rounded-lg shadow-xl"
               />
             </div>
-            <div className="text-white space-y-6">
-              <h2 className="text-4xl md:text-6xl font-bold mb-8 gradient-text" style={{ textAlign: isRTL ? 'right' : 'left' }}>
+            <div className="text-gray-800 space-y-6">
+              <h2 className="text-4xl md:text-6xl font-bold mb-8 text-amber-600" style={{ textAlign: isRTL ? 'right' : 'left' }}>
                 {t('about.title')}
               </h2>
-              <p className="text-lg md:text-xl leading-relaxed text-white/90" style={{ textAlign: isRTL ? 'right' : 'left' }}>
+              <p className="text-lg md:text-xl leading-relaxed text-gray-700" style={{ textAlign: isRTL ? 'right' : 'left' }}>
                 {t('about.description')}
               </p>
             </div>
@@ -327,77 +359,129 @@ const Index = () => {
       </section>
 
       {/* Offerings Section */}
-      <section className="py-24 section-overlay reveal" style={{backgroundImage: "url('/api/placeholder/1920/800')"}}>
-        <div className="container mx-auto px-6 text-white text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-16 gradient-text">
-            {t('offerings.title')}
-          </h2>
+      <section className="py-24 reveal bg-gray-50">
+        <div className="container mx-auto px-6">
+          {/* Section Image */}
+          <div className="mb-16">
+            <img 
+              src="https://oudreserve.sa/images/l10_2.webp" 
+              alt="Offerings section background" 
+              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-2xl"
+            />
+          </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-20">
-            {offerings.map((offering, index) => (
-              <div key={index} className="text-center group hover-lift reveal">
-                <div className="mb-6 flex justify-center">
-                  <div className={`p-6 ${offering.color} rounded-xl shadow-xl transform group-hover:scale-110 transition-all duration-300`}>
-                    <offering.icon className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
+          {/* Section Content */}
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-16 text-amber-600">
+              {t('offerings.title')}
+            </h2>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-20">
+              {offerings.map((offering, index) => (
+                <div key={index} className="text-center group hover-lift reveal">
+                  <div className="mb-6 flex justify-center">
+                    <div className="p-6 bg-amber-100 rounded-xl shadow-xl transform group-hover:scale-110 transition-all duration-300">
+                      <img 
+                        src={offering.iconImage} 
+                        alt={offering.title}
+                        className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
+                      />
+                    </div>
                   </div>
+                  <h3 className="font-bold mb-3 text-lg sm:text-xl text-gray-800">{offering.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{offering.description}</p>
                 </div>
-                <h3 className="font-bold mb-3 text-lg sm:text-xl">{offering.title}</h3>
-                <p className="text-sm sm:text-base text-white/80 leading-relaxed">{offering.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Goal Section */}
-      <section className="py-24 section-overlay reveal" style={{backgroundImage: "url('/api/placeholder/1920/800')"}}>
-        <div className="container mx-auto px-6 text-white text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-8 gradient-text">
-            {t('goal.title')}
-          </h2>
-          <p className="text-xl sm:text-2xl md:text-3xl font-bold mb-16 text-white max-w-4xl mx-auto leading-relaxed">
-            {t('goal.description')}
-          </p>
+      <section className="py-24 reveal bg-white">
+        <div className="container mx-auto px-6">
+          {/* Section Image */}
+          <div className="mb-16">
+            <img 
+              src="https://oudreserve.sa/images/imageV2_1.webp" 
+              alt="Goal section background" 
+              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-2xl"
+            />
+          </div>
+          
+          {/* Section Content */}
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-8 text-amber-600">
+              {t('goal.title')}
+            </h2>
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold mb-16 text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              {t('goal.description')}
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Services Grid Section */}
-      <section id="services" className="py-24 section-overlay reveal" style={{backgroundImage: "url('/api/placeholder/1920/800')"}}>
-        <div className="container mx-auto px-6 text-white text-center">
-          <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-16 gradient-text">
-            {t('services.title')}
-          </h3>
+      <section id="services" className="py-24 reveal bg-gray-50">
+        <div className="container mx-auto px-6">
+          {/* Section Image */}
+          <div className="mb-16">
+            <img 
+              src="https://oudreserve.sa/images/l10_2.webp" 
+              alt="Services section background" 
+              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-2xl"
+            />
+          </div>
+          
+          {/* Section Content */}
+          <div className="text-center">
+            <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-16 text-amber-600">
+              {t('services.title')}
+            </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
-            {services.map((service, index) => (
-              <div key={index} className="text-center group hover-lift reveal">
-                <div className="glass-effect rounded-xl p-6 sm:p-8 mb-6 transform group-hover:scale-105 transition-all duration-500">
-                  <service.icon className="h-12 w-12 sm:h-16 sm:w-16 text-amber-400 mx-auto mb-4 sm:mb-6" />
-                  <h4 className="font-bold mb-4 text-xl sm:text-2xl">{service.title}</h4>
-                  <p className="text-white/80 text-sm sm:text-base mb-4">{service.description}</p>
-                  <div className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center justify-center space-x-2 text-sm text-amber-300">
-                        <CheckCircle className="h-4 w-4" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+              {services.map((service, index) => (
+                <div key={index} className="text-center group hover-lift reveal">
+                  <div className="bg-white rounded-xl p-6 sm:p-8 mb-6 transform group-hover:scale-105 transition-all duration-500 shadow-lg">
+                    <div className="mb-4 sm:mb-6 flex justify-center">
+                      <service.icon className="h-16 w-16 sm:h-20 sm:w-20 text-amber-500" />
+                    </div>
+                    <h4 className="font-bold mb-4 text-xl sm:text-2xl text-gray-800">{service.title}</h4>
+                    <p className="text-gray-600 text-sm sm:text-base mb-4">{service.description}</p>
+                    <div className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center justify-center space-x-2 text-sm text-amber-600">
+                          <CheckCircle className="h-4 w-4" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 section-overlay reveal" style={{backgroundImage: "url('/api/placeholder/1920/800')"}}>
+      <section className="py-24 reveal bg-white">
         <div className="container mx-auto px-6">
+          {/* Section Image */}
+          <div className="mb-16">
+            <img 
+              src="https://oudreserve.sa/images/imageV2_1.webp" 
+              alt="Stats section background" 
+              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-2xl"
+            />
+          </div>
+          
+          {/* Section Content */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white gradient-text">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 text-amber-600">
               {t('stats.achievements')}
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {t('stats.achievementsDesc')}
             </p>
           </div>
@@ -405,11 +489,11 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group hover-lift reveal">
-                <div className="glass-effect rounded-xl p-8 transform group-hover:scale-105 transition-all duration-500">
-                  <div className="text-5xl md:text-6xl font-bold text-amber-400 mb-4 animate-bounce-in">
+                <div className="bg-amber-50 rounded-xl p-8 transform group-hover:scale-105 transition-all duration-500 shadow-lg">
+                  <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-4 animate-bounce-in">
                     {stat.number}
                   </div>
-                  <p className="text-white/80 text-lg font-semibold">{stat.label}</p>
+                  <p className="text-gray-700 text-lg font-semibold">{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -418,14 +502,24 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 section-overlay reveal" style={{backgroundImage: "url('/api/placeholder/1920/800')"}}>
+      <section id="contact" className="py-24 reveal bg-gray-50">
         <div className="container mx-auto px-6">
+          {/* Section Image */}
+          <div className="mb-16">
+            <img 
+              src="https://oudreserve.sa/images/l10_2.webp" 
+              alt="Contact section background" 
+              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-2xl"
+            />
+          </div>
+          
+          {/* Section Content */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="text-white">
-              <h2 className="text-4xl md:text-6xl font-bold mb-8 text-center gradient-text">
+            <div className="text-gray-800">
+              <h2 className="text-4xl md:text-6xl font-bold mb-8 text-center text-amber-600">
                 {t('contact.title')}
               </h2>
-              <p className="text-xl mb-12 text-center text-white/90">
+              <p className="text-xl mb-12 text-center text-gray-600">
                 {t('contact.subtitle')}
               </p>
               
@@ -434,7 +528,7 @@ const Index = () => {
                   <input 
                     type="text" 
                     placeholder={t('contact.form.name')} 
-                    className="w-full p-4 rounded-xl border border-white/30 glass-effect text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
+                    className="w-full p-4 rounded-xl border border-gray-300 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -442,14 +536,14 @@ const Index = () => {
                     <input 
                       type="email" 
                       placeholder={t('contact.form.email')} 
-                      className="p-4 rounded-xl border border-white/30 glass-effect text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
+                      className="p-4 rounded-xl border border-gray-300 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
                     />
                   </div>
                   <div className="group">
                     <input 
                       type="tel" 
                       placeholder={t('contact.form.phone')} 
-                      className="p-4 rounded-xl border border-white/30 glass-effect text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
+                      className="p-4 rounded-xl border border-gray-300 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
                     />
                   </div>
                 </div>
@@ -457,7 +551,7 @@ const Index = () => {
                   <textarea 
                     placeholder={t('contact.form.message')} 
                     rows={5}
-                    className="w-full p-4 rounded-xl border border-white/30 glass-effect text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50 resize-none"
+                    className="w-full p-4 rounded-xl border border-gray-300 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50 resize-none"
                   ></textarea>
                 </div>
                 <Button 
@@ -468,14 +562,14 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="text-white">
-              <h3 className="text-3xl font-bold mb-12 text-center gradient-text">
+            <div className="text-gray-800">
+              <h3 className="text-3xl font-bold mb-12 text-center text-amber-600">
                 {t('contact.visitOffice')}
               </h3>
               
-              <div className="glass-effect rounded-xl p-8 mb-8 hover-lift">
+              <div className="bg-white rounded-xl p-8 mb-8 hover-lift shadow-lg">
                 <img 
-                  src="/api/placeholder/500/300" 
+                  src="https://oudreserve.sa/images/Image.jpg" 
                   alt="Office location" 
                   className="w-full h-64 object-cover rounded-xl mb-6 shadow-xl"
                 />
@@ -483,28 +577,28 @@ const Index = () => {
 
               <div className="space-y-6 text-right">
                 <div className="group">
-                  <h4 className="font-bold text-2xl text-amber-400 mb-2">Riyadh</h4>
+                  <h4 className="font-bold text-2xl text-amber-500 mb-2">Riyadh</h4>
                 </div>
-                <div className="glass-effect rounded-lg p-4 hover-lift">
+                <div className="bg-white rounded-lg p-4 hover-lift shadow-lg">
                   <div className="flex items-center justify-end space-x-3 mb-2">
-                    <span className="font-semibold text-amber-400">{t('contact.address')}</span>
-                    <MapPin className="h-5 w-5 text-amber-400" />
+                    <span className="font-semibold text-amber-500">{t('contact.address')}</span>
+                    <MapPin className="h-5 w-5 text-amber-500" />
                   </div>
-                  <p className="text-white/90">{t('contact.info.address')}</p>
+                  <p className="text-gray-700">{t('contact.info.address')}</p>
                 </div>
-                <div className="glass-effect rounded-lg p-4 hover-lift">
+                <div className="bg-white rounded-lg p-4 hover-lift shadow-lg">
                   <div className="flex items-center justify-end space-x-3 mb-2">
-                    <span className="font-semibold text-amber-400">Email</span>
-                    <Mail className="h-5 w-5 text-amber-400" />
+                    <span className="font-semibold text-amber-500">Email</span>
+                    <Mail className="h-5 w-5 text-amber-500" />
                   </div>
-                  <p className="text-white/90">{t('contact.info.email')}</p>
+                  <p className="text-gray-700">{t('contact.info.email')}</p>
                 </div>
-                <div className="glass-effect rounded-lg p-4 hover-lift">
+                <div className="bg-white rounded-lg p-4 hover-lift shadow-lg">
                   <div className="flex items-center justify-end space-x-3 mb-2">
-                    <span className="font-semibold text-amber-400">Phone</span>
-                    <Phone className="h-5 w-5 text-amber-400" />
+                    <span className="font-semibold text-amber-500">Phone</span>
+                    <Phone className="h-5 w-5 text-amber-500" />
                   </div>
-                  <p className="text-white/90">{t('contact.info.phone')}</p>
+                  <p className="text-gray-700">{t('contact.info.phone')}</p>
                 </div>
               </div>
             </div>
@@ -513,56 +607,69 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-overlay-brown py-16 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-900/20 to-amber-700/20"></div>
-        <div className="container mx-auto relative z-10">
-          <div className="grid md:grid-cols-4 gap-12 text-white mb-12">
+      <footer className="py-16 px-6 relative overflow-hidden bg-white">
+        <div className="container mx-auto">
+          {/* Footer Image */}
+          {/* <div className="mb-12">
+            <img 
+              src="https://oudreserve.sa/images/imageV2_1.webp" 
+              alt="Footer background" 
+              className="w-full h-48 sm:h-64 md:h-80 object-cover rounded-xl shadow-2xl"
+            />
+          </div> */}
+          
+          {/* Footer Content */}
+          <div className="grid md:grid-cols-4 gap-12 text-gray-800 mb-12">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <Network className="h-10 w-10 text-amber-400" />
-                <span className="text-3xl font-bold gradient-text">{t('hero.title')}</span>
+                <img 
+                  src="http://link-expert.sa/images/brand-logo.png" 
+                  alt="AL-LINK Expert Logo"
+                  className="h-10 w-10"
+                />
+                <span className="text-3xl font-bold text-amber-600">{t('hero.title')}</span>
               </div>
-              <p className="text-white/80 mb-6 max-w-md text-lg leading-relaxed">
+              <p className="text-gray-600 mb-6 max-w-md text-lg leading-relaxed">
                 {t('footer.description')}
               </p>
               <div className="flex space-x-4">
-                <Button variant="outline" size="sm" className="rounded-full glass-effect border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-white transition-all duration-300">
+                <Button variant="outline" size="sm" className="rounded-full border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition-all duration-300">
                   Facebook
                 </Button>
-                <Button variant="outline" size="sm" className="rounded-full glass-effect border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-white transition-all duration-300">
+                <Button variant="outline" size="sm" className="rounded-full border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition-all duration-300">
                   LinkedIn
                 </Button>
-                <Button variant="outline" size="sm" className="rounded-full glass-effect border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-white transition-all duration-300">
+                <Button variant="outline" size="sm" className="rounded-full border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition-all duration-300">
                   Twitter
                 </Button>
               </div>
             </div>
             <div className="group">
-              <h4 className="font-bold mb-6 text-xl text-amber-400">{t('footer.services')}</h4>
-              <ul className="space-y-3 text-white/80">
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.parkingManagement')}</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.vehicleFleet')}</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.crowdControl')}</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.energyCharging')}</li>
+              <h4 className="font-bold mb-6 text-xl text-amber-600">{t('footer.services')}</h4>
+              <ul className="space-y-3 text-gray-600">
+                <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.parkingManagement')}</li>
+                <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.vehicleFleet')}</li>
+                <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.crowdControl')}</li>
+                <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.energyCharging')}</li>
               </ul>
             </div>
             <div className="group">
-              <h4 className="font-bold mb-6 text-xl text-amber-400">{t('footer.contact')}</h4>
-              <ul className="space-y-3 text-white/80">
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer">{t('contact.info.phone')}</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer">{t('contact.info.email')}</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer">{t('contact.info.address')}</li>
+              <h4 className="font-bold mb-6 text-xl text-amber-600">{t('footer.contact')}</h4>
+              <ul className="space-y-3 text-gray-600">
+                <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer">{t('contact.info.phone')}</li>
+                <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer">{t('contact.info.email')}</li>
+                <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer">{t('contact.info.address')}</li>
               </ul>
             </div>
           </div>
-          <Separator className="my-8 border-white/20" />
-          <div className="flex flex-col md:flex-row justify-between items-center text-white/80">
+          <Separator className="my-8 border-gray-300" />
+          <div className="flex flex-col md:flex-row justify-between items-center text-gray-600">
             <p className="text-lg">
               {t('footer.rights')}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors duration-300 hover:scale-105 transform">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors duration-300 hover:scale-105 transform">Terms of Service</a>
+              <a href="#" className="hover:text-amber-600 transition-colors duration-300 hover:scale-105 transform">Privacy Policy</a>
+              <a href="#" className="hover:text-amber-600 transition-colors duration-300 hover:scale-105 transform">Terms of Service</a>
             </div>
           </div>
         </div>
