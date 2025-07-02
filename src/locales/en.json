@@ -6,36 +6,38 @@
     "contact": "Contact Us"
   },
   "hero": {
-    "title": "LINK Expert",
+    "title": "AL-LINK Expert",
     "subtitle": "We Provide You with the Best Services and Solutions",
     "description": "We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
     "cta": "Contact Us Now"
   },
   "about": {
     "title": "Who Are We?",
-    "description": "We are specialists in managing and operating parking systems and linking them with their services, including car parking, car washing, parking equipment, and maintenance and operation of parking areas in a scientific and practical advanced manner using artificial intelligence and advanced cloud systems. We only accept new and advanced technologies, and we dream of being the leaders in this field in the Middle East region and the Kingdom of Saudi Arabia."
+    "description": "We are specialists in managing and operating parking systems and linking them with their services, including car parking, car washing, parking equipment, and maintenance and operation of parking areas in a scientific and practical advanced manner using artificial intelligence and advanced cloud systems. We only accept new and advanced technologies, and we dream of being the leaders in this field in the Middle East region and the Kingdom of Saudi Arabia.",
+    "imageAlt": "About AL-LINK Expert",
+    "meetingImageAlt": "AL-LINK Expert team meeting"
   },
   "offerings": {
     "title": "What Do We Offer Our Clients?",
     "saveTime": {
       "title": "Save Time",
-      "description": "We provide the best solutions and services to save your time"
+      "description": "We provide the best solutions and services to save your valuable time"
     },
     "saveMoney": {
       "title": "Save Money", 
-      "description": "We provide the best solutions and services to save your money"
+      "description": "We provide cost-effective solutions and services to save your money"
     },
     "saveEffort": {
       "title": "Save Effort",
-      "description": "We provide the best solutions and services to save your effort"
+      "description": "We provide efficient solutions and services to minimize your effort"
     },
     "increaseRevenue": {
       "title": "Increase Project Revenue",
-      "description": "We provide the best solutions to increase your project revenue"
+      "description": "We provide strategic solutions to maximize your project revenue"
     },
     "bestResults": {
       "title": "Best Project Results",
-      "description": "We work on your project to achieve the best results"
+      "description": "We work diligently on your project to achieve the best possible results"
     }
   },
   "goal": {
@@ -53,23 +55,65 @@
   "services": {
     "title": "Our Services",
     "parkingManagement": "Parking Management & Establishment",
+    "parkingManagementDesc": "Complete parking facility management and establishment solutions",
     "vehicleFleet": "Vehicle Fleet Services",
-    "crowdControl": "Crowd Control & Management at Parking",
+    "vehicleFleetDesc": "Professional vehicle fleet management and maintenance services",
+    "crowdControl": "Crowd Control & Management",
+    "crowdControlDesc": "Advanced crowd control and parking area management solutions",
     "membershipManagement": "Membership Management",
+    "membershipManagementDesc": "Professional membership management solutions",
     "busGolfCar": "Bus and Golf Car",
+    "busGolfCarDesc": "Bus and golf car transportation services",
     "energyCharging": "Energy and Electric Charging",
-    "maintenance": "Parking Maintenance and Cleaning"
+    "energyChargingDesc": "Energy and electric charging solutions",
+    "maintenance": "Parking Maintenance and Cleaning",
+    "maintenanceDesc": "Comprehensive parking maintenance and cleaning services",
+    "features": {
+      "parkingSystemDesign": "Parking System Design",
+      "smartParkingTechnology": "Smart Parking Technology",
+      "accessControl": "Access Control",
+      "paymentSolutions": "Payment Solutions",
+      "carWashingServices": "Car Washing Services",
+      "fleetMaintenance": "Fleet Maintenance",
+      "vehicleRegistration": "Vehicle Registration",
+      "serviceManagement": "Service Management",
+      "trafficManagement": "Traffic Management",
+      "crowdFlowControl": "Crowd Flow Control",
+      "securitySystems": "Security Systems",
+      "monitoringSolutions": "Monitoring Solutions",
+      "memberRegistration": "Member Registration",
+      "accessManagement": "Access Management",
+      "billingSystems": "Billing Systems",
+      "customerSupport": "Customer Support",
+      "transportationSolutions": "Transportation Solutions",
+      "vehicleMaintenance": "Vehicle Maintenance",
+      "routePlanning": "Route Planning",
+      "safetyManagement": "Safety Management",
+      "chargingStations": "Charging Stations",
+      "energyManagement": "Energy Management",
+      "electricVehicleSupport": "Electric Vehicle Support",
+      "sustainableSolutions": "Sustainable Solutions",
+      "regularMaintenance": "Regular Maintenance",
+      "cleaningServices": "Cleaning Services",
+      "equipmentRepair": "Equipment Repair",
+      "facilityManagement": "Facility Management"
+    }
   },
   "contact": {
     "title": "Contact Us",
     "subtitle": "We will contact you as soon as possible",
     "visitOffice": "Visit Our Office",
+    "location": "Riyadh",
     "address": "Address",
+    "email": "Email",
+    "phone": "Phone",
+    "imageAlt": "Contact section background",
+    "officeImageAlt": "Our office location",
     "form": {
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
-      "message": "Message",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Your Message",
       "send": "Send Message"
     },
     "info": {
@@ -80,10 +124,21 @@
   },
   "footer": {
     "description": "AL-LINK Expert provides you with the best services and solutions. We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
-    "links": "Important Links",
-    "contactInfo": "Contact Information",
-    "services": "Services",
-    "contact": "Contact",
-    "rights": "© 2024 AL-LINK Expert. All rights reserved."
+    "services": "Our Services",
+    "contact": "Contact Information",
+    "rights": "© 2024 AL-LINK Expert. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "social": {
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    }
+  },
+  "common": {
+    "logoAlt": "AL-LINK Expert Logo",
+    "toggleLanguage": "Toggle Language",
+    "contactUs": "Contact Us",
+    "backToTop": "Back to Top"
   }
 }

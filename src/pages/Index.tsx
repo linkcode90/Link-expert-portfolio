@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -29,7 +28,10 @@ import {
   Languages,
   Car,
   Battery,
-  Wrench
+  Wrench,
+  Facebook,
+  Linkedin,
+  Twitter
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -87,50 +89,85 @@ const Index = () => {
     {
       icon: Building,
       title: t('services.parkingManagement'),
-      description: "Complete parking facility management and establishment solutions",
-      features: ["Parking System Design", "Smart Parking Technology", "Access Control", "Payment Solutions"],
+      description: t('services.parkingManagementDesc'),
+      features: [
+        t('services.features.parkingSystemDesign'),
+        t('services.features.smartParkingTechnology'),
+        t('services.features.accessControl'),
+        t('services.features.paymentSolutions')
+      ],
       iconImage: "https://link-expert.sa/images/L6_1.webp"
     },
     {
       icon: Car,
       title: t('services.vehicleFleet'),
-      description: "Professional vehicle fleet management and maintenance",
-      features: ["Car Washing Services", "Fleet Maintenance", "Vehicle Registration", "Service Management"],
+      description: t('services.vehicleFleetDesc'),
+      features: [
+        t('services.features.carWashingServices'),
+        t('services.features.fleetMaintenance'),
+        t('services.features.vehicleRegistration'),
+        t('services.features.serviceManagement')
+      ],
       iconImage: "https://link-expert.sa/images/L7_1.webp"
     },
     {
       icon: Users,
       title: t('services.crowdControl'),
-      description: "Advanced crowd control and parking area management solutions",
-      features: ["Traffic Management", "Crowd Flow Control", "Security Systems", "Monitoring Solutions"],
+      description: t('services.crowdControlDesc'),
+      features: [
+        t('services.features.trafficManagement'),
+        t('services.features.crowdFlowControl'),
+        t('services.features.securitySystems'),
+        t('services.features.monitoringSolutions')
+      ],
       iconImage: "https://link-expert.sa/images/L8_1.webp"
     },
     {
       icon: Settings,
       title: t('services.membershipManagement'),
-      description: "Professional membership management solutions",
-      features: ["Member Registration", "Access Management", "Billing Systems", "Customer Support"],
+      description: t('services.membershipManagementDesc'),
+      features: [
+        t('services.features.memberRegistration'),
+        t('services.features.accessManagement'),
+        t('services.features.billingSystems'),
+        t('services.features.customerSupport')
+      ],
       iconImage: "https://link-expert.sa/images/L9_1.webp"
     },
     {
       icon: Server,
       title: t('services.busGolfCar'),
-      description: "Bus and golf car transportation services",
-      features: ["Transportation Solutions", "Vehicle Maintenance", "Route Planning", "Safety Management"],
+      description: t('services.busGolfCarDesc'),
+      features: [
+        t('services.features.transportationSolutions'),
+        t('services.features.vehicleMaintenance'),
+        t('services.features.routePlanning'),
+        t('services.features.safetyManagement')
+      ],
       iconImage: "https://link-expert.sa/images/L10_1.webp"
     },
     {
       icon: Battery,
       title: t('services.energyCharging'),
-      description: "Energy and electric charging solutions",
-      features: ["Charging Stations", "Energy Management", "Electric Vehicle Support", "Sustainable Solutions"],
+      description: t('services.energyChargingDesc'),
+      features: [
+        t('services.features.chargingStations'),
+        t('services.features.energyManagement'),
+        t('services.features.electricVehicleSupport'),
+        t('services.features.sustainableSolutions')
+      ],
       iconImage: "https://link-expert.sa/images/L10_1.webp"
     },
     {
       icon: Wrench,
       title: t('services.maintenance'),
-      description: "Comprehensive parking maintenance and cleaning services",
-      features: ["Regular Maintenance", "Cleaning Services", "Equipment Repair", "Facility Management"],
+      description: t('services.maintenanceDesc'),
+      features: [
+        t('services.features.regularMaintenance'),
+        t('services.features.cleaningServices'),
+        t('services.features.equipmentRepair'),
+        t('services.features.facilityManagement')
+      ],
       iconImage: "https://link-expert.sa/images/L10_1.webp"
     }
   ];
@@ -183,13 +220,13 @@ const Index = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-white/5 backdrop-blur-md border-b border-white/10 z-50 transition-all duration-300">
+      <header className="fixed top-0 w-full bg-amber-500 shadow-lg border-b border-amber-600 z-50 transition-all duration-300">
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
-            <div className="flex items-center space-x-2 animate-slide-in-left">
+            <div className={`flex items-center space-x-2 animate-slide-in-left ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
               <img 
                 src="http://link-expert.sa/images/brand-logo.png" 
-                alt="AL-LINK Expert Logo"
+                alt={t('common.logoAlt')}
                 className="h-8 w-8"
               />
               <span className="text-2xl font-bold text-white gradient-text">
@@ -208,7 +245,7 @@ const Index = () => {
                 size="sm"
                 onClick={toggleLanguage}
                 className="text-white hover:bg-white/10 transition-all duration-300"
-                title="Toggle Language"
+                title={t('common.toggleLanguage')}
               >
                 <Languages className="h-5 w-5" />
                 <span className="ml-1 text-sm">{currentLanguage === 'en' ? 'عربي' : 'EN'}</span>
@@ -329,20 +366,20 @@ const Index = () => {
       <section id="about" className="py-24 reveal bg-white">
         <div className="container mx-auto px-6">
           {/* Section Image */}
-          <div className="mb-16">
+          {/* <div className="mb-16">
             <img 
               src="https://oudreserve.sa/images/imageV2_1.webp" 
-              alt="About section background" 
+              alt={t('about.imageAlt')} 
               className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-2xl"
             />
-          </div>
+          </div> */}
           
           {/* Section Content */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="bg-gray-100 rounded-xl p-8 hover-lift shadow-lg">
               <img 
                 src="https://al-link.com/wp-content/uploads/2024/06/amer-center-meeting-1024x944.jpeg" 
-                alt="AL-LINK parking management solutions" 
+                alt={t('about.meetingImageAlt')} 
                 className="w-full h-80 object-cover rounded-lg shadow-xl"
               />
             </div>
@@ -508,7 +545,7 @@ const Index = () => {
           <div className="mb-16">
             <img 
               src="https://oudreserve.sa/images/l10_2.webp" 
-              alt="Contact section background" 
+              alt={t('contact.imageAlt')} 
               className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-2xl"
             />
           </div>
@@ -529,6 +566,7 @@ const Index = () => {
                     type="text" 
                     placeholder={t('contact.form.name')} 
                     className="w-full p-4 rounded-xl border border-gray-300 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
+                    dir={isRTL ? 'rtl' : 'ltr'}
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -537,6 +575,7 @@ const Index = () => {
                       type="email" 
                       placeholder={t('contact.form.email')} 
                       className="p-4 rounded-xl border border-gray-300 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
+                      dir={isRTL ? 'rtl' : 'ltr'}
                     />
                   </div>
                   <div className="group">
@@ -544,6 +583,7 @@ const Index = () => {
                       type="tel" 
                       placeholder={t('contact.form.phone')} 
                       className="p-4 rounded-xl border border-gray-300 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
+                      dir={isRTL ? 'rtl' : 'ltr'}
                     />
                   </div>
                 </div>
@@ -552,6 +592,7 @@ const Index = () => {
                     placeholder={t('contact.form.message')} 
                     rows={5}
                     className="w-full p-4 rounded-xl border border-gray-300 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50 resize-none"
+                    dir={isRTL ? 'rtl' : 'ltr'}
                   ></textarea>
                 </div>
                 <Button 
@@ -570,32 +611,32 @@ const Index = () => {
               <div className="bg-white rounded-xl p-8 mb-8 hover-lift shadow-lg">
                 <img 
                   src="https://oudreserve.sa/images/Image.jpg" 
-                  alt="Office location" 
+                  alt={t('contact.officeImageAlt')} 
                   className="w-full h-64 object-cover rounded-xl mb-6 shadow-xl"
                 />
               </div>
 
-              <div className="space-y-6 text-right">
+              <div className="space-y-6" style={{ textAlign: isRTL ? 'right' : 'left' }}>
                 <div className="group">
-                  <h4 className="font-bold text-2xl text-amber-500 mb-2">Riyadh</h4>
+                  <h4 className="font-bold text-2xl text-amber-500 mb-2">{t('contact.location')}</h4>
                 </div>
                 <div className="bg-white rounded-lg p-4 hover-lift shadow-lg">
-                  <div className="flex items-center justify-end space-x-3 mb-2">
+                  <div className={`flex items-center ${isRTL ? 'justify-end' : 'justify-start'} space-x-3 mb-2`}>
                     <span className="font-semibold text-amber-500">{t('contact.address')}</span>
                     <MapPin className="h-5 w-5 text-amber-500" />
                   </div>
                   <p className="text-gray-700">{t('contact.info.address')}</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 hover-lift shadow-lg">
-                  <div className="flex items-center justify-end space-x-3 mb-2">
-                    <span className="font-semibold text-amber-500">Email</span>
+                  <div className={`flex items-center ${isRTL ? 'justify-end' : 'justify-start'} space-x-3 mb-2`}>
+                    <span className="font-semibold text-amber-500">{t('contact.email')}</span>
                     <Mail className="h-5 w-5 text-amber-500" />
                   </div>
                   <p className="text-gray-700">{t('contact.info.email')}</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 hover-lift shadow-lg">
-                  <div className="flex items-center justify-end space-x-3 mb-2">
-                    <span className="font-semibold text-amber-500">Phone</span>
+                  <div className={`flex items-center ${isRTL ? 'justify-end' : 'justify-start'} space-x-3 mb-2`}>
+                    <span className="font-semibold text-amber-500">{t('contact.phone')}</span>
                     <Phone className="h-5 w-5 text-amber-500" />
                   </div>
                   <p className="text-gray-700">{t('contact.info.phone')}</p>
@@ -609,44 +650,38 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-16 px-6 relative overflow-hidden bg-white">
         <div className="container mx-auto">
-          {/* Footer Image */}
-          {/* <div className="mb-12">
-            <img 
-              src="https://oudreserve.sa/images/imageV2_1.webp" 
-              alt="Footer background" 
-              className="w-full h-48 sm:h-64 md:h-80 object-cover rounded-xl shadow-2xl"
-            />
-          </div> */}
-          
           {/* Footer Content */}
           <div className="grid md:grid-cols-4 gap-12 text-gray-800 mb-12">
             <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
+              <div className={`flex items-center space-x-3 mb-6 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
                 <img 
                   src="http://link-expert.sa/images/brand-logo.png" 
-                  alt="AL-LINK Expert Logo"
+                  alt={t('common.logoAlt')}
                   className="h-10 w-10"
                 />
                 <span className="text-3xl font-bold text-amber-600">{t('hero.title')}</span>
               </div>
-              <p className="text-gray-600 mb-6 max-w-md text-lg leading-relaxed">
+              <p className="text-gray-600 mb-6 max-w-md text-lg leading-relaxed" style={{ textAlign: isRTL ? 'right' : 'left' }}>
                 {t('footer.description')}
               </p>
-              <div className="flex space-x-4">
+              <div className={`flex space-x-4 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
                 <Button variant="outline" size="sm" className="rounded-full border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition-all duration-300">
-                  Facebook
+                  <Facebook className="h-4 w-4 mr-2" />
+                  {t('footer.social.facebook')}
                 </Button>
                 <Button variant="outline" size="sm" className="rounded-full border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition-all duration-300">
-                  LinkedIn
+                  <Linkedin className="h-4 w-4 mr-2" />
+                  {t('footer.social.linkedin')}
                 </Button>
                 <Button variant="outline" size="sm" className="rounded-full border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition-all duration-300">
-                  Twitter
+                  <Twitter className="h-4 w-4 mr-2" />
+                  {t('footer.social.twitter')}
                 </Button>
               </div>
             </div>
             <div className="group">
-              <h4 className="font-bold mb-6 text-xl text-amber-600">{t('footer.services')}</h4>
-              <ul className="space-y-3 text-gray-600">
+              <h4 className="font-bold mb-6 text-xl text-amber-600" style={{ textAlign: isRTL ? 'right' : 'left' }}>{t('footer.services')}</h4>
+              <ul className="space-y-3 text-gray-600" style={{ textAlign: isRTL ? 'right' : 'left' }}>
                 <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.parkingManagement')}</li>
                 <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.vehicleFleet')}</li>
                 <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.crowdControl')}</li>
@@ -654,8 +689,8 @@ const Index = () => {
               </ul>
             </div>
             <div className="group">
-              <h4 className="font-bold mb-6 text-xl text-amber-600">{t('footer.contact')}</h4>
-              <ul className="space-y-3 text-gray-600">
+              <h4 className="font-bold mb-6 text-xl text-amber-600" style={{ textAlign: isRTL ? 'right' : 'left' }}>{t('footer.contact')}</h4>
+              <ul className="space-y-3 text-gray-600" style={{ textAlign: isRTL ? 'right' : 'left' }}>
                 <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer">{t('contact.info.phone')}</li>
                 <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer">{t('contact.info.email')}</li>
                 <li className="hover:text-amber-600 transition-colors duration-300 cursor-pointer">{t('contact.info.address')}</li>
@@ -667,16 +702,16 @@ const Index = () => {
             <p className="text-lg">
               {t('footer.rights')}
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-amber-600 transition-colors duration-300 hover:scale-105 transform">Privacy Policy</a>
-              <a href="#" className="hover:text-amber-600 transition-colors duration-300 hover:scale-105 transform">Terms of Service</a>
+            <div className={`flex space-x-6 mt-4 md:mt-0 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
+              <a href="#" className="hover:text-amber-600 transition-colors duration-300 hover:scale-105 transform">{t('footer.privacy')}</a>
+              <a href="#" className="hover:text-amber-600 transition-colors duration-300 hover:scale-105 transform">{t('footer.terms')}</a>
             </div>
           </div>
         </div>
       </footer>
 
       {/* Floating Action Button */}
-      <div className="fixed bottom-8 right-8 z-50">
+      <div className={`fixed bottom-8 z-50 ${isRTL ? 'left-8' : 'right-8'}`}>
         <Button
           size="lg"
           className="rounded-full w-16 h-16 bg-amber-500 hover:bg-amber-600 text-white shadow-2xl hover:scale-110 transition-all duration-300 animate-bounce"
@@ -684,6 +719,7 @@ const Index = () => {
             const contactSection = document.getElementById('contact');
             contactSection?.scrollIntoView({ behavior: 'smooth' });
           }}
+          title={t('common.contactUs')}
         >
           <Mail className="h-6 w-6" />
         </Button>
@@ -691,7 +727,7 @@ const Index = () => {
 
       {/* Scroll to Top Button */}
       {scrollY > 300 && (
-        <div className="fixed bottom-8 left-8 z-50">
+        <div className={`fixed bottom-8 z-50 ${isRTL ? 'right-8' : 'left-8'}`}>
           <Button
             size="lg"
             variant="outline"
@@ -699,6 +735,7 @@ const Index = () => {
             onClick={() => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
+            title={t('common.backToTop')}
           >
             <ArrowRight className="h-6 w-6 transform -rotate-90" />
           </Button>
