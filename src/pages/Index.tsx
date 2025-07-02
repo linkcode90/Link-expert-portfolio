@@ -129,10 +129,10 @@ const Index = () => {
   ];
 
   const stats = [
-    { number: "500+", label: "Projects Completed" },
-    { number: "10+", label: "Years Experience" },
-    { number: "200+", label: "Happy Clients" },
-    { number: "99.9%", label: "Uptime Guarantee" }
+    { number: "500+", label: t('stats.projectsCompleted') },
+    { number: "10+", label: t('stats.yearsExperience') },
+    { number: "200+", label: t('stats.happyClients') },
+    { number: "99.9%", label: t('stats.uptimeGuarantee') }
   ];
 
   const offerings = [
@@ -177,7 +177,7 @@ const Index = () => {
             <div className="flex items-center space-x-2 animate-slide-in-left">
               <Network className="h-8 w-8 text-white" />
               <span className="text-2xl font-bold text-white gradient-text">
-                AL-LINK Expert
+                {t('hero.title')}
               </span>
             </div>
             
@@ -330,7 +330,7 @@ const Index = () => {
       <section className="py-24 section-overlay reveal" style={{backgroundImage: "url('/api/placeholder/1920/800')"}}>
         <div className="container mx-auto px-6 text-white text-center">
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-16 gradient-text">
-            What Do We Offer Our Clients?
+            {t('offerings.title')}
           </h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-20">
@@ -349,11 +349,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Goal Section */}
+      <section className="py-24 section-overlay reveal" style={{backgroundImage: "url('/api/placeholder/1920/800')"}}>
+        <div className="container mx-auto px-6 text-white text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-8 gradient-text">
+            {t('goal.title')}
+          </h2>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold mb-16 text-white max-w-4xl mx-auto leading-relaxed">
+            {t('goal.description')}
+          </p>
+        </div>
+      </section>
+
       {/* Services Grid Section */}
       <section id="services" className="py-24 section-overlay reveal" style={{backgroundImage: "url('/api/placeholder/1920/800')"}}>
         <div className="container mx-auto px-6 text-white text-center">
           <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-16 gradient-text">
-            Our Services
+            {t('services.title')}
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
@@ -383,10 +395,10 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white gradient-text">
-              Our Achievements
+              {t('stats.achievements')}
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Years of excellence in delivering innovative solutions and building lasting partnerships
+              {t('stats.achievementsDesc')}
             </p>
           </div>
           
@@ -411,17 +423,17 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-white">
               <h2 className="text-4xl md:text-6xl font-bold mb-8 text-center gradient-text">
-                Contact Us
+                {t('contact.title')}
               </h2>
               <p className="text-xl mb-12 text-center text-white/90">
-                We will contact you at the earliest time
+                {t('contact.subtitle')}
               </p>
               
               <div className="space-y-6 max-w-md mx-auto">
                 <div className="group">
                   <input 
                     type="text" 
-                    placeholder="Name" 
+                    placeholder={t('contact.form.name')} 
                     className="w-full p-4 rounded-xl border border-white/30 glass-effect text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
                   />
                 </div>
@@ -429,21 +441,21 @@ const Index = () => {
                   <div className="group">
                     <input 
                       type="email" 
-                      placeholder="Email" 
+                      placeholder={t('contact.form.email')} 
                       className="p-4 rounded-xl border border-white/30 glass-effect text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
                     />
                   </div>
                   <div className="group">
                     <input 
                       type="tel" 
-                      placeholder="Phone" 
+                      placeholder={t('contact.form.phone')} 
                       className="p-4 rounded-xl border border-white/30 glass-effect text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50"
                     />
                   </div>
                 </div>
                 <div className="group">
                   <textarea 
-                    placeholder="Message" 
+                    placeholder={t('contact.form.message')} 
                     rows={5}
                     className="w-full p-4 rounded-xl border border-white/30 glass-effect text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 group-hover:border-amber-400/50 resize-none"
                   ></textarea>
@@ -451,14 +463,14 @@ const Index = () => {
                 <Button 
                   className="w-full bg-amber-500 hover:bg-amber-600 text-white py-4 text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-xl"
                 >
-                  Send Message <Mail className="ml-2 h-5 w-5" />
+                  {t('contact.form.send')} <Mail className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>
 
             <div className="text-white">
               <h3 className="text-3xl font-bold mb-12 text-center gradient-text">
-                Visit Our Office
+                {t('contact.visitOffice')}
               </h3>
               
               <div className="glass-effect rounded-xl p-8 mb-8 hover-lift">
@@ -475,24 +487,24 @@ const Index = () => {
                 </div>
                 <div className="glass-effect rounded-lg p-4 hover-lift">
                   <div className="flex items-center justify-end space-x-3 mb-2">
-                    <span className="font-semibold text-amber-400">Address</span>
+                    <span className="font-semibold text-amber-400">{t('contact.address')}</span>
                     <MapPin className="h-5 w-5 text-amber-400" />
                   </div>
-                  <p className="text-white/90">Kingdom of Saudi Arabia - Al Malqa District KSA</p>
+                  <p className="text-white/90">{t('contact.info.address')}</p>
                 </div>
                 <div className="glass-effect rounded-lg p-4 hover-lift">
                   <div className="flex items-center justify-end space-x-3 mb-2">
                     <span className="font-semibold text-amber-400">Email</span>
                     <Mail className="h-5 w-5 text-amber-400" />
                   </div>
-                  <p className="text-white/90">info@parking-culture.com</p>
+                  <p className="text-white/90">{t('contact.info.email')}</p>
                 </div>
                 <div className="glass-effect rounded-lg p-4 hover-lift">
                   <div className="flex items-center justify-end space-x-3 mb-2">
                     <span className="font-semibold text-amber-400">Phone</span>
                     <Phone className="h-5 w-5 text-amber-400" />
                   </div>
-                  <p className="text-white/90">+966 53 887 2510</p>
+                  <p className="text-white/90">{t('contact.info.phone')}</p>
                 </div>
               </div>
             </div>
@@ -508,12 +520,10 @@ const Index = () => {
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
                 <Network className="h-10 w-10 text-amber-400" />
-                <span className="text-3xl font-bold gradient-text">AL-LINK Expert</span>
+                <span className="text-3xl font-bold gradient-text">{t('hero.title')}</span>
               </div>
               <p className="text-white/80 mb-6 max-w-md text-lg leading-relaxed">
-                AL-LINK Expert - We provide you with the best services and solutions. 
-                Specialists in parking management systems, vehicle services, and advanced 
-                artificial intelligence solutions.
+                {t('footer.description')}
               </p>
               <div className="flex space-x-4">
                 <Button variant="outline" size="sm" className="rounded-full glass-effect border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-white transition-all duration-300">
@@ -528,28 +538,27 @@ const Index = () => {
               </div>
             </div>
             <div className="group">
-              <h4 className="font-bold mb-6 text-xl text-amber-400">Services</h4>
+              <h4 className="font-bold mb-6 text-xl text-amber-400">{t('footer.services')}</h4>
               <ul className="space-y-3 text-white/80">
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">Parking Management</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">Vehicle Fleet Services</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">Crowd Control</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">AI Solutions</li>
+                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.parkingManagement')}</li>
+                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.vehicleFleet')}</li>
+                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.crowdControl')}</li>
+                <li className="hover:text-white transition-colors duration-300 cursor-pointer hover:translate-x-2 transform">{t('services.energyCharging')}</li>
               </ul>
             </div>
             <div className="group">
-              <h4 className="font-bold mb-6 text-xl text-amber-400">Contact</h4>
+              <h4 className="font-bold mb-6 text-xl text-amber-400">{t('footer.contact')}</h4>
               <ul className="space-y-3 text-white/80">
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer">+966 53 887 2510</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer">info@parking-culture.com</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer">Al Malqa District</li>
-                <li className="hover:text-white transition-colors duration-300 cursor-pointer">Riyadh, KSA</li>
+                <li className="hover:text-white transition-colors duration-300 cursor-pointer">{t('contact.info.phone')}</li>
+                <li className="hover:text-white transition-colors duration-300 cursor-pointer">{t('contact.info.email')}</li>
+                <li className="hover:text-white transition-colors duration-300 cursor-pointer">{t('contact.info.address')}</li>
               </ul>
             </div>
           </div>
           <Separator className="my-8 border-white/20" />
           <div className="flex flex-col md:flex-row justify-between items-center text-white/80">
             <p className="text-lg">
-              © 2024 AL-LINK Expert. All rights reserved.
+              {t('footer.rights')}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-white transition-colors duration-300 hover:scale-105 transform">Privacy Policy</a>

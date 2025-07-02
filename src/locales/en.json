@@ -42,6 +42,14 @@
     "title": "Our Goal",
     "description": "Building long-term relationships with our clients and providing the best solutions for their needs"
   },
+  "stats": {
+    "projectsCompleted": "Projects Completed",
+    "yearsExperience": "Years Experience", 
+    "happyClients": "Happy Clients",
+    "uptimeGuarantee": "Uptime Guarantee",
+    "achievements": "Our Achievements",
+    "achievementsDesc": "Years of excellence in delivering innovative solutions and building lasting partnerships"
+  },
   "services": {
     "title": "Our Services",
     "parkingManagement": "Parking Management & Establishment",
@@ -55,6 +63,8 @@
   "contact": {
     "title": "Contact Us",
     "subtitle": "We will contact you as soon as possible",
+    "visitOffice": "Visit Our Office",
+    "address": "Address",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -72,6 +82,8 @@
     "description": "AL-LINK Expert provides you with the best services and solutions. We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
     "links": "Important Links",
     "contactInfo": "Contact Information",
+    "services": "Services",
+    "contact": "Contact",
     "rights": "© 2024 AL-LINK Expert. All rights reserved."
   }
 }
