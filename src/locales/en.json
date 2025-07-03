@@ -6,7 +6,7 @@
     "contact": "Contact Us"
   },
   "hero": {
-    "title": "AL-LINK Expert",
+    "title": "Link Expert",
     "subtitle": "We Provide You with the Best Services and Solutions",
     "description": "We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
     "cta": "Contact Us Now"
@@ -14,8 +14,8 @@
   "about": {
     "title": "Who Are We?",
     "description": "We are specialists in managing and operating parking systems and linking them with their services, including car parking, car washing, parking equipment, and maintenance and operation of parking areas in a scientific and practical advanced manner using artificial intelligence and advanced cloud systems. We only accept new and advanced technologies, and we dream of being the leaders in this field in the Middle East region and the Kingdom of Saudi Arabia.",
-    "imageAlt": "About AL-LINK Expert",
-    "meetingImageAlt": "AL-LINK Expert team meeting"
+    "imageAlt": "About Link Expert",
+    "meetingImageAlt": "Link Expert team meeting"
   },
   "offerings": {
     "title": "What Do We Offer Our Clients?",
@@ -123,10 +123,10 @@
     }
   },
   "footer": {
-    "description": "AL-LINK Expert provides you with the best services and solutions. We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
+    "description": "Link Expert provides you with the best services and solutions. We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
     "services": "Our Services",
     "contact": "Contact Information",
-    "rights": "© 2024 AL-LINK Expert. All rights reserved.",
+    "rights": "© 2025 Link Expert. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "social": {
@@ -136,7 +136,7 @@
     }
   },
   "common": {
-    "logoAlt": "AL-LINK Expert Logo",
+    "logoAlt": "Link Expert Logo",
     "toggleLanguage": "Toggle Language",
     "contactUs": "Contact Us",
     "backToTop": "Back to Top"

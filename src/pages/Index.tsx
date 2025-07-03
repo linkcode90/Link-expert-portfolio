@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-
+import LinkLogo from "@/assets/link logo 33.png"; // adjust path if needed
 import { Separator } from "@/components/ui/separator";
 import {
   ArrowRight,
@@ -342,13 +342,13 @@ const Index = () => {
                 isRTL ? "flex-row-reverse space-x-reverse" : ""
               }`}
             >
-              <div className="relative">
+              <div className="relative group">
                 <img
-                  src="http://link-expert.sa/images/brand-logo.png"
+                  src={LinkLogo}
                   alt={t("common.logoAlt")}
-                  className="h-10 w-10 hover-scale transition-all duration-300"
+                  className="h-12 w-12 rounded-full transition-all duration-300 group-hover:scale-105"
                 />
-                <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full opacity-20 blur animate-pulse-gentle"></div>
+                {/* <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full opacity-20 blur-md animate-pulse-gentle pointer-events-none" /> */}
               </div>
               <span className="text-2xl font-bold text-white gradient-text text-shadow-warm">
                 {t("hero.title")}
@@ -614,7 +614,7 @@ const Index = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-amber-400 to-amber-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 blur-xl"></div>
                 <div className="relative neo-morphism rounded-3xl p-2 overflow-hidden">
                   <img
-                    src="https://al-link.com/wp-content/uploads/2024/06/amer-center-meeting-1024x944.jpeg"
+                    src="https://Link.com/wp-content/uploads/2024/06/amer-center-meeting-1024x944.jpeg"
                     alt={t("about.meetingImageAlt")}
                     className="w-full h-80 object-cover rounded-2xl shadow-warm-xl hover-scale transition-all duration-700"
                   />
@@ -1127,13 +1127,13 @@ const Index = () => {
                   isRTL ? "flex-row-reverse space-x-reverse" : ""
                 }`}
               >
-                <div className="relative">
+                <div className="relative group">
                   <img
-                    src="http://link-expert.sa/images/brand-logo.png"
+                    src={LinkLogo}
                     alt={t("common.logoAlt")}
-                    className="h-12 w-12 hover-scale transition-all duration-300"
+                    className="h-12 w-12 rounded-full transition-all duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full opacity-20 blur animate-pulse-gentle"></div>
+                  {/* <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full opacity-20 blur-md animate-pulse-gentle pointer-events-none" /> */}
                 </div>
                 <span className="text-3xl font-bold gradient-text">
                   {t("hero.title")}
