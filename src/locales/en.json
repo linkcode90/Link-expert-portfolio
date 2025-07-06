@@ -1,144 +1,133 @@
 {
   "nav": {
-    "home": "Home",
-    "about": "About Us",
-    "services": "Our Services",
-    "contact": "Contact Us"
+    "home": "Link Expert",
+    "services": "Fulfill Your Dreams",
+    "gallery": "Discover Link Expert",
+    "contact": "Reserve Your Journey Today"
   },
   "hero": {
-    "title": "Link Expert",
-    "subtitle": "We Provide You with the Best Services and Solutions",
-    "description": "We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
-    "cta": "Contact Us Now"
+    "title": "LINK EXPERT",
+    "subtitle": "Your Legacy.. In the Memory of Place",
+    "description": "Experience the uniqueness of place.. and excellence in ultra-precise parking management in the heart of new Riyadh",
+    "cta": "Be Part of Link Expert",
+    "badge": "Ultra-advanced destination by Link Expert Company"
   },
   "about": {
-    "title": "Who Are We?",
-    "description": "We are specialists in managing and operating parking systems and linking them with their services, including car parking, car washing, parking equipment, and maintenance and operation of parking areas in a scientific and practical advanced manner using artificial intelligence and advanced cloud systems. We only accept new and advanced technologies, and we dream of being the leaders in this field in the Middle East region and the Kingdom of Saudi Arabia.",
-    "imageAlt": "About Link Expert",
-    "meetingImageAlt": "Link Expert team meeting"
+    "title": "YOUR GATEWAY TO EXCELLENCE",
+    "description": "Welcome to Link Expert – the ultra-advanced destination from Link Expert Company, crafted to offer a premier parking management experience and modern lifestyle with international standards and exceptional facilities, meticulously chosen.",
+    "description2": "We provide smart and advanced parking management solutions, focusing on innovation and cutting-edge technology to ensure a comfortable and secure experience for our clients."
   },
-  "offerings": {
-    "title": "What Do We Offer Our Clients?",
-    "saveTime": {
-      "title": "Save Time",
-      "description": "We provide the best solutions and services to save your valuable time"
-    },
-    "saveMoney": {
-      "title": "Save Money", 
-      "description": "We provide cost-effective solutions and services to save your money"
-    },
-    "saveEffort": {
-      "title": "Save Effort",
-      "description": "We provide efficient solutions and services to minimize your effort"
-    },
-    "increaseRevenue": {
-      "title": "Increase Project Revenue",
-      "description": "We provide strategic solutions to maximize your project revenue"
-    },
-    "bestResults": {
-      "title": "Best Project Results",
-      "description": "We work diligently on your project to achieve the best possible results"
+  "features": {
+    "title": "INSPIRING VISTAS THAT ELEVATE CREATIVITY",
+    "subtitle": "Your journey to excellence begins here",
+    "items": {
+      "officeMansions": {
+        "title": "Office Mansions",
+        "description": "Elegant workspaces"
+      },
+      "boutiqueHotel": {
+        "title": "Boutique Hotel",
+        "description": "Luxury accommodation"
+      },
+      "exclusiveClub": {
+        "title": "Link Exclusive Memberships Club",
+        "description": "Premium memberships"
+      },
+      "privateAreas": {
+        "title": "Private Secure Areas",
+        "description": "Ultra security"
+      },
+      "prestigiousShops": {
+        "title": "Prestigious Brand Shops",
+        "description": "Luxury shopping"
+      },
+      "fineDining": {
+        "title": "Fine Dining Restaurants",
+        "description": "Exceptional dining"
+      },
+      "iconicArea": {
+        "title": "Iconic Area",
+        "description": "Prime location"
+      },
+      "boutiqueParking": {
+        "title": "Boutique Parking",
+        "description": "Advanced solutions"
+      }
     }
   },
-  "goal": {
-    "title": "Our Goal",
-    "description": "Building long-term relationships with our clients and providing the best solutions for their needs"
+  "businessEnhancement": {
+    "title": "ENHANCE YOUR BUSINESS WITH LINK EXPERT CLUB",
+    "description": "Join the exclusive Link Expert Club and enjoy premium benefits that enhance your professional experience and provide you with an exceptional work environment with the latest technologies and advanced services."
   },
-  "stats": {
-    "projectsCompleted": "Projects Completed",
-    "yearsExperience": "Years Experience", 
-    "happyClients": "Happy Clients",
-    "uptimeGuarantee": "Uptime Guarantee",
-    "achievements": "Our Achievements",
-    "achievementsDesc": "Years of excellence in delivering innovative solutions and building lasting partnerships"
+  "boutiqueOffices": {
+    "title": "BOUTIQUE OFFICES FOR THE ELITE",
+    "description": "An unparalleled work experience where meticulously designed spaces merge with an atmosphere of luxury and distinction, providing you with an exceptional work environment that stimulates creativity and productivity."
   },
   "services": {
-    "title": "Our Services",
-    "parkingManagement": "Parking Management & Establishment",
-    "parkingManagementDesc": "Complete parking facility management and establishment solutions",
-    "vehicleFleet": "Vehicle Fleet Services",
-    "vehicleFleetDesc": "Professional vehicle fleet management and maintenance services",
-    "crowdControl": "Crowd Control & Management",
-    "crowdControlDesc": "Advanced crowd control and parking area management solutions",
-    "membershipManagement": "Membership Management",
-    "membershipManagementDesc": "Professional membership management solutions",
-    "busGolfCar": "Bus and Golf Car",
-    "busGolfCarDesc": "Bus and golf car transportation services",
-    "energyCharging": "Energy and Electric Charging",
-    "energyChargingDesc": "Energy and electric charging solutions",
-    "maintenance": "Parking Maintenance and Cleaning",
-    "maintenanceDesc": "Comprehensive parking maintenance and cleaning services",
-    "features": {
-      "parkingSystemDesign": "Parking System Design",
-      "smartParkingTechnology": "Smart Parking Technology",
-      "accessControl": "Access Control",
-      "paymentSolutions": "Payment Solutions",
-      "carWashingServices": "Car Washing Services",
-      "fleetMaintenance": "Fleet Maintenance",
-      "vehicleRegistration": "Vehicle Registration",
-      "serviceManagement": "Service Management",
-      "trafficManagement": "Traffic Management",
-      "crowdFlowControl": "Crowd Flow Control",
-      "securitySystems": "Security Systems",
-      "monitoringSolutions": "Monitoring Solutions",
-      "memberRegistration": "Member Registration",
-      "accessManagement": "Access Management",
-      "billingSystems": "Billing Systems",
-      "customerSupport": "Customer Support",
-      "transportationSolutions": "Transportation Solutions",
-      "vehicleMaintenance": "Vehicle Maintenance",
-      "routePlanning": "Route Planning",
-      "safetyManagement": "Safety Management",
-      "chargingStations": "Charging Stations",
-      "energyManagement": "Energy Management",
-      "electricVehicleSupport": "Electric Vehicle Support",
-      "sustainableSolutions": "Sustainable Solutions",
-      "regularMaintenance": "Regular Maintenance",
-      "cleaningServices": "Cleaning Services",
-      "equipmentRepair": "Equipment Repair",
-      "facilityManagement": "Facility Management"
+    "title": "EXCLUSIVE SERVICES",
+    "items": {
+      "destinationActivation": {
+        "title": "Destination Activation",
+        "description": "Professional and advanced destination activation and management"
+      },
+      "valetParking": {
+        "title": "Link Expert Valet",
+        "description": "Premium and professional valet parking service"
+      },
+      "advancedReservation": {
+        "title": "Advanced Reservation",
+        "description": "Highly advanced pre-parking booking system"
+      },
+      "relationshipManager": {
+        "title": "Relationship Manager",
+        "description": "Dedicated relationship manager for your service"
+      },
+      "linkExpertNow": {
+        "title": "Link Expert Now",
+        "description": "Instant and advanced services around the clock"
+      }
     }
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "We will contact you as soon as possible",
-    "visitOffice": "Visit Our Office",
-    "location": "Riyadh",
-    "address": "Address",
-    "email": "Email",
-    "phone": "Phone",
-    "imageAlt": "Contact section background",
-    "officeImageAlt": "Our office location",
+    "title": "DISCOVER LINK EXPERT",
+    "subtitle": "TO THE REALM OF EXCELLENCE",
+    "description": "If you believe this is the suitable place for you, kindly submit your information",
     "form": {
-      "name": "Full Name",
-      "email": "Email Address",
+      "name": "Name",
+      "country": "Country",
       "phone": "Phone Number",
-      "message": "Your Message",
-      "send": "Send Message"
+      "email": "Email",
+      "message": "Message",
+      "submit": "Submit"
+    }
+  },
+  "office": {
+    "title": "VISIT OUR OFFICES",
+    "location": "RIYADH",
+    "address": {
+      "title": "Address",
+      "value": "Riyadh, Prince Turki bin Abdulaziz Al Awwal Street, Al Malqa District, North Yard by Link Expert"
     },
-    "info": {
-      "email": "info@parking-culture.com",
-      "phone": "+966538872510",
-      "address": "Kingdom of Saudi Arabia - Al Malqa District KSA"
+    "email": {
+      "title": "Email",
+      "value": "Reserve@link-expert.sa"
+    },
+    "phone": {
+      "title": "Centralized Contact Center",
+      "value": "920020424"
+    },
+    "downloads": {
+      "mediaFile": "Download the Media File",
+      "brochure": "Download the Brochure"
     }
   },
   "footer": {
-    "description": "Link Expert provides you with the best services and solutions. We work with dedication and diligence to achieve our goals and meet our clients' needs with precision and professionalism",
-    "services": "Our Services",
-    "contact": "Contact Information",
-    "rights": "© 2025 Link Expert. All rights reserved.",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "social": {
-      "facebook": "Facebook",
-      "linkedin": "LinkedIn",
-      "twitter": "Twitter"
-    }
-  },
-  "common": {
-    "logoAlt": "Link Expert Logo",
-    "toggleLanguage": "Toggle Language",
-    "contactUs": "Contact Us",
-    "backToTop": "Back to Top"
+    "copyright": "All rights reserved for Link Expert @2024",
+    "tagline": "A Place for Your Legacy",
+    "description": "Enjoy the uniqueness and excellence in luxury parking management experience in the new Riyadh downtown",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Information",
+    "additionalInfo": "Additional Information",
+    "companyTagline": "Ultra-advanced destination by Link Expert Company"
   }
 }

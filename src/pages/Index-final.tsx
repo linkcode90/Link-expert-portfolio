@@ -139,19 +139,19 @@ const Index = () => {
                 onClick={() => scrollToSection('services')}
                 className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
               >
-                {isRTL ? 'حقق أحلامك' : 'Fulfill Your Dreams'}
+                {isRTL ? 'حقق أحلامك' : 'Achieve Your Dreams'}
               </button>
               <button 
                 onClick={() => scrollToSection('gallery')}
                 className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
               >
-                {isRTL ? 'استكشف خبير الربط' : 'Discover Link Expert'}
+                {isRTL ? 'استكشف خبير الربط' : 'Explore Link Expert'}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
               >
-                {isRTL ? 'احجز رحلتك اليوم' : 'Reserve Your Journey Today'}
+                {isRTL ? 'احجز رحلتك الآن' : 'Book Your Journey Now'}
               </button>
               
               {/* Language Switcher */}
@@ -203,19 +203,19 @@ const Index = () => {
                 onClick={() => scrollToSection('services')}
                 className="block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium"
               >
-                {isRTL ? 'حقق أحلامك' : 'Fulfill Your Dreams'}
+                {isRTL ? 'حقق أحلامك' : 'Achieve Your Dreams'}
               </button>
               <button 
                 onClick={() => scrollToSection('gallery')}
                 className="block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium"
               >
-                {isRTL ? 'استكشف خبير الربط' : 'Discover Link Expert'}
+                {isRTL ? 'استكشف خبير الربط' : 'Explore Link Expert'}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium"
               >
-                {isRTL ? 'احجز رحلتك اليوم' : 'Reserve Your Journey Today'}
+                {isRTL ? 'احجز رحلتك الآن' : 'Book Your Journey Now'}
               </button>
             </div>
           </motion.div>
@@ -324,7 +324,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gateway to Excellence Section - Split Layout like OUD Reserve */}
+      {/* About Section - Split Layout like OUD Reserve */}
       <section className="py-0 bg-gray-900">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           {/* Left Content - Dark Background */}
@@ -337,18 +337,18 @@ const Index = () => {
           >
             <div className="max-w-lg">
               <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-amber-400 uppercase tracking-wider">
-                {isRTL ? 'بوابتك للتميز' : 'YOUR GATEWAY TO EXCELLENCE'}
+                {isRTL ? 'خبير الربط' : 'LINK EXPERT'}
               </h2>
               <p className="text-lg lg:text-xl leading-relaxed mb-8 text-gray-200">
                 {isRTL 
-                  ? 'أهلاً بك في خبير الربط – الوجهة فائقة التطور من شركة خبير الربط، مُصممة لتقديم تجربة إدارة مواقف وأسلوب حياة عصري متميز بمعايير عالمية ومرافق استثنائية، مُختارة بعناية فائقة.'
-                  : 'Welcome to Link Expert – the ultra-advanced destination from Link Expert Company, crafted to offer a premier parking management experience and modern lifestyle with international standards and exceptional facilities, meticulously chosen.'
+                  ? 'وجهة حصرية ومتطورة لإدارة المواقف والخدمات التجارية في وسط الرياض الجديد، تقع في حي الملقا، تقدم خبير الربط مجموعة حصرية من الحلول المتقدمة الأولى من نوعها، بالإضافة إلى خدمات إدارة الأسطول ونادي خبير الربط للعضويات الخاصة، ونخبة من التقنيات والحلول المبتكرة.'
+                  : 'An exclusive and ultra-advanced parking management and commercial services destination in the heart of new Riyadh, located in Al Malqa neighborhood, Link Expert offers a unique collection of premier advanced solutions, the first of its kind in the Kingdom of Saudi Arabia. Additionally, it features fleet management services, Link Expert Private Membership Club, and a selection of innovative technologies and solutions.'
                 }
               </p>
               <p className="text-base lg:text-lg leading-relaxed text-gray-300">
                 {isRTL 
-                  ? 'نحن نقدم حلول إدارة المواقف الذكية والمتطورة، مع التركيز على الابتكار والتكنولوجيا المتقدمة لضمان تجربة مريحة وآمنة لعملائنا.'
-                  : 'We provide smart and advanced parking management solutions, focusing on innovation and cutting-edge technology to ensure a comfortable and secure experience for our clients.'
+                  ? 'جميع هذه المكونات تتخذ إطلالتها الخاصة على منطقة أيقونية في وسط خبير الربط. وكل ذلك يبدأ لحظة عبورك للبوابة الاستثنائية التي تأخذك في رحلة إلى عالم التقنية والإبداع.'
+                  : 'All these elements overlook an iconic area at the heart of Link Expert. And it all begins the moment you pass through the exceptional gate that takes you on a journey into a world of technology and innovation.'
                 }
               </p>
             </div>
@@ -398,8 +398,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Inspiring Vistas Section - Features Grid */}
-      <section id="gallery" className="py-20 lg:py-32 bg-gray-50">
+      {/* Features Grid Section */}
+      <section className="py-20 lg:py-32 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -408,11 +408,11 @@ const Index = () => {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 uppercase tracking-wider">
-              {isRTL ? 'إطلالات ساحرة تلهم الإبداع' : 'INSPIRING VISTAS THAT ELEVATE CREATIVITY'}
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8">
+              {isRTL ? 'إطلالات ساحرة تلهمك وتعزز إبداعك' : 'Inspiring Views That Enhance Your Creativity'}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
-              {isRTL ? 'من هنا تبدأ رحلتك نحو التميز' : 'Your journey to excellence begins here'}
+              {isRTL ? 'من هنا تبدأ رفاهيتك' : 'This is where your luxury begins'}
             </p>
           </motion.div>
 
@@ -427,43 +427,35 @@ const Index = () => {
             {[
               {
                 icon: Building,
-                title: isRTL ? 'مكاتب فاخرة' : 'Office Mansions',
-                description: isRTL ? 'مساحات عمل راقية' : 'Elegant workspaces'
-              },
-              {
-                icon: Star,
-                title: isRTL ? 'خدمات فندقية' : 'Boutique Hotel',
-                description: isRTL ? 'إقامة فاخرة' : 'Luxury accommodation'
-              },
-              {
-                icon: Users,
-                title: isRTL ? 'نادي العضويات الخاصة' : 'Link Exclusive Memberships Club',
-                description: isRTL ? 'عضويات مميزة' : 'Premium memberships'
-              },
-              {
-                icon: Shield,
-                title: isRTL ? 'مناطق خاصة آمنة' : 'Private Secure Areas',
-                description: isRTL ? 'حماية فائقة' : 'Ultra security'
-              },
-              {
-                icon: Globe,
-                title: isRTL ? 'متاجر العلامات المرموقة' : 'Prestigious Brand Shops',
-                description: isRTL ? 'تسوق راقي' : 'Luxury shopping'
-              },
-              {
-                icon: Award,
-                title: isRTL ? 'مطاعم فاخرة' : 'Fine Dining Restaurants',
-                description: isRTL ? 'تجارب طعام مميزة' : 'Exceptional dining'
-              },
-              {
-                icon: Network,
-                title: isRTL ? 'منطقة أيقونية' : 'Iconic Area',
-                description: isRTL ? 'موقع متميز' : 'Prime location'
+                title: isRTL ? 'إدارة مرافق متطورة' : 'Advanced Facility Management',
               },
               {
                 icon: Car,
-                title: isRTL ? 'مواقف ذكية' : 'Boutique Parking',
-                description: isRTL ? 'حلول متطورة' : 'Advanced solutions'
+                title: isRTL ? 'مواقف ذكية' : 'Smart Parking',
+              },
+              {
+                icon: Users,
+                title: isRTL ? 'نادي العضويات الخاصة' : 'Private Membership Club',
+              },
+              {
+                icon: Shield,
+                title: isRTL ? 'مناطق خاصة آمنة' : 'Secure Private Areas',
+              },
+              {
+                icon: Globe,
+                title: isRTL ? 'تقنيات عالمية' : 'Global Technologies',
+              },
+              {
+                icon: Star,
+                title: isRTL ? 'خدمات متميزة' : 'Premium Services',
+              },
+              {
+                icon: Network,
+                title: isRTL ? 'شبكة ذكية' : 'Smart Network',
+              },
+              {
+                icon: Award,
+                title: isRTL ? 'معايير عالية' : 'High Standards',
               }
             ].map((feature, index) => (
               <motion.div 
@@ -475,12 +467,9 @@ const Index = () => {
                   <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <feature.icon className="h-8 w-8 text-amber-600" />
                   </div>
-                  <h3 className="text-sm lg:text-base font-semibold text-gray-900 leading-tight mb-2">
+                  <h3 className="text-sm lg:text-base font-semibold text-gray-900 leading-tight">
                     {feature.title}
                   </h3>
-                  <p className="text-xs text-gray-600">
-                    {feature.description}
-                  </p>
                 </div>
               </motion.div>
             ))}
@@ -488,96 +477,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhance Your Business Section */}
-      <section className="py-20 lg:py-32 bg-gray-900 text-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInLeft}
-              className="space-y-8"
-            >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-amber-400 uppercase tracking-wider">
-                {isRTL ? 'عزز أعمالك مع نادي خبير الربط' : 'ENHANCE YOUR BUSINESS WITH LINK EXPERT CLUB'}
-              </h2>
-              <p className="text-lg lg:text-xl text-gray-300 leading-relaxed">
-                {isRTL 
-                  ? 'انضم إلى نادي خبير الربط الخاص واستمتع بمزايا حصرية تعزز من تجربتك المهنية وتوفر لك بيئة عمل استثنائية مع أحدث التقنيات والخدمات المتطورة.'
-                  : 'Join the exclusive Link Expert Club and enjoy premium benefits that enhance your professional experience and provide you with an exceptional work environment with the latest technologies and advanced services.'
-                }
-              </p>
-            </motion.div>
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInRight}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-amber-600 to-orange-600 rounded-lg p-8 shadow-2xl">
-                <div className="text-center space-y-6">
-                  <Users className="h-16 w-16 mx-auto text-white" />
-                  <h3 className="text-2xl font-bold text-white">
-                    {isRTL ? 'عضويات حصرية' : 'Exclusive Memberships'}
-                  </h3>
-                  <p className="text-amber-100">
-                    {isRTL ? 'استمتع بالخدمات المميزة' : 'Enjoy premium services'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Boutique Offices Section */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInLeft}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg p-8 shadow-2xl">
-                <div className="text-center space-y-6">
-                  <Building className="h-16 w-16 mx-auto text-amber-600" />
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {isRTL ? 'مكاتب فاخرة' : 'Premium Offices'}
-                  </h3>
-                  <p className="text-gray-600">
-                    {isRTL ? 'مساحات عمل راقية ومتطورة' : 'Elegant and advanced workspaces'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInRight}
-              className="space-y-8"
-            >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 uppercase tracking-wider">
-                {isRTL ? 'مكاتب فاخرة للنخبة' : 'BOUTIQUE OFFICES FOR THE ELITE'}
-              </h2>
-              <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-                {isRTL 
-                  ? 'تجربة عمل لا مثيل لها حيث تندمج المساحات المصممة بعناية فائقة مع أجواء الفخامة والتميز، لتوفر لك بيئة عمل استثنائية تحفز الإبداع والإنتاجية.'
-                  : 'An unparalleled work experience where meticulously designed spaces merge with an atmosphere of luxury and distinction, providing you with an exceptional work environment that stimulates creativity and productivity.'
-                }
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Exclusive Services Section */}
-      <section id="services" className="py-20 lg:py-32 bg-gray-50">
+      {/* Services Section */}
+      <section id="services" className="py-20 lg:py-32 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -586,8 +487,8 @@ const Index = () => {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 uppercase tracking-wider">
-              {isRTL ? 'الخدمات الحصرية' : 'EXCLUSIVE SERVICES'}
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8">
+              {isRTL ? 'الخدمات الخاصة' : 'Special Services'}
             </h2>
           </motion.div>
 
@@ -602,27 +503,27 @@ const Index = () => {
               {
                 icon: Target,
                 title: isRTL ? 'تفعيل الوجهات' : 'Destination Activation',
-                description: isRTL ? 'تفعيل وإدارة الوجهات بطريقة احترافية ومتطورة' : 'Professional and advanced destination activation and management'
+                description: isRTL ? 'تفعيل وإدارة الوجهات بطريقة احترافية' : 'Professional destination activation and management'
               },
               {
                 icon: Car,
-                title: isRTL ? 'خدمة صف السيارات' : 'Link Expert Valet',
-                description: isRTL ? 'خدمة صف السيارات الفاخرة والاحترافية' : 'Premium and professional valet parking service'
+                title: isRTL ? 'خدمة صف السيارات' : 'Valet Parking Service',
+                description: isRTL ? 'خدمة صف السيارات الاحترافية' : 'Professional valet parking service'
               },
               {
                 icon: Clock,
-                title: isRTL ? 'الحجز المسبق' : 'Advanced Reservation',
-                description: isRTL ? 'نظام حجز مواقف مسبق ومتطور للغاية' : 'Highly advanced pre-parking booking system'
+                title: isRTL ? 'الحجز المسبق' : 'Pre-Booking',
+                description: isRTL ? 'نظام حجز مواقف مسبق ومتطور' : 'Advanced pre-parking booking system'
               },
               {
                 icon: Headphones,
-                title: isRTL ? 'مدير العلاقات' : 'Relationship Manager',
-                description: isRTL ? 'مدير علاقات مخصص ومتفرغ لخدمتك' : 'Dedicated relationship manager for your service'
+                title: isRTL ? 'مدير العلاقة الخاصة' : 'Dedicated Relationship Manager',
+                description: isRTL ? 'مدير علاقات مخصص ومتفرغ' : 'Dedicated and exclusive relationship manager'
               },
               {
                 icon: Zap,
                 title: isRTL ? 'خبير الربط الآن' : 'Link Expert Now',
-                description: isRTL ? 'خدمات فورية ومتطورة على مدار الساعة' : 'Instant and advanced services around the clock'
+                description: isRTL ? 'خدمات فورية ومتطورة' : 'Instant and advanced services'
               }
             ].map((service, index) => (
               <motion.div 
@@ -649,21 +550,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Discover Link Expert - Contact Section */}
+      {/* Contact Section */}
       <section id="contact" className="py-20 lg:py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="container mx-auto px-4 lg:px-8">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-8 uppercase tracking-wider">
-              {isRTL ? 'استكشف خبير الربط' : 'DISCOVER LINK EXPERT'}
-            </h2>
-          </motion.div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center text-white">
             {/* Left Content */}
             <motion.div 
@@ -672,13 +561,16 @@ const Index = () => {
               viewport={{ once: true, amount: 0.3 }}
               variants={fadeInLeft}
             >
-              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-6 text-amber-400 uppercase tracking-wider">
-                {isRTL ? 'إلى عالم التميز' : 'TO THE REALM OF EXCELLENCE'}
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
+                {isRTL ? 'احجز رحلتك الآن' : 'Book Your Journey Now'}
+              </h2>
+              <h3 className="text-2xl lg:text-3xl font-light mb-8 text-amber-400">
+                {isRTL ? 'إلى حيث التميز' : 'To Where Excellence Lies'}
               </h3>
               <p className="text-lg mb-8 text-gray-300">
                 {isRTL 
-                  ? 'إذا كنت تعتقد أن هذا هو المكان المناسب لك، يرجى إدخال معلوماتك'
-                  : 'If you believe this is the suitable place for you, kindly submit your information'
+                  ? 'إذا شعرت بأن هذا هو مكانك المناسب، دوّن بياناتك'
+                  : 'If you feel this is the right place for you, write down your details'
                 }
               </p>
 
@@ -729,7 +621,7 @@ const Index = () => {
                   type="submit"
                   className="w-full bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg font-semibold rounded-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0"
                 >
-                  {isRTL ? 'إرسال' : 'Submit'}
+                  {isRTL ? 'إرسال' : 'Send'}
                 </Button>
               </form>
             </motion.div>
@@ -743,27 +635,27 @@ const Index = () => {
               className="space-y-8"
             >
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-amber-400 uppercase tracking-wider">
-                  {isRTL ? 'زر مكاتبنا' : 'VISIT OUR OFFICES'}
+                <h3 className="text-2xl lg:text-3xl font-bold mb-8">
+                  {isRTL ? 'تفضل بزيارة مكاتبنا' : 'Visit Our Offices'}
                 </h3>
                 
                 <div className="space-y-8">
                   <div>
-                    <h4 className="text-xl font-semibold mb-6 text-white">
-                      {isRTL ? 'الرياض' : 'RIYADH'}
+                    <h4 className="text-xl font-semibold mb-6 text-amber-400">
+                      {isRTL ? 'الرياض' : 'Riyadh'}
                     </h4>
                     
                     <div className="space-y-6">
                       <div className="flex items-start space-x-4 rtl:space-x-reverse">
                         <MapPin className="h-6 w-6 text-amber-400 mt-1 flex-shrink-0" />
                         <div>
-                          <h5 className="font-semibold mb-2 text-gray-300">
+                          <h5 className="font-semibold mb-2">
                             {isRTL ? 'العنوان' : 'Address'}
                           </h5>
-                          <p className="text-gray-400">
+                          <p className="text-gray-300">
                             {isRTL 
-                              ? 'الرياض، طريق الأمير تركي بن عبدالعزيز الأول، حي الملقا، الساحة الشمالية لشركة خبير الربط'
-                              : 'Riyadh, Prince Turki bin Abdulaziz Al Awwal Street, Al Malqa District, North Yard by Link Expert'
+                              ? 'الرياض، طريق الأمير تركي بن عبدالعزيز الأول، حي الملقا'
+                              : 'Riyadh, Prince Turki bin Abdulaziz Al Awwal Road, Al Malqa'
                             }
                           </p>
                         </div>
@@ -772,20 +664,20 @@ const Index = () => {
                       <div className="flex items-start space-x-4 rtl:space-x-reverse">
                         <Mail className="h-6 w-6 text-amber-400 mt-1 flex-shrink-0" />
                         <div>
-                          <h5 className="font-semibold mb-2 text-gray-300">
+                          <h5 className="font-semibold mb-2">
                             {isRTL ? 'البريد الإلكتروني' : 'Email'}
                           </h5>
-                          <p className="text-gray-400">Reserve@link-expert.sa</p>
+                          <p className="text-gray-300">info@link-expert.sa</p>
                         </div>
                       </div>
 
                       <div className="flex items-start space-x-4 rtl:space-x-reverse">
                         <Phone className="h-6 w-6 text-amber-400 mt-1 flex-shrink-0" />
                         <div>
-                          <h5 className="font-semibold mb-2 text-gray-300">
-                            {isRTL ? 'مركز الاتصال الموحد' : 'Centralized Contact Center'}
+                          <h5 className="font-semibold mb-2">
+                            {isRTL ? 'مركز الاتصال الموحد' : 'Unified Call Center'}
                           </h5>
-                          <p className="text-gray-400">920020424</p>
+                          <p className="text-gray-300">920020424</p>
                         </div>
                       </div>
                     </div>
@@ -797,13 +689,13 @@ const Index = () => {
                       className="w-full bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-none border border-gray-600 hover:border-amber-500 transition-all duration-300"
                     >
                       <Download className="h-5 w-5 mr-2" />
-                      {isRTL ? 'تحميل الملف الإعلامي' : 'Download the Media File'}
+                      {isRTL ? 'حمل الملف الإعلامي' : 'Download Media File'}
                     </Button>
                     <Button 
                       className="w-full bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-none border border-gray-600 hover:border-amber-500 transition-all duration-300"
                     >
                       <Download className="h-5 w-5 mr-2" />
-                      {isRTL ? 'تحميل البروشور' : 'Download the Brochure'}
+                      {isRTL ? 'حمل البروشور' : 'Download Brochure'}
                     </Button>
                   </div>
                 </div>
@@ -816,122 +708,11 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-black text-white py-8">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            {/* Logo and Company Info */}
-            <div className="space-y-4">
-              <img 
-                src={LinkLogo} 
-                alt="Link Expert" 
-                className="h-12 w-auto filter brightness-0 invert"
-              />
-              <h3 className="text-xl font-bold text-amber-400">
-                {isRTL ? 'خبير الربط' : 'Link Expert'}
-              </h3>
-              <p className="text-gray-400 text-sm">
-                {isRTL ? 'مكان لإرثك' : 'A Place for Your Legacy'}
-              </p>
-              <p className="text-gray-400 text-sm">
-                {isRTL 
-                  ? 'استمتع بالتفرد والتميز في تجربة إدارة المواقف الفاخرة في وسط الرياض الجديد'
-                  : 'Enjoy the uniqueness and excellence in luxury parking management experience in the new Riyadh downtown'
-                }
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-amber-400">
-                {isRTL ? 'روابط سريعة' : 'Quick Links'}
-              </h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('home')}
-                    className="hover:text-amber-400 transition-colors duration-200 text-sm"
-                  >
-                    {isRTL ? 'خبير الربط' : 'Link Expert'}
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('services')}
-                    className="hover:text-amber-400 transition-colors duration-200 text-sm"
-                  >
-                    {isRTL ? 'حقق أحلامك' : 'Fulfill Your Dreams'}
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('gallery')}
-                    className="hover:text-amber-400 transition-colors duration-200 text-sm"
-                  >
-                    {isRTL ? 'استكشف خبير الربط' : 'Discover Link Expert'}
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('contact')}
-                    className="hover:text-amber-400 transition-colors duration-200 text-sm"
-                  >
-                    {isRTL ? 'احجز رحلتك اليوم' : 'Reserve Your Journey Today'}
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-amber-400">
-                {isRTL ? 'معلومات التواصل' : 'Contact Information'}
-              </h4>
-              <div className="space-y-3 text-gray-400">
-                <div className="flex items-center space-x-3 rtl:space-x-reverse">
-                  <MapPin className="h-4 w-4 text-amber-400" />
-                  <p className="text-sm">
-                    {isRTL ? 'الرياض، حي الملقا' : 'Riyadh, Al Malqa'}
-                  </p>
-                </div>
-                <div className="flex items-center space-x-3 rtl:space-x-reverse">
-                  <Phone className="h-4 w-4 text-amber-400" />
-                  <p className="text-sm">920020424</p>
-                </div>
-                <div className="flex items-center space-x-3 rtl:space-x-reverse">
-                  <Mail className="h-4 w-4 text-amber-400" />
-                  <p className="text-sm">Reserve@link-expert.sa</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Additional Info */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-amber-400">
-                {isRTL ? 'معلومات إضافية' : 'Additional Information'}
-              </h4>
-              <p className="text-gray-400 text-sm">
-                {isRTL 
-                  ? 'وجهة فائقة التطور من شركة خبير الربط'
-                  : 'Ultra-advanced destination by Link Expert Company'
-                }
-              </p>
-              <div className="flex space-x-4 rtl:space-x-reverse">
-                <Button 
-                  variant="outline"
-                  size="sm"
-                  className="bg-transparent border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black"
-                >
-                  <Download className="h-4 w-4 mr-1" />
-                  {isRTL ? 'بروشور' : 'Brochure'}
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="border-t border-gray-800 pt-8 text-center">
+          <div className="text-center">
             <p className="text-gray-400 text-sm">
               {isRTL 
                 ? 'جميع الحقوق محفوظة لخبير الربط @2024'
-                : 'All rights reserved for Link Expert @2024'
+                : 'All rights reserved to Link Expert @2024'
               }
             </p>
           </div>

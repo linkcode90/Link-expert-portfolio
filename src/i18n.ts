@@ -17,7 +17,8 @@ i18n
         translation: arTranslations
       }
     },
-    fallbackLng: 'en',
+    fallbackLng: 'ar',
+    lng: 'ar', // Set Arabic as default language
     interpolation: {
       escapeValue: false
     },
