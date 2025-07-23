@@ -240,12 +240,12 @@ const Index = () => {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
         
-        <div className={`relative z-10 container mx-auto px-4 lg:px-8 text-white ${isRTL ? '' : 'text-center'}`}>
+        <div className="relative z-10 container mx-auto px-4 lg:px-8 text-white text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className={`max-w-4xl ${isRTL ? 'mr-0 ml-auto' : 'mx-auto'}`}
+            className="max-w-4xl mx-auto"
           >
             {/* Logo */}
             <motion.div 
@@ -266,7 +266,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className={`text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight ${isRTL ? 'text-right' : 'text-center'}`}
+              className="text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight text-center"
             >
               {isRTL ? 'خبير الربط' : 'Link Expert'}
             </motion.h1>
@@ -276,7 +276,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className={`text-xl lg:text-2xl mb-8 font-light leading-relaxed ${isRTL ? 'text-right' : 'text-center'}`}
+              className="text-xl lg:text-2xl mb-8 font-light leading-relaxed text-center"
             >
               {isRTL ? 'إرثك.. في ذاكرة المكان' : 'Your Legacy.. In the Memory of Place'}
             </motion.p>
@@ -286,7 +286,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className={`text-lg lg:text-xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 ${isRTL ? 'text-right' : 'text-center'}`}
+              className="text-lg lg:text-xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 text-center"
             >
               {isRTL 
                 ? 'انعم بتفرد المكان.. وتميز الكيان في تجربة إدارة مواقف فائقة الدقة في وسط الرياض الجديد'
@@ -299,6 +299,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1 }}
+              className="flex justify-center"
             >
               <Button 
                 onClick={() => scrollToSection('contact')}
@@ -308,22 +309,7 @@ const Index = () => {
               </Button>
             </motion.div>
 
-            {/* Bottom Badge */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              className="mt-16"
-            >
-              <div className={isRTL ? 'text-right' : 'text-center'}>
-                <p className={`text-sm font-light opacity-80 mb-2 ${isRTL ? 'text-right' : 'text-center'}`}>
-                  {isRTL ? 'وجهة فائقة الفخامة من خبير الربط' : 'Ultra-luxury destination by Link Expert'}
-                </p>
-                <p className={`text-xs opacity-60 ${isRTL ? 'text-right' : 'text-center'}`}>
-                  {isRTL ? 'Ultra-luxury destination by Link Expert' : 'وجهة فائقة الفخامة من خبير الربط'}
-                </p>
-              </div>
-            </motion.div>
+
           </motion.div>
         </div>
       </section>
