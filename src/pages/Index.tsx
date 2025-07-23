@@ -105,8 +105,14 @@ const Index = () => {
     }
   };
 
+  useEffect(() => {
+    // Set direction and lang on the html element for correct LTR/RTL
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+    document.documentElement.lang = currentLanguage;
+  }, [isRTL, currentLanguage]);
+
   return (
-    <div className="min-h-screen bg-white" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen bg-white ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'} lang={currentLanguage}>
       {/* Navigation - static solid background color for visibility */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900 bg-opacity-95 shadow-md`}>
         <div className="container mx-auto px-4 lg:px-8">
