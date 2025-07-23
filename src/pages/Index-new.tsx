@@ -759,7 +759,7 @@ const Index = () => {
           <div className="text-center">
             <p className="text-gray-300">
               {isRTL 
-                ? 'جميع الحقوق محفوظة لخبير الربط @2024'
+                ? 'جميع الحقوق محفوظة لخبير الربط @2025'
                 : 'All rights reserved to Link Expert @2024'
               }
             </p>

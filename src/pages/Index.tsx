@@ -107,10 +107,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Navigation - no background image */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
-      }`}>
+      {/* Navigation - static solid background color for visibility */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900 bg-opacity-95 shadow-md`}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
@@ -414,10 +412,10 @@ const Index = () => {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 uppercase tracking-wider">
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-8 uppercase tracking-wider">
               {isRTL ? 'إطلالات ساحرة تلهم الإبداع' : 'INSPIRING VISTAS THAT ELEVATE CREATIVITY'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+            <p className="text-xl text-white max-w-2xl mx-auto mb-12">
               {isRTL ? 'من هنا تبدأ رحلتك نحو التميز' : 'Your journey to excellence begins here'}
             </p>
           </motion.div>
@@ -574,10 +572,10 @@ const Index = () => {
               variants={fadeInRight}
               className="space-y-8"
             >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 uppercase tracking-wider">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white uppercase tracking-wider">
                 {isRTL ? 'مكاتب فاخرة للنخبة' : 'BOUTIQUE OFFICES FOR THE ELITE'}
               </h2>
-              <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg lg:text-xl text-white leading-relaxed">
                 {isRTL 
                   ? 'تجربة عمل لا مثيل لها حيث تندمج المساحات المصممة بعناية فائقة مع أجواء الفخامة والتميز، لتوفر لك بيئة عمل استثنائية تحفز الإبداع والإنتاجية.'
                   : 'An unparalleled work experience where meticulously designed spaces merge with an atmosphere of luxury and distinction, providing you with an exceptional work environment that stimulates creativity and productivity.'
@@ -793,7 +791,7 @@ const Index = () => {
                           <h5 className="font-semibold mb-2 text-gray-300">
                             {isRTL ? 'البريد الإلكتروني' : 'Email'}
                           </h5>
-                          <p className="text-gray-400">Reserve@link-expert.sa</p>
+                          <p className="text-gray-400">info@link-expert.sa</p>
                         </div>
                       </div>
 
@@ -803,7 +801,7 @@ const Index = () => {
                           <h5 className="font-semibold mb-2 text-gray-300">
                             {isRTL ? 'مركز الاتصال الموحد' : 'Centralized Contact Center'}
                           </h5>
-                          <p className="text-gray-400">920020424</p>
+                          <p className="text-gray-400">+966 920 0204 24</p>
                         </div>
                       </div>
                     </div>
@@ -911,11 +909,11 @@ const Index = () => {
                 </div>
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                   <Phone className="h-4 w-4 text-amber-400" />
-                  <p className="text-sm">920020424</p>
+                  <p className="text-sm">+966 920 0204 24</p>
                 </div>
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                   <Mail className="h-4 w-4 text-amber-400" />
-                  <p className="text-sm">Reserve@link-expert.sa</p>
+                  <p className="text-sm">info@link-expert.sa</p>
                 </div>
               </div>
             </div>
@@ -948,7 +946,7 @@ const Index = () => {
           <div className="border-t border-gray-800 pt-8 text-center">
             <p className="text-gray-400 text-sm">
               {isRTL 
-                ? 'جميع الحقوق محفوظة لخبير الربط @2024'
+                ? 'جميع الحقوق محفوظة لخبير الربط @2025'
                 : 'All rights reserved for Link Expert @2024'
               }
             </p>

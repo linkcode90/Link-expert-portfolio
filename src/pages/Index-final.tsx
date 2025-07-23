@@ -677,7 +677,7 @@ const Index = () => {
                           <h5 className="font-semibold mb-2">
                             {isRTL ? 'مركز الاتصال الموحد' : 'Unified Call Center'}
                           </h5>
-                          <p className="text-gray-300">920020424</p>
+                          <p className="text-gray-300">+966 920 0204 24</p>
                         </div>
                       </div>
                     </div>
@@ -711,7 +711,7 @@ const Index = () => {
           <div className="text-center">
             <p className="text-gray-400 text-sm">
               {isRTL 
-                ? 'جميع الحقوق محفوظة لخبير الربط @2024'
+                ? 'جميع الحقوق محفوظة لخبير الربط @2025'
                 : 'All rights reserved to Link Expert @2024'
               }
             </p>
