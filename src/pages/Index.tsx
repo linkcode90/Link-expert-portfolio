@@ -107,7 +107,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Navigation */}
+      {/* Navigation - no background image */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
       }`}>
@@ -228,7 +228,7 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/placeholder.svg')`,
+            backgroundImage: `url('/src/assets/header.jpeg')`,
             filter: 'brightness(0.4)'
           }}
         ></div>
@@ -325,8 +325,11 @@ const Index = () => {
       </section>
 
       {/* Gateway to Excellence Section - Split Layout like OUD Reserve */}
-      <section className="py-0 bg-gray-900">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+      <section className="py-0 bg-gray-900 relative min-h-screen flex items-stretch overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/80"></div>
+        <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           {/* Left Content - Dark Background */}
           <motion.div 
             initial="hidden"
@@ -399,8 +402,11 @@ const Index = () => {
       </section>
 
       {/* Inspiring Vistas Section - Features Grid */}
-      <section id="gallery" className="py-20 lg:py-32 bg-gray-50">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section id="gallery" className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -489,8 +495,11 @@ const Index = () => {
       </section>
 
       {/* Enhance Your Business Section */}
-      <section className="py-20 lg:py-32 bg-gray-900 text-white">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-20 lg:py-32 bg-gray-900 text-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/30 to-black/80"></div>
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               initial="hidden"
@@ -533,8 +542,11 @@ const Index = () => {
       </section>
 
       {/* Boutique Offices Section */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               initial="hidden"
@@ -577,8 +589,11 @@ const Index = () => {
       </section>
 
       {/* Exclusive Services Section */}
-      <section id="services" className="py-20 lg:py-32 bg-gray-50">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section id="services" className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -650,8 +665,11 @@ const Index = () => {
       </section>
 
       {/* Discover Link Expert - Contact Section */}
-      <section id="contact" className="py-20 lg:py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section id="contact" className="py-20 lg:py-32 bg-gray-900 text-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/30 to-black/80"></div>
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
