@@ -294,18 +294,25 @@ const Index = () => {
               }
             </motion.p>
 
-            {/* CTA Button */}
+            {/* CTA Buttons */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1 }}
-              className="flex justify-center"
+              className="flex flex-col sm:flex-row justify-center items-center gap-4"
             >
               <Button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-amber-600 hover:bg-amber-700 text-white px-10 py-4 text-lg font-semibold rounded-none shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 border-0"
               >
                 {isRTL ? 'كن جزءًا من خبير الربط' : 'Be Part of Link Expert'}
+              </Button>
+              
+              <Button 
+                onClick={() => window.location.href = '/privacy-policy'}
+                className="bg-transparent hover:bg-white/10 text-white border border-white px-10 py-4 text-lg font-semibold rounded-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                {isRTL ? 'سياسة الاستخدام والاسترجاع' : 'Usage and Refund Policy'}
               </Button>
             </motion.div>
 
@@ -936,6 +943,11 @@ const Index = () => {
 
           {/* Copyright */}
           <div className="border-t border-gray-800 pt-8 text-center">
+            <div className="mb-4">
+              <a href="/privacy-policy" className="text-amber-400 hover:text-amber-300 text-sm transition-colors">
+                {isRTL ? 'سياسة الاستخدام والاسترجاع' : 'Usage and Refund Policy'}
+              </a>
+            </div>
             <p className="text-gray-400 text-sm">
               {isRTL 
                 ? 'جميع الحقوق محفوظة لخبير الربط @2025'

@@ -3,7 +3,8 @@
     "home": "Link Expert",
     "services": "Fulfill Your Dreams",
     "gallery": "Discover Link Expert",
-    "contact": "Reserve Your Journey Today"
+    "contact": "Reserve Your Journey Today",
+    "privacy": "Usage and Refund Policy"
   },
   "hero": {
     "title": "LINK EXPERT",
@@ -120,6 +121,49 @@
       "mediaFile": "Download the Media File",
       "brochure": "Download the Brochure"
     }
+  },
+  "privacy": {
+    "title": "Usage and Refund Policy",
+    "subtitle": "(LINK EXPERT)",
+    "terms_title": "1. Terms of Use",
+    "intro_title": "Introduction",
+    "intro_text": "Welcome to Link Expert. By using our website or requesting any of our services, you agree to the following terms:",
+    "general_title": "General Usage",
+    "general_items": [
+      "Users must not misuse or exploit the website or services in any unlawful manner.",
+      "All trademarks, designs, images, and content are the intellectual property of Link Expert and may not be reused without permission.",
+      "Link Expert reserves the right to update or modify services and content at any time."
+    ],
+    "privacy_title": "Data Privacy",
+    "privacy_items": [
+      "Your personal data is protected and handled with confidentiality.",
+      "Information is collected and used solely to provide and improve services."
+    ],
+    "refund_title": "2. Cancellation & Refund Policy",
+    "ongoing_title": "A. Ongoing Operational Services",
+    "before_start_title": "Cancellation before starting:",
+    "before_start_text": "Full refund minus administrative/setup costs if canceled at least 72 hours in advance.",
+    "after_start_title": "Cancellation after start:",
+    "after_start_text": "A proportional refund will be calculated based on the work completed. The rest will be refunded within 14 business days.",
+    "contracts_title": "Monthly/Annual Contracts:",
+    "contracts_text": "Written cancellation notice must be provided 30 days in advance.",
+    "events_title": "B. Event-Based or Temporary Services",
+    "before_event_title": "Cancellation 5+ business days before event:",
+    "before_event_text": "70% refund.",
+    "less_days_title": "Less than 5 days before event:",
+    "less_days_text": "No refund due to committed resources.",
+    "ondemand_title": "C. On-Demand Services (Valet, Car Wash, Shuttle)",
+    "not_started_title": "Not yet started:",
+    "not_started_text": "Cancel at least 2 hours before – full refund.",
+    "already_started_title": "Already started:",
+    "already_started_text": "Non-refundable once service has begun.",
+    "custom_title": "D. Custom Services",
+    "custom_text": "Non-refundable once resources are allocated or execution has begun.",
+    "contact_title": "3. Contact & Support",
+    "contact_intro": "To request a refund or cancel a service:",
+    "email": "Email: info@link-expert.sa",
+    "phone": "Customer Support: +966-920013846",
+    "response_time": "We aim to respond within 2 business days."
   },
   "footer": {
     "copyright": "All rights reserved for Link Expert @2024",
