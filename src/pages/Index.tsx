@@ -661,6 +661,201 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-8 uppercase tracking-wider">
+              {isRTL ? 'أسعار الخدمات' : 'SERVICE PRICING'}
+            </h2>
+            <p className="text-xl text-white max-w-2xl mx-auto mb-12">
+              {isRTL ? 'أسعار شفافة ومتاحة لجميع خدمات صف السيارات' : 'Transparent pricing for all valet parking services'}
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
+              {/* Table Header */}
+              <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white p-6">
+                <h3 className="text-2xl font-bold text-center">
+                  {isRTL ? 'أسعار خدمات صف السيارات' : 'Valet Parking Service Prices'}
+                </h3>
+              </div>
+
+              {/* Table */}
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className={`px-6 py-4 text-left text-sm font-semibold text-gray-900 border-b ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'المشروع' : 'Project'}
+                      </th>
+                      <th className={`px-6 py-4 text-left text-sm font-semibold text-gray-900 border-b ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'نوع الخدمة' : 'Service Type'}
+                      </th>
+                      <th className={`px-6 py-4 text-left text-sm font-semibold text-gray-900 border-b ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'السعر (ريال سعودي)' : 'Price (SAR)'}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    {/* Riyadh Park Mall */}
+                    <tr className="hover:bg-gray-50 transition-colors duration-200">
+                      <td className={`px-6 py-4 text-sm font-medium text-gray-900 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'الرياض بارك مول' : 'Riyadh Park Mall'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'خدمة صف السيارات (عادية)' : 'Valet Parking Service (Normal)'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm font-semibold text-amber-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        45 ريال
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-50 transition-colors duration-200">
+                      <td className={`px-6 py-4 text-sm font-medium text-gray-900 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'الرياض بارك مول' : 'Riyadh Park Mall'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'خدمة صف السيارات (VIP)' : 'Valet Parking Service (VIP)'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm font-semibold text-amber-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        85 ريال
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-50 transition-colors duration-200">
+                      <td className={`px-6 py-4 text-sm font-medium text-gray-900 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'الرياض بارك مول' : 'Riyadh Park Mall'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'خدمة صف السيارات (Exclusive)' : 'Valet Parking Service (Exclusive)'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm font-semibold text-amber-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        120 ريال
+                      </td>
+                    </tr>
+                    
+                    {/* Riyadh Gate */}
+                    <tr className="hover:bg-gray-50 transition-colors duration-200">
+                      <td className={`px-6 py-4 text-sm font-medium text-gray-900 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'بوابة الرياض' : 'Riyadh Gate'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'خدمة صف السيارات (عادية)' : 'Valet Parking Service (Normal)'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm font-semibold text-amber-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        35 ريال
+                      </td>
+                    </tr>
+                    
+                    {/* North Yard */}
+                    <tr className="hover:bg-gray-50 transition-colors duration-200">
+                      <td className={`px-6 py-4 text-sm font-medium text-gray-900 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'نورث يارد' : 'North Yard'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'خدمة صف السيارات (عادية)' : 'Valet Parking Service (Normal)'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm font-semibold text-amber-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        35 ريال
+                      </td>
+                    </tr>
+                    
+                    {/* Oud Square */}
+                    <tr className="hover:bg-gray-50 transition-colors duration-200">
+                      <td className={`px-6 py-4 text-sm font-medium text-gray-900 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'عود سكوير' : 'Oud Square'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {isRTL ? 'خدمة مواقف' : 'Parking Service'}
+                      </td>
+                      <td className={`px-6 py-4 text-sm font-semibold text-amber-600 ${isRTL ? 'text-right' : 'text-left'}`}>
+                        10 ريال
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Table Footer */}
+              <div className="bg-gray-50 p-6 border-t">
+                <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                  <div className="flex items-center space-x-2 rtl:space-x-reverse">
+                    <Shield className="h-5 w-5 text-amber-600" />
+                    <span className="text-sm text-gray-600">
+                      {isRTL ? 'جميع الأسعار شاملة الضريبة' : 'All prices include VAT'}
+                    </span>
+                  </div>
+                  <Button 
+                    onClick={() => scrollToSection('contact')}
+                    className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0"
+                  >
+                    {isRTL ? 'احجز الآن' : 'Book Now'}
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Additional Pricing Info */}
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            <div className="text-center text-white">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                <Car className="h-12 w-12 text-amber-400 mx-auto mb-4" />
+                <h4 className="text-xl font-semibold mb-2">
+                  {isRTL ? 'خدمة عادية' : 'Normal Service'}
+                </h4>
+                <p className="text-gray-200 text-sm">
+                  {isRTL ? 'خدمة صف سيارات أساسية مع ضمان الأمان' : 'Basic valet service with security guarantee'}
+                </p>
+              </div>
+            </div>
+            <div className="text-center text-white">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                <Star className="h-12 w-12 text-amber-400 mx-auto mb-4" />
+                <h4 className="text-xl font-semibold mb-2">
+                  {isRTL ? 'خدمة VIP' : 'VIP Service'}
+                </h4>
+                <p className="text-gray-200 text-sm">
+                  {isRTL ? 'خدمة متميزة مع رعاية خاصة' : 'Premium service with special care'}
+                </p>
+              </div>
+            </div>
+            <div className="text-center text-white">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                <Award className="h-12 w-12 text-amber-400 mx-auto mb-4" />
+                <h4 className="text-xl font-semibold mb-2">
+                  {isRTL ? 'خدمة حصرية' : 'Exclusive Service'}
+                </h4>
+                <p className="text-gray-200 text-sm">
+                  {isRTL ? 'أعلى مستوى من الخدمة والرعاية' : 'Highest level of service and care'}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Discover Link Expert - Contact Section */}
       <section id="contact" className="py-20 lg:py-32 bg-gray-900 text-white relative overflow-hidden">
         {/* Background Image */}
