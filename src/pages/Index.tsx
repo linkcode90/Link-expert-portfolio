@@ -1041,7 +1041,7 @@ const Index = () => {
                           <h5 className="font-semibold mb-2 text-gray-300">
                             {isRTL ? 'مركز الاتصال الموحد' : 'Centralized Contact Center'}
                           </h5>
-                          <p className="text-gray-400">+966 920 0204 24</p>
+                          <p className="text-gray-400 ltr" dir="ltr">{t('office.phone.value')}</p>
                         </div>
                       </div>
                     </div>
@@ -1157,7 +1157,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                   <Phone className="h-4 w-4 text-amber-400" />
-                  <p className="text-sm">+966 920 0204 24</p>
+                  <p className="text-sm ltr" dir="ltr">{t('office.phone.value')}</p>
                 </div>
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                   <Mail className="h-4 w-4 text-amber-400" />
