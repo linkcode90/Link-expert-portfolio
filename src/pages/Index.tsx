@@ -337,19 +337,13 @@ const Index = () => {
           >
             <div className="max-w-lg">
               <h2 className={`text-3xl lg:text-4xl font-bold mb-8 text-amber-400 uppercase tracking-wider ${isRTL ? 'text-right' : 'text-left'}`}>
-                {isRTL ? 'بوابتك للتميز' : 'YOUR GATEWAY TO EXCELLENCE'}
+                {t('about.title')}
               </h2>
               <p className={`text-lg lg:text-xl leading-relaxed mb-8 text-gray-200 ${isRTL ? 'text-right' : 'text-left'}`}>
-                {isRTL 
-                  ? 'أهلاً بك في خبير الربط – الوجهة فائقة التطور من شركة خبير الربط، مُصممة لتقديم تجربة إدارة مواقف وأسلوب حياة عصري متميز بمعايير عالمية ومرافق استثنائية، مُختارة بعناية فائقة.'
-                  : 'Welcome to Link Expert – the ultra-advanced destination from Link Expert Company, crafted to offer a premier parking management experience and modern lifestyle with international standards and exceptional facilities, meticulously chosen.'
-                }
+                {t('about.description')}
               </p>
               <p className={`text-base lg:text-lg leading-relaxed text-gray-300 ${isRTL ? 'text-right' : 'text-left'}`}>
-                {isRTL 
-                  ? 'نحن نقدم حلول إدارة المواقف الذكية والمتطورة، مع التركيز على الابتكار والتكنولوجيا المتقدمة لضمان تجربة مريحة وآمنة لعملائنا.'
-                  : 'We provide smart and advanced parking management solutions, focusing on innovation and cutting-edge technology to ensure a comfortable and secure experience for our clients.'
-                }
+                {t('about.description2')}
               </p>
             </div>
           </motion.div>
@@ -398,11 +392,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Inspiring Vistas Section - Features Grid */}
-      <section id="gallery" className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+      {/* Our Projects KSA Section */}
+      <section id="gallery" className="py-20 lg:py-32 bg-gray-900 relative overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.3)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+        
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -412,10 +407,10 @@ const Index = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-8 uppercase tracking-wider">
-              {isRTL ? 'إطلالات ساحرة تلهم الإبداع' : 'INSPIRING VISTAS THAT ELEVATE CREATIVITY'}
+              {t('projects.title')}
             </h2>
-            <p className="text-xl text-white max-w-2xl mx-auto mb-12">
-              {isRTL ? 'من هنا تبدأ رحلتك نحو التميز' : 'Your journey to excellence begins here'}
+            <p className="text-xl text-amber-300 max-w-2xl mx-auto mb-12 font-medium">
+              {t('projects.subtitle')}
             </p>
           </motion.div>
 
@@ -424,69 +419,109 @@ const Index = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={staggerChildren}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"
+            className="max-w-7xl mx-auto"
           >
-            {/* Feature Cards */}
-            {[
-              {
-                icon: Building,
-                title: isRTL ? 'مكاتب فاخرة' : 'Office Mansions',
-                description: isRTL ? 'مساحات عمل راقية' : 'Elegant workspaces'
-              },
-              {
-                icon: Star,
-                title: isRTL ? 'خدمات فندقية' : 'Boutique Hotel',
-                description: isRTL ? 'إقامة فاخرة' : 'Luxury accommodation'
-              },
-              {
-                icon: Users,
-                title: isRTL ? 'نادي العضويات الخاصة' : 'Link Exclusive Memberships Club',
-                description: isRTL ? 'عضويات مميزة' : 'Premium memberships'
-              },
-              {
-                icon: Shield,
-                title: isRTL ? 'مناطق خاصة آمنة' : 'Private Secure Areas',
-                description: isRTL ? 'حماية فائقة' : 'Ultra security'
-              },
-              {
-                icon: Globe,
-                title: isRTL ? 'متاجر العلامات المرموقة' : 'Prestigious Brand Shops',
-                description: isRTL ? 'تسوق راقي' : 'Luxury shopping'
-              },
-              {
-                icon: Award,
-                title: isRTL ? 'مطاعم فاخرة' : 'Fine Dining Restaurants',
-                description: isRTL ? 'تجارب طعام مميزة' : 'Exceptional dining'
-              },
-              {
-                icon: Network,
-                title: isRTL ? 'منطقة أيقونية' : 'Iconic Area',
-                description: isRTL ? 'موقع متميز' : 'Prime location'
-              },
-              {
-                icon: Car,
-                title: isRTL ? 'مواقف ذكية' : 'Boutique Parking',
-                description: isRTL ? 'حلول متطورة' : 'Advanced solutions'
-              }
-            ].map((feature, index) => (
-              <motion.div 
-                key={index}
-                variants={fadeInUp}
-                className="group text-center"
-              >
-                <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group-hover:border-amber-200">
-                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="h-8 w-8 text-amber-600" />
+            {/* Project Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
+              {[
+                {
+                  name: t('projects.items.riyadhPark.name'),
+                  location: t('projects.items.riyadhPark.location'),
+                  arabicName: t('projects.items.riyadhPark.arabicName'),
+                  icon: '🏢'
+                },
+                {
+                  name: t('projects.items.laysenValley.name'),
+                  location: t('projects.items.laysenValley.location'),
+                  arabicName: t('projects.items.laysenValley.arabicName'),
+                  icon: '🌿'
+                },
+                {
+                  name: t('projects.items.arriyadhGate.name'),
+                  location: t('projects.items.arriyadhGate.location'),
+                  arabicName: t('projects.items.arriyadhGate.arabicName'),
+                  icon: '🏛️'
+                },
+                {
+                  name: t('projects.items.majdoolTower.name'),
+                  location: t('projects.items.majdoolTower.location'),
+                  arabicName: t('projects.items.majdoolTower.arabicName'),
+                  icon: '🏙️'
+                },
+                {
+                  name: t('projects.items.rixosObhur.name'),
+                  location: t('projects.items.rixosObhur.location'),
+                  arabicName: t('projects.items.rixosObhur.arabicName'),
+                  icon: '🏖️'
+                },
+                {
+                  name: t('projects.items.panoramaMall.name'),
+                  location: t('projects.items.panoramaMall.location'),
+                  arabicName: t('projects.items.panoramaMall.arabicName'),
+                  icon: '🛍️'
+                },
+                {
+                  name: t('projects.items.wphQiddiya.name'),
+                  location: t('projects.items.wphQiddiya.location'),
+                  arabicName: t('projects.items.wphQiddiya.arabicName'),
+                  icon: '🎡'
+                },
+                {
+                  name: t('projects.items.northYard.name'),
+                  location: t('projects.items.northYard.location'),
+                  arabicName: t('projects.items.northYard.arabicName'),
+                  icon: '🏢'
+                },
+                {
+                  name: t('projects.items.smartTown.name'),
+                  location: t('projects.items.smartTown.location'),
+                  arabicName: t('projects.items.smartTown.arabicName'),
+                  icon: '⚙️'
+                },
+                {
+                  name: t('projects.items.oudSquare.name'),
+                  location: t('projects.items.oudSquare.location'),
+                  arabicName: t('projects.items.oudSquare.arabicName'),
+                  icon: '🏛️'
+                },
+                {
+                  name: t('projects.items.sabqon.name'),
+                  location: t('projects.items.sabqon.location'),
+                  arabicName: t('projects.items.sabqon.arabicName'),
+                  icon: '🏢'
+                }
+              ].map((project, index) => (
+                <motion.div 
+                  key={index}
+                  variants={fadeInUp}
+                  className="group"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-5 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-white/20 border border-white/20 group-hover:border-amber-400 group-hover:shadow-amber-400/20">
+                    <div className="flex items-center space-x-4 rtl:space-x-reverse">
+                      {/* Project Icon */}
+                      <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-full p-3 w-12 h-12 flex items-center justify-center text-white text-lg font-bold shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        {project.icon}
+                      </div>
+                      
+                      {/* Project Info */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-sm lg:text-base font-bold text-white leading-tight mb-1 group-hover:text-amber-300 transition-colors duration-300">
+                          {project.name}
+                        </h3>
+                        {project.arabicName && (
+                          <p className="text-xs lg:text-sm text-amber-300 leading-tight mb-0.5 font-medium">
+                            {project.arabicName}
+                          </p>
+                        )}
+                        <p className="text-xs text-gray-300 font-medium">
+                          {project.location}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-sm lg:text-base font-semibold text-gray-900 leading-tight mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-xs text-gray-600">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -506,13 +541,10 @@ const Index = () => {
               className="space-y-8"
             >
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-amber-400 uppercase tracking-wider">
-                {isRTL ? 'عزز أعمالك مع نادي خبير الربط' : 'ENHANCE YOUR BUSINESS WITH LINK EXPERT CLUB'}
+                {t('businessEnhancement.title')}
               </h2>
               <p className="text-lg lg:text-xl text-gray-300 leading-relaxed">
-                {isRTL 
-                  ? 'انضم إلى نادي خبير الربط الخاص واستمتع بمزايا حصرية تعزز من تجربتك المهنية وتوفر لك بيئة عمل استثنائية مع أحدث التقنيات والخدمات المتطورة.'
-                  : 'Join the exclusive Link Expert Club and enjoy premium benefits that enhance your professional experience and provide you with an exceptional work environment with the latest technologies and advanced services.'
-                }
+                {t('businessEnhancement.description')}
               </p>
             </motion.div>
             <motion.div 
@@ -585,11 +617,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Exclusive Services Section */}
-      <section id="services" className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+      {/* Our Services Section */}
+      <section id="services" className="py-20 lg:py-32 bg-gray-900 relative overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.3)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -598,9 +630,12 @@ const Index = () => {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 uppercase tracking-wider">
-              {isRTL ? 'الخدمات الحصرية' : 'EXCLUSIVE SERVICES'}
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 uppercase tracking-wider">
+              {t('services.title')}
             </h2>
+            <p className="text-xl text-amber-300 font-medium">
+              {t('services.subtitle')}
+            </p>
           </motion.div>
 
           <motion.div 
@@ -608,55 +643,66 @@ const Index = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={staggerChildren}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8"
+            className="max-w-6xl mx-auto"
           >
-            {[
-              {
-                icon: Target,
-                title: isRTL ? 'تفعيل الوجهات' : 'Destination Activation',
-                description: isRTL ? 'تفعيل وإدارة الوجهات بطريقة احترافية ومتطورة' : 'Professional and advanced destination activation and management'
-              },
-              {
-                icon: Car,
-                title: isRTL ? 'خدمة صف السيارات' : 'Link Expert Valet',
-                description: isRTL ? 'خدمة صف السيارات الفاخرة والاحترافية' : 'Premium and professional valet parking service'
-              },
-              {
-                icon: Clock,
-                title: isRTL ? 'الحجز المسبق' : 'Advanced Reservation',
-                description: isRTL ? 'نظام حجز مواقف مسبق ومتطور للغاية' : 'Highly advanced pre-parking booking system'
-              },
-              {
-                icon: Headphones,
-                title: isRTL ? 'مدير العلاقات' : 'Relationship Manager',
-                description: isRTL ? 'مدير علاقات مخصص ومتفرغ لخدمتك' : 'Dedicated relationship manager for your service'
-              },
-              {
-                icon: Zap,
-                title: isRTL ? 'خبير الربط الآن' : 'Link Expert Now',
-                description: isRTL ? 'خدمات فورية ومتطورة على مدار الساعة' : 'Instant and advanced services around the clock'
-              }
-            ].map((service, index) => (
-              <motion.div 
-                key={index}
-                variants={fadeInUp}
-                className="group text-center"
-              >
-                <Card className="h-full bg-white hover:bg-gradient-to-br hover:from-amber-50 hover:to-orange-50 transition-all duration-300 hover:shadow-2xl hover:scale-105 border-0 shadow-lg group">
-                  <CardContent className="p-6 lg:p-8">
-                    <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-full p-4 w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="h-8 w-8 text-amber-600" />
+            <div className="bg-gray-800 rounded-2xl p-8 lg:p-12 shadow-2xl border border-gray-700">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                {[
+                  {
+                    icon: '👥⚙️',
+                    title: t('services.categories.manpower.title'),
+                    services: t('services.categories.manpower.services', { returnObjects: true })
+                  },
+                  {
+                    icon: '🔧',
+                    title: t('services.categories.operation.title'),
+                    services: t('services.categories.operation.services', { returnObjects: true })
+                  },
+                  {
+                    icon: '🏢',
+                    title: t('services.categories.facility.title'),
+                    services: t('services.categories.facility.services', { returnObjects: true })
+                  },
+                  {
+                    icon: '📋⚙️',
+                    title: t('services.categories.projectManagement.title'),
+                    services: t('services.categories.projectManagement.services', { returnObjects: true })
+                  }
+                ].map((category, index) => (
+                  <motion.div 
+                    key={index}
+                    variants={fadeInUp}
+                    className="group"
+                  >
+                    <div className="bg-gray-700 rounded-xl p-6 hover:bg-gray-600 transition-all duration-300 border border-gray-600 group-hover:border-amber-400 group-hover:shadow-lg group-hover:shadow-amber-400/20">
+                      {/* Icon */}
+                      <div className="text-3xl mb-4 text-center">
+                        {category.icon}
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-lg font-bold text-white mb-2 text-center">
+                        {category.title}
+                      </h3>
+                      
+                      {/* Services List */}
+                      <div className="space-y-2">
+                        {(category.services as string[]).map((service: string, serviceIndex: number) => (
+                          <div key={serviceIndex} className="flex items-start space-x-2 rtl:space-x-reverse">
+                            <CheckCircle className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                            <div className="flex-1">
+                              <p className="text-sm text-gray-200 font-medium">
+                                {service}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-4 leading-tight">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -1003,13 +1049,21 @@ const Index = () => {
 
                   {/* Download Buttons */}
                   <div className="space-y-4">
-                    <Button 
+                    {/* <Button 
                       className="w-full bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-none border border-gray-600 hover:border-amber-500 transition-all duration-300"
                     >
                       <Download className="h-5 w-5 mr-2" />
                       {isRTL ? 'تحميل الملف الإعلامي' : 'Download the Media File'}
-                    </Button>
+                    </Button> */}
                     <Button 
+                      onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = '/src/assets/Link Expert_FACILITY_Company_Profile _2025.pdf';
+                        link.download = 'Link Expert_FACILITY_Company_Profile_2025.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                      }}
                       className="w-full bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-none border border-gray-600 hover:border-amber-500 transition-all duration-300"
                     >
                       <Download className="h-5 w-5 mr-2" />
@@ -1124,14 +1178,14 @@ const Index = () => {
                 }
               </p>
               <div className="flex space-x-4 rtl:space-x-reverse">
-                <Button 
+                {/* <Button 
                   variant="outline"
                   size="sm"
                   className="bg-transparent border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black"
                 >
                   <Download className="h-4 w-4 mr-1" />
                   {isRTL ? 'بروشور' : 'Brochure'}
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>

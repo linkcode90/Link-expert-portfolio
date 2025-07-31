@@ -15,77 +15,122 @@
   },
   "about": {
     "title": "YOUR GATEWAY TO EXCELLENCE",
-    "description": "Welcome to Link Expert – the ultra-advanced destination from Link Expert Company, crafted to offer a premier parking management experience and modern lifestyle with international standards and exceptional facilities, meticulously chosen.",
-    "description2": "We provide smart and advanced parking management solutions, focusing on innovation and cutting-edge technology to ensure a comfortable and secure experience for our clients."
+    "description": "At Link Expert, we take pride in our leadership in facility management and operations, driven by professionalism and innovation. We have successfully established, operated, and trained numerous inspiring projects across various sectors, and developed smart solutions and effective strategies that exceeded expectations and enhanced user experience.",
+    "description2": "We are committed to the highest standards of quality and transparency, working diligently to meet our clients' goals with precision and professionalism. We constantly strive to build long-term partnerships based on trust and shared success, and we look forward to a future filled with achievements and real value for our clients in everything we do."
   },
-  "features": {
-    "title": "INSPIRING VISTAS THAT ELEVATE CREATIVITY",
-    "subtitle": "Your journey to excellence begins here",
+  "projects": {
+    "title": "Our Projects KSA",
+    "subtitle": "Partners we worked with",
     "items": {
-      "officeMansions": {
-        "title": "Office Mansions",
-        "description": "Elegant workspaces"
+      "riyadhPark": {
+        "name": "Riyadh Park Mall",
+        "arabicName": "رياض بارك مول",
+        "location": "Riyadh"
       },
-      "boutiqueHotel": {
-        "title": "Boutique Hotel",
-        "description": "Luxury accommodation"
+      "laysenValley": {
+        "name": "Laysen Valley",
+        "arabicName": "",
+        "location": "Riyadh"
       },
-      "exclusiveClub": {
-        "title": "Link Exclusive Memberships Club",
-        "description": "Premium memberships"
+      "arriyadhGate": {
+        "name": "Arriyadh Gate",
+        "arabicName": "بوابة الرياض",
+        "location": "Riyadh"
       },
-      "privateAreas": {
-        "title": "Private Secure Areas",
-        "description": "Ultra security"
+      "majdoolTower": {
+        "name": "Majdool Tower",
+        "arabicName": "برج مجدول",
+        "location": "Riyadh"
       },
-      "prestigiousShops": {
-        "title": "Prestigious Brand Shops",
-        "description": "Luxury shopping"
+      "rixosObhur": {
+        "name": "Rixos Obhur",
+        "arabicName": "",
+        "location": "Jeddah"
       },
-      "fineDining": {
-        "title": "Fine Dining Restaurants",
-        "description": "Exceptional dining"
+      "panoramaMall": {
+        "name": "Panorama Mall",
+        "arabicName": "بانوراما مول",
+        "location": "Riyadh"
       },
-      "iconicArea": {
-        "title": "Iconic Area",
-        "description": "Prime location"
+      "wphQiddiya": {
+        "name": "WPH القدية",
+        "arabicName": "",
+        "location": "Qiddiya"
       },
-      "boutiqueParking": {
-        "title": "Boutique Parking",
-        "description": "Advanced solutions"
+      "northYard": {
+        "name": "North Yard",
+        "arabicName": "",
+        "location": "Riyadh"
+      },
+      "smartTown": {
+        "name": "Smart Town",
+        "arabicName": "",
+        "location": "Jeddah"
+      },
+      "oudSquare": {
+        "name": "Oud Square",
+        "arabicName": "",
+        "location": "Riyadh"
+      },
+      "sabqon": {
+        "name": "SABQON International Holding",
+        "arabicName": "سابقون الدولية القابضة",
+        "location": "Riyadh"
       }
     }
   },
   "businessEnhancement": {
     "title": "ENHANCE YOUR BUSINESS WITH LINK EXPERT CLUB",
-    "description": "Join the exclusive Link Expert Club and enjoy premium benefits that enhance your professional experience and provide you with an exceptional work environment with the latest technologies and advanced services."
+    "description": "At Link Expert, we take pride in our leadership in facility management and operations, driven by professionalism and innovation. We have successfully established, operated, and trained numerous inspiring projects across various sectors, and developed smart solutions and effective strategies that exceeded expectations and enhanced user experience. We are committed to the highest standards of quality and transparency, working diligently to meet our clients' goals with precision and professionalism. We constantly strive to build long-term partnerships based on trust and shared success, and we look forward to a future filled with achievements and real value for our clients in everything we do."
   },
   "boutiqueOffices": {
     "title": "BOUTIQUE OFFICES FOR THE ELITE",
     "description": "An unparalleled work experience where meticulously designed spaces merge with an atmosphere of luxury and distinction, providing you with an exceptional work environment that stimulates creativity and productivity."
   },
   "services": {
-    "title": "EXCLUSIVE SERVICES",
-    "items": {
-      "destinationActivation": {
-        "title": "Destination Activation",
-        "description": "Professional and advanced destination activation and management"
+    "title": "Our Services",
+    "subtitle": "خدماتنا",
+    "categories": {
+      "manpower": {
+        "title": "Manpower Supply",
+        "services": [
+          "Supply of technical specialists of various disciplines",
+          "Workers, roustabouts"
+        ]
       },
-      "valetParking": {
-        "title": "Link Expert Valet",
-        "description": "Premium and professional valet parking service"
+      "operation": {
+        "title": "Operation & Maintenance",
+        "services": [
+          "Operate Facility",
+          "Structure Maintenance",
+          "Maintenance Operation",
+          "Repair, Testing & Installation",
+          "Dewatering",
+          "Testing and Certification",
+          "Flange Management",
+          "Well Operations",
+          "Tubing Cleaning & Inspections"
+        ]
       },
-      "advancedReservation": {
-        "title": "Advanced Reservation",
-        "description": "Highly advanced pre-parking booking system"
+      "facility": {
+        "title": "Facility",
+        "services": [
+          "Material Delivery",
+          "Cleaning",
+          "Security Structure",
+          "Landscape",
+          "Security",
+          "Access Control"
+        ]
       },
-      "relationshipManager": {
-        "title": "Relationship Manager",
-        "description": "Dedicated relationship manager for your service"
-      },
-      "linkExpertNow": {
-        "title": "Link Expert Now",
-        "description": "Instant and advanced services around the clock"
+      "projectManagement": {
+        "title": "Project Management",
+        "services": [
+          "Turn-Key Project",
+          "Engineering Solutions",
+          "Piping Solutions",
+          "Manpower Provision"
+        ]
       }
     }
   },
