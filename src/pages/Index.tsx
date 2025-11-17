@@ -6,6 +6,32 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import LinkLogo from "@/assets/link logo 33.png";
+import riyadhParkLogo from "@/assets/riyadh-park.jpeg";
+import laysenValleyLogo from "@/assets/laysen-valley.jpeg";
+import arriyadhGateLogo from "@/assets/arriyadh-gate-alt.jpeg";
+import majdoulTowerLogo from "@/assets/majdoul-tower.jpeg";
+import rixosHotelsLogo from "@/assets/rixos-hotels.jpeg";
+import panoramaLogo from "@/assets/panorama.jpeg";
+import qiddiyaLogo from "@/assets/qiddiya.jpeg";
+import northYardLogo from "@/assets/north-yard.jpeg";
+import modonLogo from "@/assets/modon.jpeg";
+import oudSquareLogo from "@/assets/oud-square.jpeg";
+import riyadhHoldingLogo from "@/assets/riyadh-holding.jpeg";
+import developmentAuthSupportLogo from "@/assets/devolopment auth support center.jpeg";
+import sikkahLogo from "@/assets/sikkah.png";
+import industrialCenterLogo from "@/assets/industrial center.jpeg";
+import servcorpLogo from "@/assets/servcorp.jpeg";
+import omAliLogo from "@/assets/omali.jpeg";
+import saudiEximLogo from "@/assets/saudi exim.jpeg";
+import ministryOfEnergyLogo from "@/assets/ministryofenergy.jpeg";
+import rematAlRiyadhLogo from "@/assets/remat al-riyadh.jpeg";
+import awqadLogo from "@/assets/awtad.jpeg";
+import iotLogo from "@/assets/iot.jpeg";
+import alBawaniLogo from "@/assets/al-bawani.jpeg";
+import alFuttaimLogo from "@/assets/al-futtaim.jpeg";
+import tajDhabiLogo from "@/assets/taj-dhabi.jpeg";
+import tawabeqLogo from "@/assets/tawabeq.jpeg";
+import urbanconLogo from "@/assets/urbancon.jpeg";
 import {
   ArrowRight,
   Zap,
@@ -479,67 +505,78 @@ Required Services: ${formData.requiredServices}`;
                   name: t('projects.items.riyadhPark.name'),
                   location: t('projects.items.riyadhPark.location'),
                   arabicName: t('projects.items.riyadhPark.arabicName'),
-                  icon: '🏢'
+                  icon: '🏢',
+                  logo: riyadhParkLogo
                 },
                 {
                   name: t('projects.items.laysenValley.name'),
                   location: t('projects.items.laysenValley.location'),
                   arabicName: t('projects.items.laysenValley.arabicName'),
-                  icon: '🌿'
+                  icon: '🌿',
+                  logo: laysenValleyLogo
                 },
                 {
                   name: t('projects.items.arriyadhGate.name'),
                   location: t('projects.items.arriyadhGate.location'),
                   arabicName: t('projects.items.arriyadhGate.arabicName'),
-                  icon: '🏛️'
+                  icon: '🏛️',
+                  logo: arriyadhGateLogo
                 },
                 {
                   name: t('projects.items.majdoolTower.name'),
                   location: t('projects.items.majdoolTower.location'),
                   arabicName: t('projects.items.majdoolTower.arabicName'),
-                  icon: '🏙️'
+                  icon: '🏙️',
+                  logo: majdoulTowerLogo
                 },
                 {
                   name: t('projects.items.rixosObhur.name'),
                   location: t('projects.items.rixosObhur.location'),
                   arabicName: t('projects.items.rixosObhur.arabicName'),
-                  icon: '🏖️'
+                  icon: '🏖️',
+                  logo: rixosHotelsLogo
                 },
                 {
                   name: t('projects.items.panoramaMall.name'),
                   location: t('projects.items.panoramaMall.location'),
                   arabicName: t('projects.items.panoramaMall.arabicName'),
-                  icon: '🛍️'
+                  icon: '🛍️',
+                  logo: panoramaLogo
                 },
                 {
                   name: t('projects.items.wphQiddiya.name'),
                   location: t('projects.items.wphQiddiya.location'),
                   arabicName: t('projects.items.wphQiddiya.arabicName'),
-                  icon: '🎡'
+                  icon: '🎡',
+                  logo: qiddiyaLogo
                 },
                 {
                   name: t('projects.items.northYard.name'),
                   location: t('projects.items.northYard.location'),
                   arabicName: t('projects.items.northYard.arabicName'),
-                  icon: '🏢'
+                  icon: '🏢',
+                  logo: northYardLogo
                 },
                 {
                   name: t('projects.items.smartTown.name'),
                   location: t('projects.items.smartTown.location'),
                   arabicName: t('projects.items.smartTown.arabicName'),
-                  icon: '⚙️'
+                  icon: '⚙️',
+                  logo: modonLogo
                 },
                 {
                   name: t('projects.items.oudSquare.name'),
                   location: t('projects.items.oudSquare.location'),
                   arabicName: t('projects.items.oudSquare.arabicName'),
-                  icon: '🏛️'
+                  icon: '🏛️',
+                  logo: oudSquareLogo
                 },
                 {
                   name: t('projects.items.sabqon.name'),
                   location: t('projects.items.sabqon.location'),
-                  arabicName: t('projects.items.sabqon.arabicName'),
-                  icon: '🏢'
+                  // arabicName: t('projects.items.sabqon.arabicName'),
+                  icon: '🏢',
+                  logo: riyadhHoldingLogo
                 }
               ].map((project, index) => (
                 <motion.div 
@@ -549,9 +586,14 @@ Required Services: ${formData.requiredServices}`;
                 >
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-5 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-white/20 border border-white/20 group-hover:border-amber-400 group-hover:shadow-amber-400/20">
                     <div className="flex items-center space-x-4 rtl:space-x-reverse">
-                      {/* Project Icon */}
-                      <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-full p-3 w-12 h-12 flex items-center justify-center text-white text-lg font-bold shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        {project.icon}
+                      {/* Project Logo */}
+                      <div className="bg-white rounded-lg p-2 w-16 h-16 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                        <img
+                          src={project.logo}
+                          alt={project.name}
+                          className="max-w-full max-h-full w-auto h-auto object-contain"
+                          loading="lazy"
+                        />
                       </div>
                       
                       {/* Project Info */}
@@ -654,23 +696,32 @@ Required Services: ${formData.requiredServices}`;
           >
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 lg:gap-6">
               {[
-                { name: 'Laysen Valley', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.49.jpeg' },
-                { name: 'Qiddiya', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.50.jpeg' },
-                { name: 'Riyadh Park', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.50 (1).jpeg' },
-                { name: 'Panorama', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.51.jpeg' },
-                { name: 'Majdoul Tower', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.51 (1).jpeg' },
-                { name: 'Oud Square', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.51 (2).jpeg' },
-                { name: 'North Yard', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.52.jpeg' },
-                { name: 'Arriyadh Gate', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.52 (1).jpeg' },
-                { name: 'Rixos Hotels', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.52 (2).jpeg' },
-                { name: 'Riyadh Holding', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.53.jpeg' },
-                { name: 'MODON', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.53 (1).jpeg' },
-                { name: 'Al Bawani', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.53 (2).jpeg' },
-                { name: 'UCC', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.54.jpeg' },
-                { name: 'Tawaqeq', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.39.07.jpeg' },
-                { name: 'Al Futtaim', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.42.52.jpeg' },
-                { name: 'Taj Dubai', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.43.45.jpeg' },
-                { name: 'Real Estate', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.49.00.jpeg' },
+                { name: 'Laysen Valley', image: laysenValleyLogo },
+                { name: 'Qiddiya', image: qiddiyaLogo },
+                { name: 'Riyadh Park', image: riyadhParkLogo },
+                { name: 'Panorama', image: panoramaLogo },
+                { name: 'Majdoul Tower', image: majdoulTowerLogo },
+                { name: 'Oud Square', image: oudSquareLogo },
+                { name: 'North Yard', image: northYardLogo },
+                { name: 'Arriyadh Gate', image: arriyadhGateLogo },
+                { name: 'Rixos Hotels', image: rixosHotelsLogo },
+                { name: 'Riyadh Holding', image: riyadhHoldingLogo },
+                { name: 'MODON', image: modonLogo },
+                { name: 'Al Bawani', image: alBawaniLogo },
+                { name: 'UrbanCon', image: urbanconLogo },
+                { name: 'Tawabeq', image: tawabeqLogo },
+                { name: 'Al Futtaim', image: alFuttaimLogo },
+                { name: 'Taj Dhabi', image: tajDhabiLogo },
+                { name: 'Development Authorities Support Center', image: developmentAuthSupportLogo },
+                { name: 'Sikkah', image: sikkahLogo },
+                { name: 'Industrial Center', image: industrialCenterLogo },
+                { name: 'SERVcorp', image: servcorpLogo },
+                { name: 'Om Ali Oriental Restaurant', image: omAliLogo },
+                { name: 'Saudi EXIM', image: saudiEximLogo },
+                { name: 'Ministry of Energy', image: ministryOfEnergyLogo },
+                { name: 'Remat Al-Riyadh', image: rematAlRiyadhLogo },
+                { name: 'Awqad', image: awqadLogo },
+                { name: 'iot²', image: iotLogo },
               ].map((partner, index) => (
                 <motion.div
                   key={index}
