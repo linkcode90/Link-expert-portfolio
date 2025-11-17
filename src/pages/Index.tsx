@@ -620,7 +620,76 @@ Required Services: ${formData.requiredServices}`;
         </div>
       </section>
 
+      {/* Partners in Success Section */}
+      <section className="py-20 lg:py-32 bg-gray-900 text-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.3)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 uppercase tracking-wider">
+              {isRTL ? 'شركاء النجاح' : 'PARTNERS IN SUCCESS'}
+            </h2>
+            <p className="text-xl text-amber-300 max-w-2xl mx-auto font-medium">
+              {isRTL 
+                ? 'نفتخر بشراكاتنا الاستراتيجية مع أبرز الشركات والمشاريع الرائدة في المملكة'
+                : 'We are proud of our strategic partnerships with leading companies and projects in the Kingdom'
+              }
+            </p>
+          </motion.div>
 
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={staggerChildren}
+            className="max-w-7xl mx-auto"
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 lg:gap-6">
+              {[
+                { name: 'Laysen Valley', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.49.jpeg' },
+                { name: 'Qiddiya', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.50.jpeg' },
+                { name: 'Riyadh Park', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.50 (1).jpeg' },
+                { name: 'Panorama', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.51.jpeg' },
+                { name: 'Majdoul Tower', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.51 (1).jpeg' },
+                { name: 'Oud Square', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.51 (2).jpeg' },
+                { name: 'North Yard', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.52.jpeg' },
+                { name: 'Arriyadh Gate', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.52 (1).jpeg' },
+                { name: 'Rixos Hotels', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.52 (2).jpeg' },
+                { name: 'Riyadh Holding', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.53.jpeg' },
+                { name: 'MODON', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.53 (1).jpeg' },
+                { name: 'Al Bawani', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.53 (2).jpeg' },
+                { name: 'UCC', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.38.54.jpeg' },
+                { name: 'Tawaqeq', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.39.07.jpeg' },
+                { name: 'Al Futtaim', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.42.52.jpeg' },
+                { name: 'Taj Dubai', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.43.45.jpeg' },
+                { name: 'Real Estate', image: '/src/assets/WhatsApp Image 2025-11-17 at 15.49.00.jpeg' },
+              ].map((partner, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className="group"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 lg:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 hover:border-amber-400 h-full flex items-center justify-center min-h-[120px] group-hover:scale-105 group-hover:bg-white/20">
+                    <img
+                      src={partner.image}
+                      alt={partner.name}
+                      className="max-w-full max-h-14 lg:max-h-18 w-auto h-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Our Services Section */}
       <section id="services" className="py-20 lg:py-32 bg-gray-900 relative overflow-hidden">
@@ -658,10 +727,10 @@ Required Services: ${formData.requiredServices}`;
                     variants={fadeInUp}
                     className="group"
                   >
-                    <div className="bg-gray-700 rounded-xl p-6 hover:bg-gray-600 transition-all duration-300 border border-gray-600 group-hover:border-amber-400 group-hover:shadow-lg group-hover:shadow-amber-400/20 h-full flex items-center">
+                    <div className="bg-gray-700 rounded-xl p-6 hover:bg-gray-600 transition-all duration-300 border border-gray-600 group-hover:border-amber-400 group-hover:shadow-lg group-hover:shadow-amber-400/20 h-full flex items-center min-h-[80px]">
                       <div className="flex items-start space-x-3 rtl:space-x-reverse w-full">
                         <CheckCircle className="h-5 w-5 text-amber-400 mt-0.5 flex-shrink-0" />
-                        <p className="text-base text-gray-200 font-medium">
+                        <p className="text-base text-gray-200 font-medium leading-relaxed">
                           {service}
                         </p>
                       </div>
