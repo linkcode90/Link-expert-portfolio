@@ -16,6 +16,7 @@ import qiddiyaLogo from "@/assets/qiddiya.jpeg";
 import northYardLogo from "@/assets/north-yard.jpeg";
 import modonLogo from "@/assets/modon.jpeg";
 import oudSquareLogo from "@/assets/oud-square.jpeg";
+import oudSquarePngLogo from "@/assets/Oud Square.png";
 import riyadhHoldingLogo from "@/assets/riyadh-holding.jpeg";
 import developmentAuthSupportLogo from "@/assets/devolopment auth support center.jpeg";
 import sikkahLogo from "@/assets/sikkah.png";
@@ -32,6 +33,9 @@ import alFuttaimLogo from "@/assets/al-futtaim.jpeg";
 import tajDhabiLogo from "@/assets/taj-dhabi.jpeg";
 import tawabeqLogo from "@/assets/tawabeq.jpeg";
 import urbanconLogo from "@/assets/urbancon.jpeg";
+import darWardLogo from "@/assets/dar ward.jpeg";
+import bydLogo from "@/assets/byd.jpeg";
+import alraedahFinanceLogo from "@/assets/alraedah finance.jpeg";
 import {
   ArrowRight,
   Zap,
@@ -82,6 +86,20 @@ const Index = () => {
   
   const currentLanguage = i18n.language;
   const isRTL = currentLanguage === 'ar';
+
+  // Company logos map for reviews
+  const companyLogosMap: { [key: string]: string } = {
+    'Arriyadh Gate': arriyadhGateLogo,
+    'بوابة الرياض': arriyadhGateLogo,
+    'Majdoul Tower': majdoulTowerLogo,
+    'برج مجدول': majdoulTowerLogo,
+    'Laysen Valley': laysenValleyLogo,
+    'ليسن فالي': laysenValleyLogo,
+    'Riyadh Park': riyadhParkLogo,
+    'الرياض بارك': riyadhParkLogo,
+    'Riyadh Park Mall': riyadhParkLogo,
+    'رياض بارك مول': riyadhParkLogo,
+  };
 
   // Scroll handling
   useEffect(() => {
@@ -223,10 +241,10 @@ Required Services: ${formData.requiredServices}`;
                 {t('nav.services')}
               </button>
               <button 
-                onClick={() => scrollToSection('gallery')}
+                onClick={() => scrollToSection('partners')}
                 className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
               >
-                {isRTL ? 'استكشف خبير الربط' : 'Discover Link Expert'}
+                {isRTL ? 'شركاء النجاح' : 'Partners in Success'}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
@@ -287,10 +305,10 @@ Required Services: ${formData.requiredServices}`;
                 {t('nav.services')}
               </button>
               <button 
-                onClick={() => scrollToSection('gallery')}
+                onClick={() => scrollToSection('partners')}
                 className={`block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium ${isRTL ? 'text-right w-full' : 'text-left'}`}
               >
-                {isRTL ? 'استكشف خبير الربط' : 'Discover Link Expert'}
+                {isRTL ? 'شركاء النجاح' : 'Partners in Success'}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
@@ -469,156 +487,6 @@ Required Services: ${formData.requiredServices}`;
         </div>
       </section>
 
-      {/* Our Projects KSA Section */}
-      <section id="gallery" className="py-20 lg:py-32 bg-gray-900 relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.3)'}}></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
-        
-        <div className="relative z-10 container mx-auto px-4 lg:px-8">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-8 uppercase tracking-wider">
-              {t('projects.title')}
-            </h2>
-            <p className="text-xl text-amber-300 max-w-2xl mx-auto mb-12 font-medium">
-              {t('projects.subtitle')}
-            </p>
-          </motion.div>
-
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerChildren}
-            className="max-w-7xl mx-auto"
-          >
-            {/* Project Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
-              {[
-                {
-                  name: t('projects.items.riyadhPark.name'),
-                  location: t('projects.items.riyadhPark.location'),
-                  arabicName: t('projects.items.riyadhPark.arabicName'),
-                  icon: '🏢',
-                  logo: riyadhParkLogo
-                },
-                {
-                  name: t('projects.items.laysenValley.name'),
-                  location: t('projects.items.laysenValley.location'),
-                  arabicName: t('projects.items.laysenValley.arabicName'),
-                  icon: '🌿',
-                  logo: laysenValleyLogo
-                },
-                {
-                  name: t('projects.items.arriyadhGate.name'),
-                  location: t('projects.items.arriyadhGate.location'),
-                  arabicName: t('projects.items.arriyadhGate.arabicName'),
-                  icon: '🏛️',
-                  logo: arriyadhGateLogo
-                },
-                {
-                  name: t('projects.items.majdoolTower.name'),
-                  location: t('projects.items.majdoolTower.location'),
-                  arabicName: t('projects.items.majdoolTower.arabicName'),
-                  icon: '🏙️',
-                  logo: majdoulTowerLogo
-                },
-                {
-                  name: t('projects.items.rixosObhur.name'),
-                  location: t('projects.items.rixosObhur.location'),
-                  arabicName: t('projects.items.rixosObhur.arabicName'),
-                  icon: '🏖️',
-                  logo: rixosHotelsLogo
-                },
-                {
-                  name: t('projects.items.panoramaMall.name'),
-                  location: t('projects.items.panoramaMall.location'),
-                  arabicName: t('projects.items.panoramaMall.arabicName'),
-                  icon: '🛍️',
-                  logo: panoramaLogo
-                },
-                {
-                  name: t('projects.items.wphQiddiya.name'),
-                  location: t('projects.items.wphQiddiya.location'),
-                  arabicName: t('projects.items.wphQiddiya.arabicName'),
-                  icon: '🎡',
-                  logo: qiddiyaLogo
-                },
-                {
-                  name: t('projects.items.northYard.name'),
-                  location: t('projects.items.northYard.location'),
-                  arabicName: t('projects.items.northYard.arabicName'),
-                  icon: '🏢',
-                  logo: northYardLogo
-                },
-                {
-                  name: t('projects.items.smartTown.name'),
-                  location: t('projects.items.smartTown.location'),
-                  arabicName: t('projects.items.smartTown.arabicName'),
-                  icon: '⚙️',
-                  logo: modonLogo
-                },
-                {
-                  name: t('projects.items.oudSquare.name'),
-                  location: t('projects.items.oudSquare.location'),
-                  arabicName: t('projects.items.oudSquare.arabicName'),
-                  icon: '🏛️',
-                  logo: oudSquareLogo
-                },
-                {
-                  name: t('projects.items.sabqon.name'),
-                  location: t('projects.items.sabqon.location'),
-                  // arabicName: t('projects.items.sabqon.arabicName'),
-                  icon: '🏢',
-                  logo: riyadhHoldingLogo
-                }
-              ].map((project, index) => (
-                <motion.div 
-                  key={index}
-                  variants={fadeInUp}
-                  className="group"
-                >
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-5 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-white/20 border border-white/20 group-hover:border-amber-400 group-hover:shadow-amber-400/20">
-                    <div className="flex items-center space-x-4 rtl:space-x-reverse">
-                      {/* Project Logo */}
-                      <div className="bg-white rounded-lg p-2 w-16 h-16 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                        <img
-                          src={project.logo}
-                          alt={project.name}
-                          className="max-w-full max-h-full w-auto h-auto object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                      
-                      {/* Project Info */}
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-sm lg:text-base font-bold text-white leading-tight mb-1 group-hover:text-amber-300 transition-colors duration-300">
-                          {project.name}
-                        </h3>
-                        {project.arabicName && (
-                          <p className="text-xs lg:text-sm text-amber-300 leading-tight mb-0.5 font-medium">
-                            {project.arabicName}
-                          </p>
-                        )}
-                        <p className="text-xs text-gray-300 font-medium">
-                          {project.location}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Enhance Your Business Section */}
       <section className="py-20 lg:py-32 bg-gray-900 text-white relative overflow-hidden">
         {/* Background Image */}
@@ -664,15 +532,15 @@ Required Services: ${formData.requiredServices}`;
       </section>
 
       {/* Partners in Success Section */}
-      <section className="py-20 lg:py-32 bg-gray-900 text-white relative overflow-hidden">
+      <section id="partners" className="py-20 lg:py-32 bg-gray-900 text-white relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.3)'}}></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
             className="text-center mb-16"
           >
@@ -701,7 +569,7 @@ Required Services: ${formData.requiredServices}`;
                 { name: 'Riyadh Park', image: riyadhParkLogo },
                 { name: 'Panorama', image: panoramaLogo },
                 { name: 'Majdoul Tower', image: majdoulTowerLogo },
-                { name: 'Oud Square', image: oudSquareLogo },
+                { name: 'Oud Square', image: oudSquarePngLogo },
                 { name: 'North Yard', image: northYardLogo },
                 { name: 'Arriyadh Gate', image: arriyadhGateLogo },
                 { name: 'Rixos Hotels', image: rixosHotelsLogo },
@@ -722,6 +590,9 @@ Required Services: ${formData.requiredServices}`;
                 { name: 'Remat Al-Riyadh', image: rematAlRiyadhLogo },
                 { name: 'Awqad', image: awqadLogo },
                 { name: 'iot²', image: iotLogo },
+                { name: 'Dar Ward', image: darWardLogo },
+                { name: 'BYD Al-Futtaim', image: bydLogo },
+                { name: 'Alraedah Finance', image: alraedahFinanceLogo },
               ].map((partner, index) => (
                 <motion.div
                   key={index}
@@ -735,11 +606,11 @@ Required Services: ${formData.requiredServices}`;
                       className="max-w-full max-h-14 lg:max-h-18 w-auto h-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                       loading="lazy"
                     />
-                  </div>
+                </div>
                 </motion.div>
               ))}
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
         </div>
       </section>
 
@@ -749,20 +620,20 @@ Required Services: ${formData.requiredServices}`;
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.3)'}}></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
             className="text-center mb-16"
-          >
+            >
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 uppercase tracking-wider">
               {t('reviews.title')}
-            </h2>
+              </h2>
             <p className="text-xl text-amber-300 font-medium">
               {t('reviews.subtitle')}
-            </p>
-          </motion.div>
+              </p>
+            </motion.div>
 
           <motion.div 
             initial="hidden"
@@ -782,7 +653,7 @@ Required Services: ${formData.requiredServices}`;
                     {/* Quote Icon */}
                     <div className="mb-4">
                       <Quote className="h-8 w-8 text-amber-400" />
-                    </div>
+          </div>
                     
                     {/* Review Text */}
                     <p className="text-gray-200 text-base lg:text-lg leading-relaxed mb-6 flex-grow">
@@ -793,7 +664,7 @@ Required Services: ${formData.requiredServices}`;
                     <div className="flex items-center space-x-4 rtl:space-x-reverse pt-4 border-t border-white/20">
                       <div className="bg-white rounded-lg p-3 flex-shrink-0">
                         <img
-                          src={reviewItem.logo}
+                          src={companyLogosMap[reviewItem.company] || reviewItem.logo}
                           alt={reviewItem.company}
                           className="h-12 w-auto object-contain max-w-[120px]"
                           loading="lazy"
@@ -858,8 +729,8 @@ Required Services: ${formData.requiredServices}`;
                       <div className="flex items-start space-x-3 rtl:space-x-reverse w-full">
                         <CheckCircle className="h-5 w-5 text-amber-400 mt-0.5 flex-shrink-0" />
                         <p className="text-base text-gray-200 font-medium leading-relaxed">
-                          {service}
-                        </p>
+                                {service}
+                              </p>
                       </div>
                     </div>
                   </motion.div>
@@ -1344,10 +1215,10 @@ Required Services: ${formData.requiredServices}`;
                 </li>
                 <li>
                   <button 
-                    onClick={() => scrollToSection('gallery')}
+                    onClick={() => scrollToSection('partners')}
                     className="hover:text-amber-400 transition-colors duration-200 text-sm"
                   >
-                    {isRTL ? 'استكشف خبير الربط' : 'Discover Link Expert'}
+                    {isRTL ? 'شركاء النجاح' : 'Partners in Success'}
                   </button>
                 </li>
                 <li>
