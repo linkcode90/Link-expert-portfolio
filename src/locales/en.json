@@ -134,6 +134,32 @@
       "brochure": "Explore Us"
     }
   },
+  "reviews": {
+    "title": "Our Partners' Reviews",
+    "subtitle": "What Our Clients Say About Us",
+    "items": [
+      {
+        "company": "Arriyadh Gate",
+        "logo": "/src/assets/WhatsApp Image 2025-11-17 at 15.38.52 (1).jpeg",
+        "review": "Your service is excellent and honestly I was surprised by the message after you delivered the car, and even when I requested the car, the staff were very respectful and polite. Premium service at an unbeatable price. Thank you"
+      },
+      {
+        "company": "Majdoul Tower",
+        "logo": "/src/assets/WhatsApp Image 2025-11-17 at 15.38.51 (1).jpeg",
+        "review": "Excellent administrative performance and exceptional customer care. Please convey my greetings to all Link Expert members"
+      },
+      {
+        "company": "Laysen Valley",
+        "logo": "/src/assets/WhatsApp Image 2025-11-17 at 15.38.49.jpeg",
+        "review": "Best staff, always smiling and welcoming. Thank the management for these employees"
+      },
+      {
+        "company": "Riyadh Park",
+        "logo": "/src/assets/WhatsApp Image 2025-11-17 at 15.38.50 (1).jpeg",
+        "review": "The experience was excellent and the prices are very reasonable"
+      }
+    ]
+  },
   "privacy": {
     "title": "Usage and Refund Policy",
     "subtitle": "(LINK EXPERT)",

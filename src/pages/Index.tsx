@@ -33,6 +33,7 @@ import {
   Briefcase,
   Headphones,
   ChevronDown,
+  Quote,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -683,6 +684,81 @@ Required Services: ${formData.requiredServices}`;
                       className="max-w-full max-h-14 lg:max-h-18 w-auto h-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                       loading="lazy"
                     />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-20 lg:py-32 bg-gray-900 text-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.3)'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 uppercase tracking-wider">
+              {t('reviews.title')}
+            </h2>
+            <p className="text-xl text-amber-300 font-medium">
+              {t('reviews.subtitle')}
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={staggerChildren}
+            className="max-w-7xl mx-auto"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {(t('reviews.items', { returnObjects: true }) as Array<{company: string, logo: string, review: string}>).map((reviewItem, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className="group"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 hover:border-amber-400 h-full flex flex-col">
+                    {/* Quote Icon */}
+                    <div className="mb-4">
+                      <Quote className="h-8 w-8 text-amber-400" />
+                    </div>
+                    
+                    {/* Review Text */}
+                    <p className="text-gray-200 text-base lg:text-lg leading-relaxed mb-6 flex-grow">
+                      "{reviewItem.review}"
+                    </p>
+                    
+                    {/* Company Logo */}
+                    <div className="flex items-center space-x-4 rtl:space-x-reverse pt-4 border-t border-white/20">
+                      <div className="bg-white rounded-lg p-3 flex-shrink-0">
+                        <img
+                          src={reviewItem.logo}
+                          alt={reviewItem.company}
+                          className="h-12 w-auto object-contain max-w-[120px]"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold text-lg">
+                          {reviewItem.company}
+                        </h4>
+                        <div className="flex items-center space-x-1 rtl:space-x-reverse mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}
