@@ -42,6 +42,16 @@ const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    projectLocation: '',
+    phone: '',
+    email: '',
+    requiredServices: '',
+    projectType: '',
+    projectName: '',
+    parentCompany: ''
+  });
   
   const currentLanguage = i18n.language;
   const isRTL = currentLanguage === 'ar';
@@ -77,6 +87,46 @@ const Index = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
+  };
+
+  // Handle form input change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission - open mailto link
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    const email = 'info@link-expert.sa';
+    const subject = isRTL 
+      ? `طلب خدمة جديد من ${formData.name}`
+      : `New Service Request from ${formData.name}`;
+    
+    const body = isRTL
+      ? `الاسم: ${formData.name}
+البريد الإلكتروني: ${formData.email}
+رقم الهاتف: ${formData.phone}
+موقع المشروع: ${formData.projectLocation}
+نوع المشروع: ${formData.projectType}
+اسم المشروع: ${formData.projectName}
+اسم الشركة الأم: ${formData.parentCompany}
+الخدمات المطلوبة: ${formData.requiredServices}`
+      : `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Project Location: ${formData.projectLocation}
+Project Type: ${formData.projectType}
+Project Name: ${formData.projectName}
+Parent Company: ${formData.parentCompany}
+Required Services: ${formData.requiredServices}`;
+
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
   };
 
   // Animation variants
@@ -872,11 +922,14 @@ const Index = () => {
               </p>
 
               {/* Contact Form */}
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       placeholder={isRTL ? 'الاسم' : 'Name'}
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
                       required
@@ -884,8 +937,11 @@ const Index = () => {
                   </div>
                   <div>
                     <input
-                      type="text"
-                      placeholder={isRTL ? 'البلد' : 'Country'}
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder={isRTL ? 'البريد الإلكتروني' : 'Email'}
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
                       required
                     />
@@ -893,6 +949,9 @@ const Index = () => {
                   <div>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       placeholder={isRTL ? 'رقم الهاتف' : 'Phone Number'}
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
                       required
@@ -900,8 +959,44 @@ const Index = () => {
                   </div>
                   <div>
                     <input
-                      type="email"
-                      placeholder={isRTL ? 'البريد الإلكتروني' : 'Email'}
+                      type="text"
+                      name="projectLocation"
+                      value={formData.projectLocation}
+                      onChange={handleInputChange}
+                      placeholder={isRTL ? 'موقع المشروع' : 'Project Location'}
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleInputChange}
+                      placeholder={isRTL ? 'نوع المشروع' : 'Project Type'}
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="projectName"
+                      value={formData.projectName}
+                      onChange={handleInputChange}
+                      placeholder={isRTL ? 'اسم المشروع' : 'Project Name'}
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="parentCompany"
+                      value={formData.parentCompany}
+                      onChange={handleInputChange}
+                      placeholder={isRTL ? 'اسم الشركة الأم' : 'Parent Company Name'}
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
                       required
                     />
@@ -909,9 +1004,13 @@ const Index = () => {
                 </div>
                 <div>
                   <textarea
-                    placeholder={isRTL ? 'الرسالة' : 'Message'}
+                    name="requiredServices"
+                    value={formData.requiredServices}
+                    onChange={handleInputChange}
+                    placeholder={isRTL ? 'الخدمات المطلوبة' : 'Required Services'}
                     rows={4}
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 resize-none"
+                    required
                   ></textarea>
                 </div>
                 <Button 
