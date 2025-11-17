@@ -364,7 +364,7 @@ const Index = () => {
                   {isRTL ? 'موقعنا' : 'Our Location'}
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  {isRTL ? 'الرياض - حي الملقا' : 'Riyadh - Al Malqa'}
+                  {isRTL ? 'الرياض ، أم الحمام الغربي ، ليسن فالي' : 'Riyadh, um alhammam District, Laysen Valley Office'}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse">
@@ -1017,10 +1017,7 @@ const Index = () => {
                             {isRTL ? 'العنوان' : 'Address'}
                           </h5>
                           <p className="text-gray-400">
-                            {isRTL 
-                              ? 'الرياض، طريق الأمير تركي بن عبدالعزيز الأول، حي الملقا، الساحة الشمالية لشركة خبير الربط'
-                              : 'Riyadh, Prince Turki bin Abdulaziz Al Awwal Street, Al Malqa District, North Yard by Link Expert'
-                            }
+                            {t('office.address.value')}
                           </p>
                         </div>
                       </div>
@@ -1152,7 +1149,7 @@ const Index = () => {
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                   <MapPin className="h-4 w-4 text-amber-400" />
                   <p className="text-sm">
-                    {isRTL ? 'الرياض، حي الملقا' : 'Riyadh, Al Malqa'}
+                    {t('office.address.value')}
                   </p>
                 </div>
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">

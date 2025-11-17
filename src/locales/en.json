@@ -152,7 +152,7 @@
     "location": "RIYADH",
     "address": {
       "title": "Address",
-      "value": "Riyadh, Prince Turki bin Abdulaziz Al Awwal Street, Al Malqa District, North Yard by Link Expert"
+      "value": "Riyadh, um alhammam District, Laysen Valley Office"
     },
     "email": {
       "title": "Email",
@@ -160,7 +160,7 @@
     },
     "phone": {
       "title": "Centralized Contact Center",
-      "value": "+966 920 0204 24"
+      "value": "+966 9200 13846"
     },
     "downloads": {
       "mediaFile": "Download the Media File",
@@ -207,7 +207,7 @@
     "contact_title": "3. Contact & Support",
     "contact_intro": "To request a refund or cancel a service:",
     "email": "Email: info@link-expert.sa",
-    "phone": "Customer Support: +966-920013846",
+    "phone": "Customer Support: +966 9200 13846",
     "response_time": "We aim to respond within 2 business days."
   },
   "footer": {
