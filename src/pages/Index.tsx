@@ -143,7 +143,7 @@ const Index = () => {
                 onClick={() => scrollToSection('services')}
                 className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
               >
-                {isRTL ? 'حقق أحلامك' : 'Fulfill Your Dreams'}
+                {t('nav.services')}
               </button>
               <button 
                 onClick={() => scrollToSection('gallery')}
@@ -207,7 +207,7 @@ const Index = () => {
                 onClick={() => scrollToSection('services')}
                 className={`block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium ${isRTL ? 'text-right w-full' : 'text-left'}`}
               >
-                {isRTL ? 'حقق أحلامك' : 'Fulfill Your Dreams'}
+                {t('nav.services')}
               </button>
               <button 
                 onClick={() => scrollToSection('gallery')}
@@ -289,7 +289,7 @@ const Index = () => {
               className="text-lg lg:text-xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 text-center"
             >
               {isRTL 
-                ? 'انعم بتفرد المكان.. وتميز الكيان في تجربة إدارة مواقف فائقة الدقة في وسط الرياض الجديد'
+                ? 'انعم بتفرد المكان.. وتميز الكيان في تجربة إدارة مواقف فائقة الدقة في أنحاء المملكة العربية السعودية'
                 : 'Experience the uniqueness of place.. and excellence in ultra-precise parking management in the heart of new Riyadh'
               }
             </motion.p>
@@ -620,6 +620,22 @@ const Index = () => {
                 ))}
               </div>
             </div>
+            
+            {/* Request Service Button */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeInUp}
+              className="mt-8 text-center"
+            >
+              <Button 
+                onClick={() => window.open('https://link-expert.sa/external/request-service', '_blank')}
+                className="bg-amber-600 hover:bg-amber-700 text-white px-10 py-4 text-lg font-semibold rounded-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0"
+              >
+                {isRTL ? 'طلب خدمة' : 'Request a Service'}
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -1010,7 +1026,7 @@ const Index = () => {
               </p>
               <p className="text-gray-400 text-sm">
                 {isRTL 
-                  ? 'استمتع بالتفرد والتميز في تجربة إدارة المواقف الفاخرة في وسط الرياض الجديد'
+                  ? 'استمتع بالتفرد والتميز في تجربة إدارة المواقف الفاخرة في أنحاء المملكة العربية السعودية'
                   : 'Enjoy the uniqueness and excellence in luxury parking management experience in the new Riyadh downtown'
                 }
               </p>
@@ -1035,7 +1051,7 @@ const Index = () => {
                     onClick={() => scrollToSection('services')}
                     className="hover:text-amber-400 transition-colors duration-200 text-sm"
                   >
-                    {isRTL ? 'حقق أحلامك' : 'Fulfill Your Dreams'}
+                    {t('nav.services')}
                   </button>
                 </li>
                 <li>
