@@ -570,52 +570,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Boutique Offices Section */}
-      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=1500&q=80')`, filter: 'brightness(0.5)'}}></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
-        <div className="relative z-10 container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInLeft}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg p-8 shadow-2xl">
-                <div className="text-center space-y-6">
-                  <Building className="h-16 w-16 mx-auto text-amber-600" />
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {isRTL ? 'مكاتب فاخرة' : 'Premium Offices'}
-                  </h3>
-                  <p className="text-gray-600">
-                    {isRTL ? 'مساحات عمل راقية ومتطورة' : 'Elegant and advanced workspaces'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInRight}
-              className="space-y-8"
-            >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white uppercase tracking-wider">
-                {isRTL ? 'مكاتب فاخرة للنخبة' : 'BOUTIQUE OFFICES FOR THE ELITE'}
-              </h2>
-              <p className="text-lg lg:text-xl text-white leading-relaxed">
-                {isRTL 
-                  ? 'تجربة عمل لا مثيل لها حيث تندمج المساحات المصممة بعناية فائقة مع أجواء الفخامة والتميز، لتوفر لك بيئة عمل استثنائية تحفز الإبداع والإنتاجية.'
-                  : 'An unparalleled work experience where meticulously designed spaces merge with an atmosphere of luxury and distinction, providing you with an exceptional work environment that stimulates creativity and productivity.'
-                }
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Our Services Section */}
       <section id="services" className="py-20 lg:py-32 bg-gray-900 relative overflow-hidden">
@@ -646,57 +601,19 @@ const Index = () => {
             className="max-w-6xl mx-auto"
           >
             <div className="bg-gray-800 rounded-2xl p-8 lg:p-12 shadow-2xl border border-gray-700">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                {[
-                  {
-                    icon: '👥⚙️',
-                    title: t('services.categories.manpower.title'),
-                    services: t('services.categories.manpower.services', { returnObjects: true })
-                  },
-                  {
-                    icon: '🔧',
-                    title: t('services.categories.operation.title'),
-                    services: t('services.categories.operation.services', { returnObjects: true })
-                  },
-                  {
-                    icon: '🏢',
-                    title: t('services.categories.facility.title'),
-                    services: t('services.categories.facility.services', { returnObjects: true })
-                  },
-                  {
-                    icon: '📋⚙️',
-                    title: t('services.categories.projectManagement.title'),
-                    services: t('services.categories.projectManagement.services', { returnObjects: true })
-                  }
-                ].map((category, index) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                {(t('services.items', { returnObjects: true }) as string[]).map((service: string, index: number) => (
                   <motion.div 
                     key={index}
                     variants={fadeInUp}
                     className="group"
                   >
-                    <div className="bg-gray-700 rounded-xl p-6 hover:bg-gray-600 transition-all duration-300 border border-gray-600 group-hover:border-amber-400 group-hover:shadow-lg group-hover:shadow-amber-400/20">
-                      {/* Icon */}
-                      <div className="text-3xl mb-4 text-center">
-                        {category.icon}
-                      </div>
-                      
-                      {/* Title */}
-                      <h3 className="text-lg font-bold text-white mb-2 text-center">
-                        {category.title}
-                      </h3>
-                      
-                      {/* Services List */}
-                      <div className="space-y-2">
-                        {(category.services as string[]).map((service: string, serviceIndex: number) => (
-                          <div key={serviceIndex} className="flex items-start space-x-2 rtl:space-x-reverse">
-                            <CheckCircle className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
-                            <div className="flex-1">
-                              <p className="text-sm text-gray-200 font-medium">
-                                {service}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
+                    <div className="bg-gray-700 rounded-xl p-6 hover:bg-gray-600 transition-all duration-300 border border-gray-600 group-hover:border-amber-400 group-hover:shadow-lg group-hover:shadow-amber-400/20 h-full flex items-center">
+                      <div className="flex items-start space-x-3 rtl:space-x-reverse w-full">
+                        <CheckCircle className="h-5 w-5 text-amber-400 mt-0.5 flex-shrink-0" />
+                        <p className="text-base text-gray-200 font-medium">
+                          {service}
+                        </p>
                       </div>
                     </div>
                   </motion.div>

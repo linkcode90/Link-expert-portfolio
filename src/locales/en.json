@@ -88,51 +88,18 @@
     "description": "An unparalleled work experience where meticulously designed spaces merge with an atmosphere of luxury and distinction, providing you with an exceptional work environment that stimulates creativity and productivity."
   },
   "services": {
-    "title": "Our Services",
-    "subtitle": "خدماتنا",
-    "categories": {
-      "manpower": {
-        "title": "Manpower Supply",
-        "services": [
-          "Supply of technical specialists of various disciplines",
-          "Workers, roustabouts"
-        ]
-      },
-      "operation": {
-        "title": "Operation & Maintenance",
-        "services": [
-          "Operate Facility",
-          "Structure Maintenance",
-          "Maintenance Operation",
-          "Repair, Testing & Installation",
-          "Dewatering",
-          "Testing and Certification",
-          "Flange Management",
-          "Well Operations",
-          "Tubing Cleaning & Inspections"
-        ]
-      },
-      "facility": {
-        "title": "Facility",
-        "services": [
-          "Material Delivery",
-          "Cleaning",
-          "Security Structure",
-          "Landscape",
-          "Security",
-          "Access Control"
-        ]
-      },
-      "projectManagement": {
-        "title": "Project Management",
-        "services": [
-          "Turn-Key Project",
-          "Engineering Solutions",
-          "Piping Solutions",
-          "Manpower Provision"
-        ]
-      }
-    }
+    "title": "Link Expert Services",
+    "subtitle": "خدمات لينك اكسبرت",
+    "items": [
+      "Parking management services",
+      "Valet parking service",
+      "Facilities management services",
+      "Traffic and Crowd management",
+      "Parking memberships and Permits management",
+      "Car wash service",
+      "Parking systems and services",
+      "Parking platforms and applications"
+    ]
   },
   "contact": {
     "title": "DISCOVER LINK EXPERT",
