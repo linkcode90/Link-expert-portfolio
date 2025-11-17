@@ -986,18 +986,11 @@ const Index = () => {
                       {isRTL ? 'تحميل الملف الإعلامي' : 'Download the Media File'}
                     </Button> */}
                     <Button 
-                      onClick={() => {
-                        const link = document.createElement('a');
-                        link.href = '/src/assets/Link Expert_FACILITY_Company_Profile _2025.pdf';
-                        link.download = 'Link Expert_FACILITY_Company_Profile_2025.pdf';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                      }}
+                      onClick={() => window.open('https://linktr.ee/linkexpert', '_blank')}
                       className="w-full bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-none border border-gray-600 hover:border-amber-500 transition-all duration-300"
                     >
-                      <Download className="h-5 w-5 mr-2" />
-                      {isRTL ? 'تحميل البروشور' : 'Download the Brochure'}
+                      <Globe className="h-5 w-5 mr-2" />
+                      {t('office.downloads.brochure')}
                     </Button>
                   </div>
                 </div>
