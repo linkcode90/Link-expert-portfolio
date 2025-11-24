@@ -112,7 +112,24 @@
       "phone": "Phone Number",
       "email": "Email",
       "message": "Message",
-      "submit": "Submit"
+      "submit": "Submit",
+      "requiredServices": "Service requested",
+      "projectType": "Project Type",
+      "serviceOptions": [
+        "Parking management services",
+        "Parking Operations Management",
+        "Golf Cars",
+        "Shuttle Bus",
+        "Valet Parking service",
+        "Car wash service",
+        "Facility Support Services"
+      ],
+      "projectTypeOptions": [
+        "Small-scale project",
+        "Medium-scale project",
+        "Large-scale project"
+      ],
+      "selectPlaceholder": "Select..."
     }
   },
   "office": {

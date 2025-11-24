@@ -201,10 +201,7 @@ const Index = () => {
         break;
       case 'requiredServices':
         if (!value.trim()) {
-          return isRTL ? 'الخدمات المطلوبة مطلوبة' : 'Required services is required';
-        }
-        if (value.trim().length < 10) {
-          return isRTL ? 'الخدمات المطلوبة يجب أن تكون على الأقل 10 أحرف' : 'Required services must be at least 10 characters';
+          return isRTL ? 'الخدمة المطلوبة مطلوبة' : 'Service requested is required';
         }
         break;
     }
@@ -226,7 +223,7 @@ const Index = () => {
   };
 
   // Handle form input change
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -1205,16 +1202,30 @@ Required Services: ${formData.requiredServices}`;
                     )}
                   </div>
                   <div>
-                    <input
-                      type="text"
+                    <select
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleInputChange}
-                      placeholder={isRTL ? 'نوع المشروع' : 'Project Type'}
-                      className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 ${
+                      className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 appearance-none cursor-pointer ${
                         formErrors.projectType ? 'border-red-500' : 'border-gray-700'
-                      }`}
-                    />
+                      } ${!formData.projectType ? 'text-gray-400' : 'text-white'}`}
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: isRTL ? 'left 1rem center' : 'right 1rem center',
+                        paddingRight: isRTL ? '1rem' : '2.5rem',
+                        paddingLeft: isRTL ? '2.5rem' : '1rem'
+                      }}
+                    >
+                      <option value="" disabled>
+                        {isRTL ? 'اختر نوع المشروع...' : 'Select project type...'}
+                      </option>
+                      {t('contact.form.projectTypeOptions', { returnObjects: true }).map((option: string, index: number) => (
+                        <option key={index} value={option} className="bg-gray-800">
+                          {option}
+                        </option>
+                      ))}
+                    </select>
                     {formErrors.projectType && (
                       <p className="text-red-400 text-sm mt-1">{formErrors.projectType}</p>
                     )}
@@ -1251,16 +1262,30 @@ Required Services: ${formData.requiredServices}`;
                   </div>
                 </div>
                 <div>
-                  <textarea
+                  <select
                     name="requiredServices"
                     value={formData.requiredServices}
                     onChange={handleInputChange}
-                    placeholder={isRTL ? 'الخدمات المطلوبة' : 'Required Services'}
-                    rows={4}
-                    className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 resize-none ${
+                    className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 appearance-none cursor-pointer ${
                       formErrors.requiredServices ? 'border-red-500' : 'border-gray-700'
-                    }`}
-                  ></textarea>
+                    } ${!formData.requiredServices ? 'text-gray-400' : 'text-white'}`}
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: isRTL ? 'left 1rem center' : 'right 1rem center',
+                      paddingRight: isRTL ? '1rem' : '2.5rem',
+                      paddingLeft: isRTL ? '2.5rem' : '1rem'
+                    }}
+                  >
+                    <option value="" disabled>
+                      {isRTL ? 'اختر الخدمة المطلوبة...' : 'Select service requested...'}
+                    </option>
+                    {t('contact.form.serviceOptions', { returnObjects: true }).map((option: string, index: number) => (
+                      <option key={index} value={option} className="bg-gray-800">
+                        {option}
+                      </option>
+                    ))}
+                  </select>
                   {formErrors.requiredServices && (
                     <p className="text-red-400 text-sm mt-1">{formErrors.requiredServices}</p>
                   )}
