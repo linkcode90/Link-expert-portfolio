@@ -254,7 +254,7 @@ Required Services: ${formData.requiredServices}`;
                 onClick={() => scrollToSection('contact')}
                 className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
               >
-                {isRTL ? 'احجز رحلتك اليوم' : 'Reserve Your Journey Today'}
+                {isRTL ? 'احجز خدمتك' : 'Book Your Service'}
               </button>
               
               {/* Language Switcher */}
@@ -318,7 +318,7 @@ Required Services: ${formData.requiredServices}`;
                 onClick={() => scrollToSection('contact')}
                 className={`block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium ${isRTL ? 'text-right w-full' : 'text-left'}`}
               >
-                {isRTL ? 'احجز رحلتك اليوم' : 'Reserve Your Journey Today'}
+                {isRTL ? 'احجز خدمتك' : 'Book Your Service'}
               </button>
             </div>
           </motion.div>
@@ -1234,7 +1234,7 @@ Required Services: ${formData.requiredServices}`;
                     onClick={() => scrollToSection('contact')}
                     className="hover:text-amber-400 transition-colors duration-200 text-sm"
                   >
-                    {isRTL ? 'احجز رحلتك اليوم' : 'Reserve Your Journey Today'}
+                    {isRTL ? 'احجز خدمتك' : 'Book Your Service'}
                   </button>
                 </li>
               </ul>

@@ -3,7 +3,7 @@
     "home": "Link Expert",
     "services": "Our Services",
     "gallery": "Discover Link Expert",
-    "contact": "Reserve Your Journey Today",
+    "contact": "Book Your Service",
     "privacy": "Usage and Refund Policy"
   },
   "hero": {
@@ -98,7 +98,8 @@
       "Parking memberships and Permits management",
       "Car wash service",
       "Parking systems and services",
-      "Parking platforms and applications"
+      "Parking platforms and applications",
+      "Shuttle Services"
     ]
   },
   "contact": {
