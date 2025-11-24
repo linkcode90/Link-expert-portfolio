@@ -89,6 +89,7 @@ const Index = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
   
   const currentLanguage = i18n.language;
   const isRTL = currentLanguage === 'ar';
@@ -140,6 +141,90 @@ const Index = () => {
     setIsMenuOpen(false);
   };
 
+  // Validation functions
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string): boolean => {
+    // Accepts international format with or without +, spaces, dashes
+    const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ''));
+  };
+
+  const validateField = (name: string, value: string): string => {
+    switch (name) {
+      case 'name':
+        if (!value.trim()) {
+          return isRTL ? 'الاسم مطلوب' : 'Name is required';
+        }
+        if (value.trim().length < 2) {
+          return isRTL ? 'الاسم يجب أن يكون على الأقل حرفين' : 'Name must be at least 2 characters';
+        }
+        break;
+      case 'email':
+        if (!value.trim()) {
+          return isRTL ? 'البريد الإلكتروني مطلوب' : 'Email is required';
+        }
+        if (!validateEmail(value)) {
+          return isRTL ? 'البريد الإلكتروني غير صحيح' : 'Invalid email address';
+        }
+        break;
+      case 'phone':
+        if (!value.trim()) {
+          return isRTL ? 'رقم الهاتف مطلوب' : 'Phone number is required';
+        }
+        if (!validatePhone(value)) {
+          return isRTL ? 'رقم الهاتف غير صحيح' : 'Invalid phone number';
+        }
+        break;
+      case 'projectLocation':
+        if (!value.trim()) {
+          return isRTL ? 'موقع المشروع مطلوب' : 'Project location is required';
+        }
+        break;
+      case 'projectType':
+        if (!value.trim()) {
+          return isRTL ? 'نوع المشروع مطلوب' : 'Project type is required';
+        }
+        break;
+      case 'projectName':
+        if (!value.trim()) {
+          return isRTL ? 'اسم المشروع مطلوب' : 'Project name is required';
+        }
+        break;
+      case 'parentCompany':
+        if (!value.trim()) {
+          return isRTL ? 'اسم الشركة الأم مطلوب' : 'Parent company name is required';
+        }
+        break;
+      case 'requiredServices':
+        if (!value.trim()) {
+          return isRTL ? 'الخدمات المطلوبة مطلوبة' : 'Required services is required';
+        }
+        if (value.trim().length < 10) {
+          return isRTL ? 'الخدمات المطلوبة يجب أن تكون على الأقل 10 أحرف' : 'Required services must be at least 10 characters';
+        }
+        break;
+    }
+    return '';
+  };
+
+  const validateForm = (): boolean => {
+    const errors: { [key: string]: string } = {};
+    
+    Object.keys(formData).forEach(key => {
+      const error = validateField(key, formData[key as keyof typeof formData]);
+      if (error) {
+        errors[key] = error;
+      }
+    });
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   // Handle form input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -147,11 +232,27 @@ const Index = () => {
       ...prev,
       [name]: value
     }));
+    
+    // Clear error for this field when user starts typing
+    if (formErrors[name]) {
+      setFormErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
   };
 
   // Handle form submission - send email via FormSubmit
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Validate form before submission
+    if (!validateForm()) {
+      setSubmitStatus('idle');
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -1050,9 +1151,13 @@ Required Services: ${formData.requiredServices}`;
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder={isRTL ? 'الاسم' : 'Name'}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
-                      required
+                      className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 ${
+                        formErrors.name ? 'border-red-500' : 'border-gray-700'
+                      }`}
                     />
+                    {formErrors.name && (
+                      <p className="text-red-400 text-sm mt-1">{formErrors.name}</p>
+                    )}
                   </div>
                   <div>
                     <input
@@ -1061,9 +1166,13 @@ Required Services: ${formData.requiredServices}`;
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder={isRTL ? 'البريد الإلكتروني' : 'Email'}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
-                      required
+                      className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 ${
+                        formErrors.email ? 'border-red-500' : 'border-gray-700'
+                      }`}
                     />
+                    {formErrors.email && (
+                      <p className="text-red-400 text-sm mt-1">{formErrors.email}</p>
+                    )}
                   </div>
                   <div>
                     <input
@@ -1072,9 +1181,13 @@ Required Services: ${formData.requiredServices}`;
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder={isRTL ? 'رقم الهاتف' : 'Phone Number'}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
-                      required
+                      className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 ${
+                        formErrors.phone ? 'border-red-500' : 'border-gray-700'
+                      }`}
                     />
+                    {formErrors.phone && (
+                      <p className="text-red-400 text-sm mt-1">{formErrors.phone}</p>
+                    )}
                   </div>
                   <div>
                     <input
@@ -1083,9 +1196,13 @@ Required Services: ${formData.requiredServices}`;
                       value={formData.projectLocation}
                       onChange={handleInputChange}
                       placeholder={isRTL ? 'موقع المشروع' : 'Project Location'}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
-                      required
+                      className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 ${
+                        formErrors.projectLocation ? 'border-red-500' : 'border-gray-700'
+                      }`}
                     />
+                    {formErrors.projectLocation && (
+                      <p className="text-red-400 text-sm mt-1">{formErrors.projectLocation}</p>
+                    )}
                   </div>
                   <div>
                     <input
@@ -1094,9 +1211,13 @@ Required Services: ${formData.requiredServices}`;
                       value={formData.projectType}
                       onChange={handleInputChange}
                       placeholder={isRTL ? 'نوع المشروع' : 'Project Type'}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
-                      required
+                      className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 ${
+                        formErrors.projectType ? 'border-red-500' : 'border-gray-700'
+                      }`}
                     />
+                    {formErrors.projectType && (
+                      <p className="text-red-400 text-sm mt-1">{formErrors.projectType}</p>
+                    )}
                   </div>
                   <div>
                     <input
@@ -1105,9 +1226,13 @@ Required Services: ${formData.requiredServices}`;
                       value={formData.projectName}
                       onChange={handleInputChange}
                       placeholder={isRTL ? 'اسم المشروع' : 'Project Name'}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
-                      required
+                      className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 ${
+                        formErrors.projectName ? 'border-red-500' : 'border-gray-700'
+                      }`}
                     />
+                    {formErrors.projectName && (
+                      <p className="text-red-400 text-sm mt-1">{formErrors.projectName}</p>
+                    )}
                   </div>
                   <div>
                     <input
@@ -1116,9 +1241,13 @@ Required Services: ${formData.requiredServices}`;
                       value={formData.parentCompany}
                       onChange={handleInputChange}
                       placeholder={isRTL ? 'اسم الشركة الأم' : 'Parent Company Name'}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200"
-                      required
+                      className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 ${
+                        formErrors.parentCompany ? 'border-red-500' : 'border-gray-700'
+                      }`}
                     />
+                    {formErrors.parentCompany && (
+                      <p className="text-red-400 text-sm mt-1">{formErrors.parentCompany}</p>
+                    )}
                   </div>
                 </div>
                 <div>
@@ -1128,9 +1257,13 @@ Required Services: ${formData.requiredServices}`;
                     onChange={handleInputChange}
                     placeholder={isRTL ? 'الخدمات المطلوبة' : 'Required Services'}
                     rows={4}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 resize-none"
-                    required
+                    className={`w-full px-4 py-3 bg-gray-800 border rounded-none text-white placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all duration-200 resize-none ${
+                      formErrors.requiredServices ? 'border-red-500' : 'border-gray-700'
+                    }`}
                   ></textarea>
+                  {formErrors.requiredServices && (
+                    <p className="text-red-400 text-sm mt-1">{formErrors.requiredServices}</p>
+                  )}
                 </div>
                 {submitStatus === 'success' && (
                   <div className="bg-green-500/20 border border-green-500 text-green-300 px-4 py-3 rounded-none">
