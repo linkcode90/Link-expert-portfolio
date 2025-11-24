@@ -87,6 +87,8 @@ const Index = () => {
     projectName: '',
     parentCompany: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   
   const currentLanguage = i18n.language;
   const isRTL = currentLanguage === 'ar';
@@ -147,16 +149,17 @@ const Index = () => {
     }));
   };
 
-  // Handle form submission - open mailto link
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  // Handle form submission - send email via FormSubmit
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    const email = 'info@link-expert.sa';
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
     const subject = isRTL 
       ? `طلب خدمة جديد من ${formData.name}`
       : `New Service Request from ${formData.name}`;
     
-    const body = isRTL
+    const message = isRTL
       ? `الاسم: ${formData.name}
 البريد الإلكتروني: ${formData.email}
 رقم الهاتف: ${formData.phone}
@@ -174,8 +177,49 @@ Project Name: ${formData.projectName}
 Parent Company: ${formData.parentCompany}
 Required Services: ${formData.requiredServices}`;
 
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/info@link-expert.sa', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: subject,
+          message: message,
+          _captcha: false,
+          _template: 'table'
+        })
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          name: '',
+          projectLocation: '',
+          phone: '',
+          email: '',
+          requiredServices: '',
+          projectType: '',
+          projectName: '',
+          parentCompany: ''
+        });
+        // Reset status after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Animation variants
@@ -1088,11 +1132,31 @@ Required Services: ${formData.requiredServices}`;
                     required
                   ></textarea>
                 </div>
+                {submitStatus === 'success' && (
+                  <div className="bg-green-500/20 border border-green-500 text-green-300 px-4 py-3 rounded-none">
+                    {isRTL 
+                      ? '✓ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.'
+                      : '✓ Your message has been sent successfully! We will contact you soon.'
+                    }
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="bg-red-500/20 border border-red-500 text-red-300 px-4 py-3 rounded-none">
+                    {isRTL 
+                      ? '✗ حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى.'
+                      : '✗ An error occurred while sending the message. Please try again.'
+                    }
+                  </div>
+                )}
                 <Button 
                   type="submit"
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg font-semibold rounded-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0"
+                  disabled={isSubmitting}
+                  className="w-full bg-amber-600 hover:bg-amber-700 disabled:bg-amber-800 disabled:cursor-not-allowed text-white px-8 py-4 text-lg font-semibold rounded-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0"
                 >
-                  {isRTL ? 'إرسال' : 'Submit'}
+                  {isSubmitting 
+                    ? (isRTL ? 'جاري الإرسال...' : 'Sending...')
+                    : (isRTL ? 'إرسال' : 'Submit')
+                  }
                 </Button>
               </form>
             </motion.div>
