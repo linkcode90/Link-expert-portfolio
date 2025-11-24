@@ -36,6 +36,10 @@ import urbanconLogo from "@/assets/urbancon.jpeg";
 import darWardLogo from "@/assets/dar ward.jpeg";
 import bydLogo from "@/assets/byd.jpeg";
 import alraedahFinanceLogo from "@/assets/alraedah finance.jpeg";
+import selaLogo from "@/assets/sela.jpeg";
+import bydRealEstateLogo from "@/assets/byd-real-estate.jpeg";
+import partnerGreenLogo from "@/assets/partner-green.jpeg";
+import albasAteenLogo from "@/assets/albas-ateen.jpeg";
 import {
   ArrowRight,
   Zap,
@@ -593,6 +597,10 @@ Required Services: ${formData.requiredServices}`;
                 { name: 'Dar Ward', image: darWardLogo },
                 { name: 'BYD Al-Futtaim', image: bydLogo },
                 { name: 'Alraedah Finance', image: alraedahFinanceLogo },
+                { name: 'Sela', image: selaLogo },
+                { name: 'BYD Real Estate', image: bydRealEstateLogo },
+                { name: 'Partner', image: partnerGreenLogo },
+                { name: 'Albas Ateen', image: albasAteenLogo },
               ].map((partner, index) => (
                 <motion.div
                   key={index}
@@ -1295,7 +1303,7 @@ Required Services: ${formData.requiredServices}`;
                     </svg>
                   </a>
                   <a
-                    href="https://api.whatsapp.com/send/?phone=562227946&text&type=phone_number&app_absent=0"
+                    href="https://api.whatsapp.com/send/?phone=966562227946&text&type=phone_number&app_absent=0"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
