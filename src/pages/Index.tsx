@@ -69,6 +69,7 @@ import {
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import JobApplication from "@/components/section/job-application";
+import useAuth from "@/hooks/use-auth";
 
 const Index = () => {
   const { t, i18n } = useTranslation();
@@ -106,6 +107,51 @@ const Index = () => {
     "الرياض بارك": riyadhParkLogo,
     "Riyadh Park Mall": riyadhParkLogo,
     "رياض بارك مول": riyadhParkLogo,
+  };
+
+  // handle login
+  const { isAuthenticated } = useAuth();
+  const [showModal, setShowModal] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const handleLogin = async () => {
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch(
+        "https://www.link-expert.sa/api/portal/login",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.message || "Login failed");
+      } else {
+
+        if (data.token) {
+          localStorage.setItem("sT4fF3n", data.token);
+        }
+        // alert(`${isRTL ? "تم تسجيل الدخول بنجاح!" : "Login successful!"}`);
+        // setShowModal(false);
+        // // Optionally redirect or store token:
+        window.location.href = '/staff-portal';
+      }
+    } catch (err) {
+      setError(err.message || "Network error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Scroll handling
@@ -418,14 +464,24 @@ Required Services: ${formData.requiredServices}`;
               >
                 {isRTL ? "احجز خدمتك" : "Book Your Service"}
               </button>
-              <button
-                onClick={() => {
-                  alert("Not Implemented Yet!");
-                }}
-                className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
-              >
-                {isRTL ? "دخول الموظفين" : "Staff Entrance"}
-              </button>
+              {isAuthenticated ? (
+                <a
+                  href="/staff-portal"
+                  className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+                >
+                  {isRTL ? "بوابة الموظفين" : "Staff Portal"}
+                </a>
+              ) : (
+                <button
+                  onClick={() => {
+                    setShowModal(true);
+                  }}
+                  className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+                >
+                  {isRTL ? "دخول الموظفين" : "Staff Entrance"}
+                </button>
+              )}
+
               <button
                 onClick={() => scrollToSection("job-application")}
                 className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
@@ -508,6 +564,28 @@ Required Services: ${formData.requiredServices}`;
               >
                 {isRTL ? "احجز خدمتك" : "Book Your Service"}
               </button>
+              {isAuthenticated ? (
+                <a
+                  href="/staff-portal"
+                  className={`block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium ${
+                    isRTL ? "text-right w-full" : "text-left"
+                  }`}
+                >
+                  {isRTL ? "بوابة الموظفين" : "Staff Portal"}
+                </a>
+              ) : (
+                <button
+                  onClick={() => {
+                    setShowModal(true);
+                  }}
+                  className={`block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium ${
+                    isRTL ? "text-right w-full" : "text-left"
+                  }`}
+                >
+                  {isRTL ? "دخول الموظفين" : "Staff Entrance"}
+                </button>
+              )}
+
               <button
                 onClick={() => scrollToSection("job-application")}
                 className={`block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium ${
@@ -1916,6 +1994,58 @@ Required Services: ${formData.requiredServices}`;
         >
           <ArrowUp className="h-6 w-6" />
         </motion.button>
+      )}
+
+      {/* Modal Login */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white rounded-lg p-6 w-80 relative">
+            <h2 className="text-lg font-bold mb-4">
+              {isRTL ? "تسجيل دخول الموظفين" : "Staff Login"}
+            </h2>
+
+            {error && <p className="text-red-600 text-sm mb-2">{error}</p>}
+
+            <input
+              type="text"
+              placeholder={isRTL ? "اسم المستخدم" : "Username"}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full border border-gray-300 rounded px-3 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+            />
+
+            <input
+              type="password"
+              placeholder={isRTL ? "كلمة المرور" : "Password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full border border-gray-300 rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-amber-500"
+            />
+
+            <div className="flex justify-end gap-2">
+              <button
+                onClick={() => setShowModal(false)}
+                className="px-3 py-1 rounded bg-gray-300 hover:bg-gray-400"
+                disabled={loading}
+              >
+                {isRTL ? "إلغاء" : "Cancel"}
+              </button>
+              <button
+                onClick={handleLogin}
+                className="px-3 py-1 rounded bg-amber-600 text-white hover:bg-amber-700"
+                disabled={loading}
+              >
+                {loading
+                  ? isRTL
+                    ? "جاري الدخول..."
+                    : "Logging in..."
+                  : isRTL
+                  ? "تسجيل الدخول"
+                  : "Login"}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
