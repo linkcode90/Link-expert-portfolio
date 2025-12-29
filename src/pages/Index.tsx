@@ -14,6 +14,7 @@ import northYardLogo from "@/assets/north-yard.jpeg";
 import modonLogo from "@/assets/modon.jpeg";
 import oudSquareLogo from "@/assets/oud-square.jpeg";
 import oudSquarePngLogo from "@/assets/Oud Square.png";
+import laCortePngLogo from "@/assets/la-corte.jpeg";
 import riyadhHoldingLogo from "@/assets/riyadh-holding.jpeg";
 import developmentAuthSupportLogo from "@/assets/devolopment auth support center.jpeg";
 import sikkahLogo from "@/assets/sikkah.png";
@@ -489,6 +490,14 @@ Required Services: ${formData.requiredServices}`;
                 {isRTL ? "التقديم على الوظائف" : "Job application"}
               </button>
 
+              <a
+                href="https://link-expert.sa/external/Complaint-form"
+                target="_blank"
+                className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+              >
+                {isRTL ? "تقديم الشكاوى الرسمية" : "Filing official complaints"}
+              </a>
+
               {/* Language Switcher */}
               <div className="relative">
                 <button
@@ -585,6 +594,16 @@ Required Services: ${formData.requiredServices}`;
                   {isRTL ? "دخول الموظفين" : "Staff Entrance"}
                 </button>
               )}
+
+              <a
+                href="https://link-expert.sa/external/Complaint-form"
+                target="_blank"
+                className={`block text-gray-700 hover:text-amber-600 transition-colors duration-200 font-medium ${
+                  isRTL ? "text-right w-full" : "text-left"
+                }`}
+              >
+                {isRTL ? "تقديم الشكاوى الرسمية" : "Filing official complaints"}
+              </a>
 
               <button
                 onClick={() => scrollToSection("job-application")}
@@ -892,7 +911,8 @@ Required Services: ${formData.requiredServices}`;
                 { name: "Panorama", image: panoramaLogo },
                 { name: "Majdoul Tower", image: majdoulTowerLogo },
                 { name: "Oud Square", image: oudSquarePngLogo },
-                { name: "North Yard", image: northYardLogo },
+                { name: "La Corte", image: laCortePngLogo },
+                // { name: "North Yard", image: northYardLogo },
                 { name: "Arriyadh Gate", image: arriyadhGateLogo },
                 { name: "Rixos Hotels", image: rixosHotelsLogo },
                 { name: "Riyadh Holding", image: riyadhHoldingLogo },

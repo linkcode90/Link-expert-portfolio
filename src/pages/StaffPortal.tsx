@@ -493,8 +493,8 @@ const StaffPortal = () => {
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold mb-2 text-gray-900">
                     {isRTL
-                      ? "منصة One Link (الفاليه – القولف كار – وغيرها)"
-                      : "One Link Platform (Valet – Golf Car – Other Services)"}
+                      ? "منصة Link One (الفاليه – القولف كار – وغيرها)"
+                      : "Link One Platform (Valet – Golf Car – Other Services)"}
                   </h3>
                   <a
                     href="https://drive.google.com/drive/folders/10CxvT562LkQb5W1HHbL8j4l5FedhAGWe"

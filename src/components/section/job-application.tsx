@@ -36,7 +36,7 @@ const JobApplication = ({ isRTL = true }) => {
       title: isRTL ? "تقديم على الوظائف خارج المملكة" : "Apply for Jobs Abroad",
       gradient: "from-orange-600 via-red-600 to-pink-700",
       icon: Globe,
-      href: "https://forms.monday.com/forms/46389e85e966e45f04d691c972e75c1a?r=euc1",
+      href: "https://link-expert.sa/external/International-Recruitment",
       accentColor: "orange",
       description: isRTL
         ? "استكشف فرص العمل الدولية"
