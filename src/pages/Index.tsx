@@ -1311,7 +1311,7 @@ Required Services: ${formData.requiredServices}`;
                       </td>
                     </tr>
 
-                    {/* North Yard */}
+                    {/* North Yard
                     <tr className="hover:bg-gray-50 transition-colors duration-200">
                       <td
                         className={`px-6 py-4 text-sm font-medium text-gray-900 ${
@@ -1336,7 +1336,7 @@ Required Services: ${formData.requiredServices}`;
                       >
                         35 ريال
                       </td>
-                    </tr>
+                    </tr> */}
 
                     {/* Oud Square */}
                     <tr className="hover:bg-gray-50 transition-colors duration-200">
