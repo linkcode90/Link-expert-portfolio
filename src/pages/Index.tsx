@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import LinkLogo from "@/assets/link logo 33.png";
+import headerImage from "@/assets/header.jpeg";
 import riyadhParkLogo from "@/assets/riyadh-park.jpeg";
 import laysenValleyLogo from "@/assets/laysen-valley.jpeg";
 import arriyadhGateLogo from "@/assets/arriyadh-gate-alt.jpeg";
@@ -626,7 +627,7 @@ Required Services: ${formData.requiredServices}`;
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/src/assets/header.jpeg')`,
+            backgroundImage: `url(${headerImage})`,
             filter: "brightness(0.4)",
           }}
         ></div>
