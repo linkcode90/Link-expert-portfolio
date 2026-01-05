@@ -139,14 +139,13 @@ const Index = () => {
       if (!response.ok) {
         setError(data.message || "Login failed");
       } else {
-
         if (data.token) {
           localStorage.setItem("sT4fF3n", data.token);
         }
         // alert(`${isRTL ? "تم تسجيل الدخول بنجاح!" : "Login successful!"}`);
         // setShowModal(false);
         // // Optionally redirect or store token:
-        window.location.href = '/staff-portal';
+        window.location.href = "/staff-portal";
       }
     } catch (err) {
       setError(err.message || "Network error");
@@ -440,7 +439,75 @@ Required Services: ${formData.requiredServices}`;
             </motion.div>
 
             {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+              <button
+                onClick={() => scrollToSection("home")}
+                className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+              >
+                {isRTL ? "خبير الربط" : "Link Expert"}
+              </button>
+              <button
+                onClick={() => scrollToSection("services")}
+                className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+              >
+                {t("nav.services")}
+              </button>
+              <button
+                onClick={() => scrollToSection("partners")}
+                className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+              >
+                {isRTL ? "شركاء النجاح" : "Partners in Success"}
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+              >
+                {isRTL ? "احجز خدمتك" : "Book Your Service"}
+              </button>
+              {isAuthenticated ? (
+                <a
+                  href="/staff-portal"
+                  className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+                >
+                  {isRTL ? "بوابة الموظفين" : "Staff Portal"}
+                </a>
+              ) : (
+                <button
+                  onClick={() => {
+                    setShowModal(true);
+                  }}
+                  className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+                >
+                  {isRTL ? "دخول الموظفين" : "Staff Entrance"}
+                </button>
+              )}
 
+              <button
+                onClick={() => scrollToSection("job-application")}
+                className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+              >
+                {isRTL ? "التقديم على الوظائف" : "Job application"}
+              </button>
+
+              <a
+                href="https://link-expert.sa/external/Complaint-form"
+                target="_blank"
+                className="text-white hover:text-amber-400 transition-colors duration-200 font-medium text-sm"
+              >
+                {isRTL ? "تقديم الشكاوى الرسمية" : "Filing official complaints"}
+              </a>
+
+              {/* Language Switcher */}
+              <div className="relative">
+                <button
+                  onClick={toggleLanguage}
+                  className="flex items-center space-x-1 rtl:space-x-reverse text-white hover:text-amber-400 transition-colors duration-200 text-sm"
+                >
+                  <span>{currentLanguage.toUpperCase()}</span>
+                  <ChevronDown className="h-3 w-3" />
+                </button>
+              </div>
+            </div>
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center space-x-2 rtl:space-x-reverse">
