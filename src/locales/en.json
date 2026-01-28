@@ -6,6 +6,15 @@
     "contact": "Book Your Service",
     "privacy": "Usage and Refund Policy"
   },
+  "certifications": {
+    "title": "Certifications",
+    "facilityManagement": "Facility Management",
+    "qualityManagement": "Quality Management Systems",
+    "iso41001": "ISO 41001:2018",
+    "iso9001": "ISO 9001:2015",
+    "downloadCertificate": "Download Certificate",
+    "viewCertificate": "View Certificate"
+  },
   "hero": {
     "title": "LINK EXPERT",
     "subtitle": "Your Legacy.. In the Memory of Place",
@@ -175,6 +184,21 @@
         "company": "Riyadh Park",
         "logo": "/src/assets/WhatsApp Image 2025-11-17 at 15.38.50 (1).jpeg",
         "review": "The experience was excellent and the prices are very reasonable"
+      },
+      {
+        "company": "Sikkah",
+        "logo": "/src/assets/sikkah.png",
+        "review": "بفضل جهود الفريق المخلص وروح العمل الجماعي، ونبني عليها استطعنا تحقيق إنجازات نفخر بها. للمستقبل"
+      },
+      {
+        "company": "La Corte",
+        "logo": "/src/assets/la-corte.jpeg",
+        "review": "الموظفين خدمة مميزة من"
+      },
+      {
+        "company": "Diriyah Company",
+        "logo": "/src/assets/der3ya.png",
+        "review": "On behalf of the Asset Management Department at Diriyah Company, we would like to extend our appreciation to every individual involved. Their commitment and excellent attitude did not go unnoticed. We truly value our collaboration and look forward to continuing a strong and successful relationship in the future."
       }
     ]
   },

@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { motion } from "framer-motion";
 import LinkLogo from "@/assets/link logo 33.png";
 import headerImage from "@/assets/header.jpeg";
@@ -39,6 +46,10 @@ import selaLogo from "@/assets/sela.jpeg";
 import bydRealEstateLogo from "@/assets/byd-real-estate.jpeg";
 import partnerGreenLogo from "@/assets/partner-green.jpeg";
 import albasAteenLogo from "@/assets/albas-ateen.jpeg";
+import akeedLogo from "@/assets/akeed.png";
+import diriyahLogo from "@/assets/der3ya.png";
+import iso41001Pdf from "@/assets/ISO 410012018-Khabir Alrabt for Operation and Maintenance  (2026 Final) (1).pdf";
+import iso9001Pdf from "@/assets/Khabir_Alrabt_for_Operation_and_Maintenance_(Link_Expert)_SoftCopy_ISO_9001 (2026 Final) (1).pdf";
 import {
   ArrowRight,
   Zap,
@@ -67,6 +78,8 @@ import {
   Headphones,
   ChevronDown,
   Quote,
+  FileText,
+  ExternalLink,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -93,6 +106,8 @@ const Index = () => {
     "idle" | "success" | "error"
   >("idle");
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
+  const [showFacilityModal, setShowFacilityModal] = useState(false);
+  const [showQualityModal, setShowQualityModal] = useState(false);
 
   const currentLanguage = i18n.language;
   const isRTL = currentLanguage === "ar";
@@ -109,6 +124,12 @@ const Index = () => {
     "الرياض بارك": riyadhParkLogo,
     "Riyadh Park Mall": riyadhParkLogo,
     "رياض بارك مول": riyadhParkLogo,
+    "Sikkah": sikkahLogo,
+    "سكة": sikkahLogo,
+    "La Corte": laCortePngLogo,
+    "ال كورت": laCortePngLogo,
+    "Diriyah Company": diriyahLogo,
+    "شركة الدرعية": diriyahLogo,
   };
 
   // handle login
@@ -425,18 +446,46 @@ Required Services: ${formData.requiredServices}`;
       >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
+            {/* Logo and Certifications */}
             <motion.div
               initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center space-x-3 rtl:space-x-reverse"
+              className="flex items-center space-x-4 rtl:space-x-reverse"
             >
               <img
                 src={LinkLogo}
                 alt="Link Expert"
                 className="h-10 lg:h-12 w-auto"
               />
+              
+              {/* Certifications Portals */}
+              <div className="hidden md:flex items-center space-x-2 rtl:space-x-reverse border-r border-amber-500/20 pr-4 rtl:border-l rtl:border-r-0 rtl:pl-4 rtl:pr-0">
+                <button
+                  onClick={() => setShowFacilityModal(true)}
+                  className="flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-800/90 hover:from-amber-500/20 hover:to-amber-600/20 border border-amber-500/20 hover:border-amber-500/40 rounded-lg transition-all duration-300 group shadow-sm hover:shadow-md"
+                  title={t('certifications.facilityManagement')}
+                >
+                  <div className="p-1 bg-amber-500/10 rounded group-hover:bg-amber-500/20 transition-colors">
+                    <Building className="h-4 w-4 text-amber-400 group-hover:text-amber-300" />
+                  </div>
+                  <span className="text-xs text-white font-semibold hidden lg:inline group-hover:text-amber-300 transition-colors">
+                    {t('certifications.facilityManagement')}
+                  </span>
+                </button>
+                <button
+                  onClick={() => setShowQualityModal(true)}
+                  className="flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-800/90 hover:from-amber-500/20 hover:to-amber-600/20 border border-amber-500/20 hover:border-amber-500/40 rounded-lg transition-all duration-300 group shadow-sm hover:shadow-md"
+                  title={t('certifications.qualityManagement')}
+                >
+                  <div className="p-1 bg-amber-500/10 rounded group-hover:bg-amber-500/20 transition-colors">
+                    <Award className="h-4 w-4 text-amber-400 group-hover:text-amber-300" />
+                  </div>
+                  <span className="text-xs text-white font-semibold hidden lg:inline group-hover:text-amber-300 transition-colors">
+                    {t('certifications.qualityManagement')}
+                  </span>
+                </button>
+              </div>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -942,6 +991,8 @@ Required Services: ${formData.requiredServices}`;
                 { name: "BYD Real Estate", image: bydRealEstateLogo },
                 { name: "Partner", image: partnerGreenLogo },
                 { name: "Albas Ateen", image: albasAteenLogo },
+                { name: "Akeed Alarabiya", image: akeedLogo },
+                { name: "Diriyah Company", image: diriyahLogo },
               ].map((partner, index) => (
                 <motion.div key={index} variants={fadeInUp} className="group">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 lg:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 hover:border-amber-400 h-full flex items-center justify-center min-h-[120px] group-hover:scale-105 group-hover:bg-white/20">
@@ -1759,6 +1810,154 @@ Required Services: ${formData.requiredServices}`;
           </div>
         </div>
       )}
+
+      {/* Facility Management Modal */}
+      <Dialog open={showFacilityModal} onOpenChange={setShowFacilityModal}>
+        <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 text-white border-2 border-amber-500/20 shadow-2xl">
+          <DialogHeader className="pb-6 border-b border-amber-500/20">
+            <div className="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+              <div className="p-2 bg-amber-500/10 rounded-lg border border-amber-500/30">
+                <Building className="h-6 w-6 text-amber-400" />
+              </div>
+              <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-amber-300 bg-clip-text text-transparent">
+                {t('certifications.facilityManagement')}
+              </DialogTitle>
+            </div>
+            <DialogDescription className="text-gray-300 text-base mt-2">
+              {isRTL 
+                ? 'شهادات إدارة المرافق المعتمدة'
+                : 'Certified Facility Management Certifications'
+              }
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="mt-8 space-y-6">
+            {/* ISO 41001:2018 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 rounded-xl p-8 border-2 border-amber-500/30 shadow-xl hover:border-amber-500/50 transition-all duration-300 overflow-hidden"
+            >
+              {/* Decorative gradient overlay */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-amber-400/5 rounded-full blur-2xl"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+                      <div className="p-2.5 bg-amber-500/20 rounded-lg border border-amber-500/40">
+                        <Award className="h-6 w-6 text-amber-400" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white">
+                        {t('certifications.iso41001')}
+                      </h3>
+                    </div>
+                    <p className="text-gray-300 text-base leading-relaxed">
+                      {isRTL 
+                        ? 'شهادة إدارة المرافق - Facility Management'
+                        : 'Facility Management Certificate'
+                      }
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-gray-700/50">
+                  <Button
+                    onClick={() => window.open(iso41001Pdf, '_blank')}
+                    className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center space-x-2 rtl:space-x-reverse"
+                  >
+                    <Download className="h-5 w-5" />
+                    <span>{t('certifications.downloadCertificate')}</span>
+                  </Button>
+                  <Button
+                    onClick={() => window.open(iso41001Pdf, '_blank')}
+                    className="bg-transparent border-2 border-gray-600 text-white hover:bg-gray-800/80 hover:border-amber-500/50 font-semibold px-6 py-3 rounded-lg transition-all duration-200 flex items-center space-x-2 rtl:space-x-reverse shadow-md hover:shadow-lg"
+                  >
+                    <ExternalLink className="h-5 w-5" />
+                    <span>{t('certifications.viewCertificate')}</span>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Quality Management Systems Modal */}
+      <Dialog open={showQualityModal} onOpenChange={setShowQualityModal}>
+        <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 text-white border-2 border-amber-500/20 shadow-2xl">
+          <DialogHeader className="pb-6 border-b border-amber-500/20">
+            <div className="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+              <div className="p-2 bg-amber-500/10 rounded-lg border border-amber-500/30">
+                <Award className="h-6 w-6 text-amber-400" />
+              </div>
+              <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-amber-300 bg-clip-text text-transparent">
+                {t('certifications.qualityManagement')}
+              </DialogTitle>
+            </div>
+            <DialogDescription className="text-gray-300 text-base mt-2">
+              {isRTL 
+                ? 'شهادات أنظمة إدارة الجودة المعتمدة'
+                : 'Certified Quality Management Systems Certifications'
+              }
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="mt-8 space-y-6">
+            {/* ISO 9001:2015 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 rounded-xl p-8 border-2 border-amber-500/30 shadow-xl hover:border-amber-500/50 transition-all duration-300 overflow-hidden"
+            >
+              {/* Decorative gradient overlay */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-amber-400/5 rounded-full blur-2xl"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+                      <div className="p-2.5 bg-amber-500/20 rounded-lg border border-amber-500/40">
+                        <Award className="h-6 w-6 text-amber-400" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white">
+                        {t('certifications.iso9001')}
+                      </h3>
+                    </div>
+                    <p className="text-gray-300 text-base leading-relaxed">
+                      {isRTL 
+                        ? 'شهادة أنظمة إدارة الجودة - Quality Management Systems'
+                        : 'Quality Management Systems Certificate'
+                      }
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-gray-700/50">
+                  <Button
+                    onClick={() => window.open(iso9001Pdf, '_blank')}
+                    className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center space-x-2 rtl:space-x-reverse"
+                  >
+                    <Download className="h-5 w-5" />
+                    <span>{t('certifications.downloadCertificate')}</span>
+                  </Button>
+                  <Button
+                    onClick={() => window.open(iso9001Pdf, '_blank')}
+                    className="bg-transparent border-2 border-gray-600 text-white hover:bg-gray-800/80 hover:border-amber-500/50 font-semibold px-6 py-3 rounded-lg transition-all duration-200 flex items-center space-x-2 rtl:space-x-reverse shadow-md hover:shadow-lg"
+                  >
+                    <ExternalLink className="h-5 w-5" />
+                    <span>{t('certifications.viewCertificate')}</span>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
